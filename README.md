@@ -1,2 +1,5 @@
 # react-register
-- a material dashboard based profile built on react.
+
+A MaterialUI based dashboard built on React.
+
+This project is currently under development.
