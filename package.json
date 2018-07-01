@@ -1,0 +1,42 @@
+{
+  "name": "fairbanks.io",
+  "version": "1.0.0",
+  "description": "Fairbanks.io Landing Page - Written in React",
+  "private": false,
+  "main": "index.js",
+  "dependencies": {
+    "@material-ui/core": "1.2.1",
+    "@material-ui/icons": "1.1.0",
+    "@types/googlemaps": "3.30.9",
+    "@types/markerclustererplus": "2.1.33",
+    "ajv": "6.5.1",
+    "chartist": "0.10.1",
+    "classnames": "2.2.6",
+    "npm-run-all": "4.1.3",
+    "perfect-scrollbar": "1.4.0",
+    "react": "16.4.0",
+    "react-chartist": "0.13.1",
+    "react-dom": "16.4.0",
+    "react-google-maps": "9.4.5",
+    "react-router-dom": "4.3.1",
+    "react-scripts": "1.1.4",
+    "react-swipeable-views": "0.12.13"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonfairbanks/fairbanks-io.git"
+  },
+  "keywords": [],
+  "author": "Jon Fairbanks <jon@fairbanks.io> (https://fairbanks.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonfairbanks/fairbanks-io/issues"
+  },
+  "homepage": "."
+}
