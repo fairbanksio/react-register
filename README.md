@@ -1,3 +1,5 @@
 # react-register
 
-This project is under development.
+A MaterialUI based dashboard built on React.
+
+This project is currently under development.
