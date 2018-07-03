@@ -3,10 +3,12 @@ import { NavLink } from "react-router-dom";
 
 import HeaderLinks from "../Header/HeaderLinks.jsx";
 
-import imagine from "assets/img/sidebar-3.jpg";
+import imagine from "assets/img/sidebar-1.jpg";
 import logo from "assets/img/reactlogo.png";
 
 import dashboardRoutes from "routes/dashboard.jsx";
+
+import { userConfig } from "../../variables/Variables.jsx";
 
 class Sidebar extends Component {
   constructor(props) {
@@ -39,7 +41,7 @@ class Sidebar extends Component {
         <div className="sidebar-background" style={sidebarBackground} />
         <div className="logo">
           <a
-            href="https://www.creative-tim.com"
+            href={userConfig.Website}
             className="simple-text logo-mini"
           >
             <div className="logo-img">
@@ -50,7 +52,7 @@ class Sidebar extends Component {
             href="https://www.creative-tim.com"
             className="simple-text logo-normal"
           >
-            Creative Tim
+            {userConfig.SiteTitle}
           </a>
         </div>
         <div className="sidebar-wrapper">

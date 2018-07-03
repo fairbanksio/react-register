@@ -1,5 +1,31 @@
 //
 // //
+// // // User Configuration
+// //
+//
+var userConfig = {
+  "FirstName":"Tet",
+  "LastName":"User",
+  "FullName":"Test User",
+  "Website":"https://yoursite.io/", // Include the /
+  "LinkedIn":"youruser",
+  "GitHub":"youruser",
+  "Email":"you@yoursite.io",
+  "ProfileImage":"https://yoursite.io/image.jpg",
+  "ProfileBanner":"https://yoursite.io/banner.jpg",
+  "Description":"Soo... what would you say ya do around here?"
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+////// Stuff Below Here Probably Needs Cleaned Out Soon-ish ///////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//
+// //
 // // // For notifications
 // //
 //
@@ -580,6 +606,7 @@ var legendBar = {
 };
 
 module.exports = {
+  userConfig,
   style, // For notifications (App container and Notifications view)
   thArray,
   tdArray, // For tables (TableList view)
