@@ -7,7 +7,7 @@ import {
   ControlLabel,
   FormControl
 } from "react-bootstrap";
-import { userConfig } from "variables/Variables.jsx";
+import { userConfig } from "variables/UserConfig.jsx";
 
 import { Card } from "components/Card/Card.jsx";
 import { FormInputs } from "components/FormInputs/FormInputs.jsx";
@@ -33,6 +33,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Company",
+                          autocomplete: "Company",
                           defaultValue: "Creative Code Inc.",
                           disabled: true
                         },
@@ -41,13 +42,15 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Username",
+                          autocomplete: "Username",
                           defaultValue: "michael23"
                         },
                         {
                           label: "Email address",
                           type: "email",
                           bsClass: "form-control",
-                          placeholder: "Email"
+                          placeholder: "Email",
+                          autocomplete: "Email"
                         }
                       ]}
                     />
@@ -59,6 +62,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "First name",
+                          autocomplete: "First name",
                           defaultValue: "Mike"
                         },
                         {
@@ -66,6 +70,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Last name",
+                          autocomplete: "Last name",
                           defaultValue: "Andrew"
                         }
                       ]}
@@ -78,6 +83,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Home Adress",
+                          autocomplete: "Home Adress",
                           defaultValue:
                             "Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
                         }
@@ -91,6 +97,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "City",
+                          autocomplete: "City",
                           defaultValue: "Mike"
                         },
                         {
@@ -98,13 +105,15 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Country",
+                          autocomplete: "Country",
                           defaultValue: "Andrew"
                         },
                         {
                           label: "Postal Code",
                           type: "number",
                           bsClass: "form-control",
-                          placeholder: "ZIP Code"
+                          placeholder: "ZIP Code",
+                          autocomplete: "ZIP Code"
                         }
                       ]}
                     />

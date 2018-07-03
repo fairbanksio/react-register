@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Grid } from "react-bootstrap";
-import { userConfig } from "../../variables/Variables.jsx";
+import { userConfig } from "../../variables/UserConfig.jsx";
 
 class Footer extends Component {
   render() {
