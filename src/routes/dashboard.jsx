@@ -5,7 +5,7 @@ import Typography from "views/Typography/Typography";
 import Icons from "views/Icons/Icons";
 import Maps from "views/Maps/Maps";
 import Notifications from "views/Notifications/Notifications";
-import Upgrade from "views/Upgrade/Upgrade";
+
 
 const dashboardRoutes = [
   {
@@ -40,13 +40,7 @@ const dashboardRoutes = [
     icon: "pe-7s-bell",
     component: Notifications
   },
-  {
-    upgrade: true,
-    path: "/upgrade",
-    name: "Upgrade to PRO",
-    icon: "pe-7s-rocket",
-    component: Upgrade
-  },
+  
   { redirect: true, path: "/", to: "/dashboard", name: "Dashboard" }
 ];
 
