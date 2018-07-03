@@ -3,9 +3,6 @@ import { Grid } from "react-bootstrap";
 import { userConfig } from "../../variables/Variables.jsx";
 
 class Footer extends Component {
-  componentDidMount(){
-    console.log(userConfig);
-  }
   render() {
     return (
       <footer className="footer">
