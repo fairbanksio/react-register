@@ -1,110 +1,58 @@
-import React from "react";
-import PropTypes from "prop-types";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import Checkbox from "@material-ui/core/Checkbox";
-import Tooltip from "@material-ui/core/Tooltip";
-import IconButton from "@material-ui/core/IconButton";
-import Table from "@material-ui/core/Table";
-import TableRow from "@material-ui/core/TableRow";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-// @material-ui/icons
-import Edit from "@material-ui/icons/Edit";
-import Close from "@material-ui/icons/Close";
-import Check from "@material-ui/icons/Check";
-// core components
-import tasksStyle from "assets/jss/material-dashboard-react/components/tasksStyle.jsx";
+import React, { Component } from "react";
+import { Tooltip, OverlayTrigger } from "react-bootstrap";
+import Checkbox from "components/CustomCheckbox/CustomCheckbox.jsx";
+import Button from "components/CustomButton/CustomButton.jsx";
 
-class Tasks extends React.Component {
-  state = {
-    checked: this.props.checkedIndexes
-  };
-  handleToggle = value => () => {
-    const { checked } = this.state;
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
-
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-
+export class Tasks extends Component {
+  handleCheckbox = event => {
+    const target = event.target;
+    console.log(event.target);
     this.setState({
-      checked: newChecked
+      [target.name]: target.checked
     });
   };
   render() {
-    const { classes, tasksIndexes, tasks } = this.props;
-    return (
-      <Table className={classes.table}>
-        <TableBody>
-          {tasksIndexes.map(value => (
-            <TableRow key={value} className={classes.tableRow}>
-              <TableCell className={classes.tableCell}>
-                <Checkbox
-                  checked={this.state.checked.indexOf(value) !== -1}
-                  tabIndex={-1}
-                  onClick={this.handleToggle(value)}
-                  checkedIcon={<Check className={classes.checkedIcon} />}
-                  icon={<Check className={classes.uncheckedIcon} />}
-                  classes={{
-                    checked: classes.checked
-                  }}
-                />
-              </TableCell>
-              <TableCell className={classes.tableCell}>
-                {tasks[value]}
-              </TableCell>
-              <TableCell className={classes.tableActions}>
-                <Tooltip
-                  id="tooltip-top"
-                  title="Edit Task"
-                  placement="top"
-                  classes={{ tooltip: classes.tooltip }}
-                >
-                  <IconButton
-                    aria-label="Edit"
-                    className={classes.tableActionButton}
-                  >
-                    <Edit
-                      className={
-                        classes.tableActionButtonIcon + " " + classes.edit
-                      }
-                    />
-                  </IconButton>
-                </Tooltip>
-                <Tooltip
-                  id="tooltip-top-start"
-                  title="Remove"
-                  placement="top"
-                  classes={{ tooltip: classes.tooltip }}
-                >
-                  <IconButton
-                    aria-label="Close"
-                    className={classes.tableActionButton}
-                  >
-                    <Close
-                      className={
-                        classes.tableActionButtonIcon + " " + classes.close
-                      }
-                    />
-                  </IconButton>
-                </Tooltip>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    );
+    const edit = <Tooltip id="edit_tooltip">Edit Task</Tooltip>;
+    const remove = <Tooltip id="remove_tooltip">Remove</Tooltip>;
+    const tasks_title = [
+      'Sign contract for "What are conference organizers afraid of?"',
+      "Lines From Great Russian Literature? Or E-mails From My Boss?",
+      "Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroi",
+      "Create 4 Invisible User Experiences you Never Knew About",
+      'Read "Following makes Medium better"',
+      "Unfollow 5 enemies from twitter"
+    ];
+    var tasks = [];
+    var number;
+    for (var i = 0; i < tasks_title.length; i++) {
+      number = "checkbox" + i;
+      tasks.push(
+        <tr key={i}>
+          <td>
+            <Checkbox
+              number={number}
+              isChecked={i === 1 || i === 2 ? true : false}
+            />
+          </td>
+          <td>{tasks_title[i]}</td>
+          <td className="td-actions text-right">
+            <OverlayTrigger placement="top" overlay={edit}>
+              <Button bsStyle="info" simple type="button" bsSize="xs">
+                <i className="fa fa-edit" />
+              </Button>
+            </OverlayTrigger>
+
+            <OverlayTrigger placement="top" overlay={remove}>
+              <Button bsStyle="danger" simple type="button" bsSize="xs">
+                <i className="fa fa-times" />
+              </Button>
+            </OverlayTrigger>
+          </td>
+        </tr>
+      );
+    }
+    return <tbody>{tasks}</tbody>;
   }
 }
 
-Tasks.propTypes = {
-  classes: PropTypes.object.isRequired,
-  tasksIndexes: PropTypes.arrayOf(PropTypes.number),
-  tasks: PropTypes.arrayOf(PropTypes.node)
-};
-
-export default withStyles(tasksStyle)(Tasks);
+export default Tasks;
