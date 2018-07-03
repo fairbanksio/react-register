@@ -8,6 +8,8 @@ import logo from "assets/img/reactlogo.png";
 
 import dashboardRoutes from "routes/dashboard.jsx";
 
+import { userConfig } from "../../variables/Variables.jsx";
+
 class Sidebar extends Component {
   constructor(props) {
     super(props);
@@ -50,7 +52,7 @@ class Sidebar extends Component {
             href="https://www.creative-tim.com"
             className="simple-text logo-normal"
           >
-            Creative Tim
+            {userConfig.SiteTitle}
           </a>
         </div>
         <div className="sidebar-wrapper">

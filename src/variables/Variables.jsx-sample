@@ -4,16 +4,15 @@
 // //
 //
 var userConfig = {
-  "FirstName":"Jon",
-  "LastName":"Fairbanks",
-  "FullName":"Jon Fairbanks",
-  "SiteTitle":"Fairbanks.io",
-  "Website":"https://fairbanks.io/", // Include the /
-  "LinkedIn":"jonfairbanks",
-  "GitHub":"jonfairbanks",
-  "Email":"jon@fairbanks.io",
-  "ProfileImage":"https://fairbanks.io/jon.jpg",
-  "ProfileBanner":"https://fairbanks.io/jon.jpg",
+  "FirstName":"Tet",
+  "LastName":"User",
+  "FullName":"Test User",
+  "Website":"https://yoursite.io/", // Include the /
+  "LinkedIn":"youruser",
+  "GitHub":"youruser",
+  "Email":"you@yoursite.io",
+  "ProfileImage":"https://yoursite.io/image.jpg",
+  "ProfileBanner":"https://yoursite.io/banner.jpg",
   "Description":"Soo... what would you say ya do around here?"
 }
 
