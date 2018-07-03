@@ -1,158 +1,64 @@
-import React from "react";
-import classNames from "classnames";
-import { Manager, Target, Popper } from "react-popper";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import MenuItem from "@material-ui/core/MenuItem";
-import MenuList from "@material-ui/core/MenuList";
-import Grow from "@material-ui/core/Grow";
-import Paper from "@material-ui/core/Paper";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import Hidden from "@material-ui/core/Hidden";
-// @material-ui/icons
-import Person from "@material-ui/icons/Person";
-import Notifications from "@material-ui/icons/Notifications";
-import Dashboard from "@material-ui/icons/Dashboard";
-import Search from "@material-ui/icons/Search";
-// core components
-import CustomInput from "components/CustomInput/CustomInput.jsx";
-import Button from "components/CustomButtons/Button.jsx";
+import React, { Component } from "react";
+import { NavItem, Nav, NavDropdown, MenuItem } from "react-bootstrap";
 
-import headerLinksStyle from "assets/jss/material-dashboard-react/components/headerLinksStyle";
-
-class HeaderLinks extends React.Component {
-  state = {
-    open: false
-  };
-  handleClick = () => {
-    this.setState({ open: !this.state.open });
-  };
-
-  handleClose = () => {
-    this.setState({ open: false });
-  };
+class HeaderLinks extends Component {
   render() {
-    const { classes } = this.props;
-    const { open } = this.state;
+    const notification = (
+      <div>
+        <i className="fa fa-globe" />
+        <b className="caret" />
+        <span className="notification">5</span>
+        <p className="hidden-lg hidden-md">Notification</p>
+      </div>
+    );
     return (
       <div>
-        <div className={classes.searchWrapper}>
-        <CustomInput
-          formControlProps={{
-            className: classes.margin + " " + classes.search
-          }}
-          inputProps={{
-            placeholder: "Search",
-            inputProps: {
-              "aria-label": "Search"
-            }
-          }}
-        />
-        <Button color="white" aria-label="edit" justIcon round>
-          <Search />
-        </Button>
-      </div>
-        <Button
-          color={window.innerWidth > 959 ? "transparent" : "white"}
-          justIcon={window.innerWidth > 959}
-          simple={!(window.innerWidth > 959)}
-          aria-label="Dashboard"
-          className={classes.buttonLink}
-        >
-          <Dashboard className={classes.icons} />
-          <Hidden mdUp>
-            <p className={classes.linkText}>Dashboard</p>
-          </Hidden>
-        </Button>
-        <Manager className={classes.manager}>
-          <Target>
-            <Button
-              color={window.innerWidth > 959 ? "transparent" : "white"}
-              justIcon={window.innerWidth > 959}
-              simple={!(window.innerWidth > 959)}
-              aria-label="Notifications"
-              aria-owns={open ? "menu-list" : null}
-              aria-haspopup="true"
-              onClick={this.handleClick}
-              className={classes.buttonLink}
-            >
-              <Notifications className={classes.icons} />
-              <span className={classes.notifications}>5</span>
-              <Hidden mdUp>
-                <p onClick={this.handleClick} className={classes.linkText}>
-                  Notification
-                </p>
-              </Hidden>
-            </Button>
-          </Target>
-          <Popper
-            placement="bottom-start"
-            eventsEnabled={open}
-            className={
-              classNames({ [classes.popperClose]: !open }) +
-              " " +
-              classes.pooperResponsive
-            }
+        <Nav>
+          <NavItem eventKey={1} href="#">
+            <i className="fa fa-dashboard" />
+            <p className="hidden-lg hidden-md">Dashboard</p>
+          </NavItem>
+          <NavDropdown
+            eventKey={2}
+            title={notification}
+            noCaret
+            id="basic-nav-dropdown"
           >
-            <ClickAwayListener onClickAway={this.handleClose}>
-              <Grow
-                in={open}
-                id="menu-list"
-                style={{ transformOrigin: "0 0 0" }}
-              >
-                <Paper className={classes.dropdown}>
-                  <MenuList role="menu">
-                    <MenuItem
-                      onClick={this.handleClose}
-                      className={classes.dropdownItem}
-                    >
-                      Mike John responded to your email
-                    </MenuItem>
-                    <MenuItem
-                      onClick={this.handleClose}
-                      className={classes.dropdownItem}
-                    >
-                      You have 5 new tasks
-                    </MenuItem>
-                    <MenuItem
-                      onClick={this.handleClose}
-                      className={classes.dropdownItem}
-                    >
-                      You're now friend with Andrew
-                    </MenuItem>
-                    <MenuItem
-                      onClick={this.handleClose}
-                      className={classes.dropdownItem}
-                    >
-                      Another Notification
-                    </MenuItem>
-                    <MenuItem
-                      onClick={this.handleClose}
-                      className={classes.dropdownItem}
-                    >
-                      Another One
-                    </MenuItem>
-                  </MenuList>
-                </Paper>
-              </Grow>
-            </ClickAwayListener>
-          </Popper>
-        </Manager>
-        <Button
-          color={window.innerWidth > 959 ? "transparent" : "white"}
-          justIcon={window.innerWidth > 959}
-          simple={!(window.innerWidth > 959)}
-          aria-label="Person"
-          className={classes.buttonLink}
-        >
-          <Person className={classes.icons} />
-          <Hidden mdUp>
-            <p className={classes.linkText}>Profile</p>
-          </Hidden>
-        </Button>
+            <MenuItem eventKey={2.1}>Notification 1</MenuItem>
+            <MenuItem eventKey={2.2}>Notification 2</MenuItem>
+            <MenuItem eventKey={2.3}>Notification 3</MenuItem>
+            <MenuItem eventKey={2.4}>Notification 4</MenuItem>
+            <MenuItem eventKey={2.5}>Another notifications</MenuItem>
+          </NavDropdown>
+          <NavItem eventKey={3} href="#">
+            <i className="fa fa-search" />
+            <p className="hidden-lg hidden-md">Search</p>
+          </NavItem>
+        </Nav>
+        <Nav pullRight>
+          <NavItem eventKey={1} href="#">
+            Account
+          </NavItem>
+          <NavDropdown
+            eventKey={2}
+            title="Dropdown"
+            id="basic-nav-dropdown-right"
+          >
+            <MenuItem eventKey={2.1}>Action</MenuItem>
+            <MenuItem eventKey={2.2}>Another action</MenuItem>
+            <MenuItem eventKey={2.3}>Something</MenuItem>
+            <MenuItem eventKey={2.4}>Another action</MenuItem>
+            <MenuItem eventKey={2.5}>Something</MenuItem>
+            <MenuItem divider />
+            <MenuItem eventKey={2.5}>Separated link</MenuItem>
+          </NavDropdown>
+          <NavItem eventKey={3} href="#">
+            Log out
+          </NavItem>
+        </Nav>
       </div>
     );
   }
 }
 
-export default withStyles(headerLinksStyle)(HeaderLinks);
+export default HeaderLinks;

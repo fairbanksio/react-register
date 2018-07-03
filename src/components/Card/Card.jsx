@@ -1,45 +1,35 @@
-import React from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
-// nodejs library to set properties for components
-import PropTypes from "prop-types";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-// @material-ui/icons
+import React, { Component } from "react";
 
-// core components
-import cardStyle from "assets/jss/material-dashboard-react/components/cardStyle.jsx";
+export class Card extends Component {
+  render() {
+    return (
+      <div className={"card" + (this.props.plain ? " card-plain" : "")}>
+        <div className={"header" + (this.props.hCenter ? " text-center" : "")}>
+          <h4 className="title">{this.props.title}</h4>
+          <p className="category">{this.props.category}</p>
+        </div>
+        <div
+          className={
+            "content" +
+            (this.props.ctAllIcons ? " all-icons" : "") +
+            (this.props.ctTableFullWidth ? " table-full-width" : "") +
+            (this.props.ctTableResponsive ? " table-responsive" : "") +
+            (this.props.ctTableUpgrade ? " table-upgrade" : "")
+          }
+        >
+          {this.props.content}
 
-function Card({ ...props }) {
-  const {
-    classes,
-    className,
-    children,
-    plain,
-    profile,
-    chart,
-    ...rest
-  } = props;
-  const cardClasses = classNames({
-    [classes.card]: true,
-    [classes.cardPlain]: plain,
-    [classes.cardProfile]: profile,
-    [classes.cardChart]: chart,
-    [className]: className !== undefined
-  });
-  return (
-    <div className={cardClasses} {...rest}>
-      {children}
-    </div>
-  );
+          <div className="footer">
+            {this.props.legend}
+            {this.props.stats != null ? <hr /> : ""}
+            <div className="stats">
+              <i className={this.props.statsIcon} /> {this.props.stats}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
-Card.propTypes = {
-  classes: PropTypes.object.isRequired,
-  className: PropTypes.string,
-  plain: PropTypes.bool,
-  profile: PropTypes.bool,
-  chart: PropTypes.bool
-};
-
-export default withStyles(cardStyle)(Card);
+export default Card;

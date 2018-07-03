@@ -1,65 +1,74 @@
-import React from "react";
-import classNames from "classnames";
-import PropTypes from "prop-types";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Hidden from "@material-ui/core/Hidden";
-// @material-ui/icons
-import Menu from "@material-ui/icons/Menu";
-// core components
-import HeaderLinks from "./HeaderLinks";
-import Button from "components/CustomButtons/Button";
+import React, { Component } from "react";
+import { Navbar } from "react-bootstrap";
 
-import headerStyle from "assets/jss/material-dashboard-react/components/headerStyle.jsx";
+import HeaderLinks from "./HeaderLinks.jsx";
 
-function Header({ ...props }) {
-  function makeBrand() {
+import dashboardRoutes from "routes/dashboard.jsx";
+
+class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.mobileSidebarToggle = this.mobileSidebarToggle.bind(this);
+    this.state = {
+      sidebarExists: false
+    };
+  }
+  mobileSidebarToggle(e) {
+    if (this.state.sidebarExists === false) {
+      this.setState({
+        sidebarExists: true
+      });
+    }
+    e.preventDefault();
+    document.documentElement.classList.toggle("nav-open");
+    var node = document.createElement("div");
+    node.id = "bodyClick";
+    node.onclick = function() {
+      this.parentElement.removeChild(this);
+      document.documentElement.classList.toggle("nav-open");
+    };
+    document.body.appendChild(node);
+  }
+  getBrand() {
     var name;
-    props.routes.map((prop, key) => {
-      if (prop.path === props.location.pathname) {
-        name = prop.navbarName;
+    dashboardRoutes.map((prop, key) => {
+      if (prop.collapse) {
+        prop.views.map((prop, key) => {
+          if (prop.path === this.props.location.pathname) {
+            name = prop.name;
+          }
+          return null;
+        });
+      } else {
+        if (prop.redirect) {
+          if (prop.path === this.props.location.pathname) {
+            name = prop.name;
+          }
+        } else {
+          if (prop.path === this.props.location.pathname) {
+            name = prop.name;
+          }
+        }
       }
       return null;
     });
     return name;
   }
-  const { classes, color } = props;
-  const appBarClasses = classNames({
-    [" " + classes[color]]: color
-  });
-  return (
-    <AppBar className={classes.appBar + appBarClasses}>
-      <Toolbar className={classes.container}>
-        <div className={classes.flex}>
-          {/* Here we create navbar brand, based on route name */}
-          <Button color="transparent" href="#" className={classes.title}>
-            {makeBrand()}
-          </Button>
-        </div>
-        <Hidden smDown implementation="css">
+  render() {
+    return (
+      <Navbar fluid>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <a href="#pablo">{this.getBrand()}</a>
+          </Navbar.Brand>
+          <Navbar.Toggle onClick={this.mobileSidebarToggle} />
+        </Navbar.Header>
+        <Navbar.Collapse>
           <HeaderLinks />
-        </Hidden>
-        <Hidden mdUp>
-          <IconButton
-            className={classes.appResponsive}
-            color="inherit"
-            aria-label="open drawer"
-            onClick={props.handleDrawerToggle}
-          >
-            <Menu />
-          </IconButton>
-        </Hidden>
-      </Toolbar>
-    </AppBar>
-  );
+        </Navbar.Collapse>
+      </Navbar>
+    );
+  }
 }
 
-Header.propTypes = {
-  classes: PropTypes.object.isRequired,
-  color: PropTypes.oneOf(["primary", "info", "success", "warning", "danger"])
-};
-
-export default withStyles(headerStyle)(Header);
+export default Header;
