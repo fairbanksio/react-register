@@ -3,10 +3,12 @@ import { NavLink } from "react-router-dom";
 
 import HeaderLinks from "../Header/HeaderLinks.jsx";
 
-import imagine from "assets/img/sidebar-3.jpg";
+import imagine from "assets/img/sidebar-1.jpg";
 import logo from "assets/img/reactlogo.png";
 
 import dashboardRoutes from "routes/dashboard.jsx";
+
+import { userConfig } from "../../variables/Variables.jsx";
 
 class Sidebar extends Component {
   constructor(props) {
@@ -50,7 +52,7 @@ class Sidebar extends Component {
             href="https://www.creative-tim.com"
             className="simple-text logo-normal"
           >
-            Creative Tim
+            {userConfig.SiteTitle}
           </a>
         </div>
         <div className="sidebar-wrapper">
