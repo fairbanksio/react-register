@@ -1,56 +1,36 @@
-import React from "react";
-import PropTypes from "prop-types";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import ListItem from "@material-ui/core/ListItem";
-import List from "@material-ui/core/List";
-// core components
-import footerStyle from "assets/jss/material-dashboard-react/components/footerStyle";
+import React, { Component } from "react";
+import { Grid } from "react-bootstrap";
 
-function Footer({ ...props }) {
-  const { classes } = props;
-  return (
-    <footer className={classes.footer}>
-      <div className={classes.container}>
-        <div className={classes.left}>
-          <List className={classes.list}>
-            <ListItem className={classes.inlineBlock}>
-              <a href="#home" className={classes.block}>
-                Home
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a href="#company" className={classes.block}>
-                Company
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a href="#portfolio" className={classes.block}>
-                Portfolio
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a href="#blog" className={classes.block}>
-                Blog
-              </a>
-            </ListItem>
-          </List>
-        </div>
-        <p className={classes.right}>
-          <span>
-            &copy; {1900 + new Date().getYear()}{" "}
-            <a href="https://fairbanks.io" className={classes.a}>
-              Fairbanks.io
-            </a>, made with love in React
-          </span>
-        </p>
-      </div>
-    </footer>
-  );
+class Footer extends Component {
+  render() {
+    return (
+      <footer className="footer">
+        <Grid fluid>
+          <nav className="pull-left">
+            <ul>
+              <li>
+                <a href="#pablo">Home</a>
+              </li>
+              <li>
+                <a href="#pablo">Company</a>
+              </li>
+              <li>
+                <a href="#pablo">Portfolio</a>
+              </li>
+              <li>
+                <a href="#pablo">Blog</a>
+              </li>
+            </ul>
+          </nav>
+          <p className="copyright pull-right">
+            &copy; {new Date().getFullYear()}{" "}
+            <a href="http://www.creative-tim.com">Creative Tim</a>, made with
+            love for a better web
+          </p>
+        </Grid>
+      </footer>
+    );
+  }
 }
 
-Footer.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(footerStyle)(Footer);
+export default Footer;

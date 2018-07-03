@@ -1,21 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createBrowserHistory } from "history";
-import { Router, Route, Switch } from "react-router-dom";
 
-import "assets/css/material-dashboard-react.css?v=1.3.0";
+import { HashRouter, Route, Switch } from "react-router-dom";
 
 import indexRoutes from "routes/index.jsx";
 
-const hist = createBrowserHistory();
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./assets/css/animate.min.css";
+import "./assets/sass/light-bootstrap-dashboard.css?v=1.2.0";
+import "./assets/css/demo.css";
+import "./assets/css/pe-icon-7-stroke.css";
 
 ReactDOM.render(
-  <Router history={hist}>
+  <HashRouter>
     <Switch>
       {indexRoutes.map((prop, key) => {
-        return <Route path={prop.path} component={prop.component} key={key} />;
+        return <Route to={prop.path} component={prop.component} key={key} />;
       })}
     </Switch>
-  </Router>,
+  </HashRouter>,
   document.getElementById("root")
 );
