@@ -10,6 +10,8 @@ import { style } from "variables/Variables.jsx";
 
 import dashboardRoutes from "routes/dashboard.jsx";
 
+import { userConfig } from "variables/UserConfig.jsx";
+
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -39,11 +41,10 @@ class Dashboard extends Component {
         break;
     }
     this.state._notificationSystem.addNotification({
-      title: <span data-notify="icon" className="pe-7s-gift" />,
+      title: <span data-notify="icon" className="pe-7s-rocket" />,
       message: (
         <div>
-          Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for
-          every web developer.
+          Welcome to <b>{userConfig.SiteTitle}</b> - this site is under active development. Please stay tuned!
         </div>
       ),
       level: level,
@@ -73,15 +74,14 @@ class Dashboard extends Component {
         break;
     }
     _notificationSystem.addNotification({
-      title: <span data-notify="icon" className="pe-7s-gift" />,
+      title: <span data-notify="icon" className="pe-7s-rocket" />,
       message: (
         <div>
-          Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for
-          every web developer.
+          Welcome to <b>{userConfig.SiteTitle}</b> - this site is under active development. Please stay tuned!
         </div>
       ),
       level: level,
-      position: "tr",
+      position: "tc",
       autoDismiss: 15
     });
   }

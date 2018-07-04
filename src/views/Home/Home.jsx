@@ -20,7 +20,7 @@ import {
 
 //import { userConfig } from "variables/UserConfig.jsx";
 
-class Dashboard extends Component {
+class Home extends Component {
   createLegend(json) {
     var legend = [];
     for (var i = 0; i < json["names"].length; i++) {
@@ -163,4 +163,4 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+export default Home;
