@@ -3,3 +3,4 @@ package-lock.json
 site-config.json
 src/variables/Variables.jsx
 src/variables/UserConfig.jsx
+src/variables/SiteConfig.jsx
