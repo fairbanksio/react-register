@@ -8,7 +8,7 @@ import logo from "assets/img/reactlogo.png";
 
 import dashboardRoutes from "routes/dashboard.jsx";
 
-import { userConfig } from "../../variables/Variables.jsx";
+import { userConfig } from "../../variables/UserConfig.jsx";
 
 class Sidebar extends Component {
   constructor(props) {
