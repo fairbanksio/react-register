@@ -18,8 +18,6 @@ import {
   legendBar
 } from "variables/Variables.jsx";
 
-//import { userConfig } from "variables/UserConfig.jsx";
-
 class Home extends Component {
   createLegend(json) {
     var legend = [];
