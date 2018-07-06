@@ -31,7 +31,7 @@ class TableList extends Component {
                           <tr key={key}>
                             {prop.map((prop, key) => {
                               if({key}.key === 0) {
-                                return <td key={key}><a href={prop[1]} target='_blank'>{prop[0]}</a></td>;
+                                return <td key={key}><a href={prop[1]} target='_blank' rel='noopener noreferrer'>{prop[0]}</a></td>;
                               }else {
                                 return <td key={key}>{prop}</td>;
                               }
