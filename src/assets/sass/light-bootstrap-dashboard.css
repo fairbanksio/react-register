@@ -1861,8 +1861,10 @@ body > .navbar-collapse[data-color="purple"]:after {
 .card-user .title {
   line-height: 24px; }
 
+{/*
 .card-user .content {
   min-height: 240px; }
+*/}
 
 .card-user .footer,
 .card-price .footer {
