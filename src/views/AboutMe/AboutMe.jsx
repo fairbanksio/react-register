@@ -14,8 +14,6 @@ import { FormInputs } from "components/FormInputs/FormInputs.jsx";
 import { UserCard } from "components/UserCard/UserCard.jsx";
 import Button from "components/CustomButton/CustomButton.jsx";
 
-import { NavLink } from "react-router-dom";
-
 class UserProfile extends Component {
   render() {
     return (
