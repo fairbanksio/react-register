@@ -71,7 +71,7 @@ class UserProfile extends Component {
                     </a>
                     <a href={'mailto:' + userConfig.Email}>
                       <Button simple>
-                        <i className="fa fa-envelope"></i>
+                        <i className="fa fa-envelope" />
                       </Button>
                     </a>
                   </div>
@@ -79,7 +79,7 @@ class UserProfile extends Component {
               />
             </Col>
           </Row>
-        </Grid>>
+        </Grid>
       </div>
     );
   }
