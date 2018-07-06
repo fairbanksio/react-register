@@ -7,9 +7,13 @@ var userConfig = {
   "FirstName":"Tet",
   "LastName":"User",
   "FullName":"Test User",
-  "Website":"https://yoursite.io/", // Include the / <- may depend on if/how reverse proxy handles requests.
+  "Website":"https://yoursite.io/", // Include the /
+  "Facebook":"youruser",
   "LinkedIn":"youruser",
   "GitHub":"youruser",
+  "NPM":"youruser",
+  "Docker":"youruser",
+  "PayPal":"youruser/35", // Add "/<dollar amount>" to automatically request an amount when users are redirected to PayPal!
   "Email":"you@yoursite.io",
   "ProfileImage":"https://yoursite.io/image.jpg", //mention dimensions here?
   "ProfileBanner":"https://yoursite.io/banner.jpg", //mention dimensions here?
