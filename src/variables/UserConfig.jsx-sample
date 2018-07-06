@@ -15,8 +15,8 @@ var userConfig = {
   "Docker":"youruser",
   "PayPal":"youruser/35", // Add "/<dollar amount>" to automatically request an amount when users are redirected to PayPal!
   "Email":"you@yoursite.io",
-  "ProfileImage":"https://yoursite.io/image.jpg", //mention dimensions here?
-  "ProfileBanner":"https://yoursite.io/banner.jpg", //mention dimensions here?
+  "ProfileImage":"https://yoursite.io/image.jpg", // 500px x 500px works best
+  "ProfileBanner":"https://yoursite.io/banner.jpg", // 800 x 400 works best
   "Description":"Soo... what would you say ya do around here?",
   "SiteTitle":"Website Title"
 }
