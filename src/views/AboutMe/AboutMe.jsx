@@ -41,17 +41,32 @@ class UserProfile extends Component {
                   <div>
                     <a href={'https://github.com/' + userConfig.GitHub} target='_blank'>
                       <Button simple>
-                        <i className="fa fa-github" />
+                        <i className="fab fa-github" />
                       </Button>
                     </a>
-                    <a href={'https://linkedin.com/' + userConfig.LinkedIn} target='_blank'>
+                    <a href={'https://linkedin.com/in/' + userConfig.LinkedIn} target='_blank'>
                       <Button simple>
-                        <i className="fa fa-linkedin" />
+                        <i className="fab fa-linkedin" />
                       </Button>
                     </a>
-                    <a href={'mailto:' + userConfig.Email}>
+                    <a href={'https://hub.docker.com/r/' + userConfig.Docker} target='_blank'>
                       <Button simple>
-                        <i className="fa fa-envelope" />
+                        <i className="fab fa-docker" />
+                      </Button>
+                    </a>
+                    <a href={'https://npmjs.com/~' + userConfig.NPM} target='_blank'>
+                      <Button simple>
+                        <i className="fab fa-npm" />
+                      </Button>
+                    </a>
+                    <a href={'https://paypal.me/' + userConfig.NPM} target='_blank'>
+                      <Button simple>
+                        <i className="fab fa-paypal" />
+                      </Button>
+                    </a>
+                    <a href={'mailto:' + userConfig.Email} target='_blank'>
+                      <Button simple>
+                        <i className="fa fa-envelope"></i>
                       </Button>
                     </a>
                   </div>
