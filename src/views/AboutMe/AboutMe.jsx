@@ -14,6 +14,8 @@ import { FormInputs } from "components/FormInputs/FormInputs.jsx";
 import { UserCard } from "components/UserCard/UserCard.jsx";
 import Button from "components/CustomButton/CustomButton.jsx";
 
+import { NavLink } from "react-router-dom";
+
 class UserProfile extends Component {
   render() {
     return (
@@ -33,7 +35,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Company",
-                          autocomplete: "Company",
+                          autoComplete: "Company",
                           defaultValue: "Creative Code Inc.",
                           disabled: true
                         },
@@ -42,7 +44,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Username",
-                          autocomplete: "Username",
+                          autoComplete: "Username",
                           defaultValue: "michael23"
                         },
                         {
@@ -50,7 +52,7 @@ class UserProfile extends Component {
                           type: "email",
                           bsClass: "form-control",
                           placeholder: "Email",
-                          autocomplete: "Email"
+                          autoComplete: "Email"
                         }
                       ]}
                     />
@@ -62,7 +64,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "First name",
-                          autocomplete: "First name",
+                          autoComplete: "First name",
                           defaultValue: "Mike"
                         },
                         {
@@ -70,7 +72,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Last name",
-                          autocomplete: "Last name",
+                          autoComplete: "Last name",
                           defaultValue: "Andrew"
                         }
                       ]}
@@ -83,7 +85,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Home Adress",
-                          autocomplete: "Home Adress",
+                          autoComplete: "Home Adress",
                           defaultValue:
                             "Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
                         }
@@ -97,7 +99,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "City",
-                          autocomplete: "City",
+                          autoComplete: "City",
                           defaultValue: "Mike"
                         },
                         {
@@ -105,7 +107,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Country",
-                          autocomplete: "Country",
+                          autoComplete: "Country",
                           defaultValue: "Andrew"
                         },
                         {
@@ -113,7 +115,7 @@ class UserProfile extends Component {
                           type: "number",
                           bsClass: "form-control",
                           placeholder: "ZIP Code",
-                          autocomplete: "ZIP Code"
+                          autoComplete: "ZIP Code"
                         }
                       ]}
                     />
@@ -153,15 +155,21 @@ class UserProfile extends Component {
                 }
                 socials={
                   <div>
-                    <Button simple>
-                      <i className="fa fa-github" />
-                    </Button>
-                    <Button simple>
-                      <i className="fa fa-linkedin" />
-                    </Button>
-                    <Button simple>
-                      <i className="fa fa-envelope" />
-                    </Button>
+                    <a href={'https://github.com/' + userConfig.GitHub} target='_blank'>
+                      <Button simple>
+                        <i className="fa fa-github" />
+                      </Button>
+                    </a>
+                    <a href={'https://linkedin.com/' + userConfig.LinkedIn} target='_blank'>
+                      <Button simple>
+                        <i className="fa fa-linkedin" />
+                      </Button>
+                    </a>
+                    <a href={'mailto:' + userConfig.Email}>
+                      <Button simple>
+                        <i className="fa fa-envelope" />
+                      </Button>
+                    </a>
                   </div>
                 }
               />
