@@ -9,18 +9,16 @@ export class UserCard extends Component {
         </div>
         <div className="content">
           <div className="author">
-            <a href="#pablo">
-              <img
-                className="avatar border-gray"
-                src={this.props.avatar}
-                alt="..."
-              />
-              <h4 className="title">
-                {this.props.name}
-                <br />
-                <small>{this.props.userName}</small>
-              </h4>
-            </a>
+            <img
+              className="avatar border-gray"
+              src={this.props.avatar}
+              alt="..."
+            />
+            <h4 className="title">
+              {this.props.name}
+              <br />
+              <small>{this.props.userName}</small>
+            </h4>
           </div>
           <p className="description text-center">{this.props.description}</p>
         </div>
