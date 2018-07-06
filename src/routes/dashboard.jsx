@@ -1,6 +1,6 @@
 import Home from "views/Home/Home";
 import Projects from "views/Projects/Projects";
-import TableList from "views/TableList/TableList";
+import Links from "views/Links/Links";
 import AboutMe from "views/AboutMe/AboutMe";
 
 const dashboardRoutes = [
@@ -20,7 +20,7 @@ const dashboardRoutes = [
     path: "/links",
     name: "Links",
     icon: "pe-7s-link",
-    component: TableList
+    component: Links
   },
   {
     path: "/about",
