@@ -44,6 +44,7 @@ class TableList extends Component {
                 }
               />
             </Col>
+            {/* Additional Tables can be added by duplicating the <Col></Col> section above. */}
           </Row>
         </Grid>
       </div>
