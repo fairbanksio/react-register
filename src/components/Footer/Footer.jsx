@@ -17,7 +17,7 @@ class Footer extends Component {
                   return (
                     <li key={key}>
                       <NavLink to={prop.path}>
-                        <p>{prop.name}</p>
+                        {prop.name}
                       </NavLink>
                     </li>
                   );
