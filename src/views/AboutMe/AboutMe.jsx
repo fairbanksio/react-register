@@ -16,16 +16,6 @@ class UserProfile extends Component {
       <div className="content">
         <Grid fluid>
           <Row>
-            <Col md={8}>
-              <Card
-                title={'More Information About ' + userConfig.FirstName}
-                content={
-                  <div>
-                    This is just a test div. Fill me!
-                  </div>
-                }
-              />
-            </Col>
             <Col md={4}>
               <UserCard
                 bgImage={userConfig.ProfileBanner}
@@ -74,6 +64,16 @@ class UserProfile extends Component {
                         <i className="fa fa-envelope" />
                       </Button>
                     </a>
+                  </div>
+                }
+              />
+            </Col>
+            <Col md={8}>
+              <Card
+                title={'More Information About ' + userConfig.FirstName}
+                content={
+                  <div>
+                    This is just a test div. Fill me!
                   </div>
                 }
               />
