@@ -11,6 +11,9 @@ import { UserCard } from "components/UserCard/UserCard.jsx";
 import Button from "components/CustomButton/CustomButton.jsx";
 
 class UserProfile extends Component {
+  componentDidMount(){
+    document.title = 'About Me | ' + userConfig.SiteTitle;
+  }
   render() {
     return (
       <div className="content">
