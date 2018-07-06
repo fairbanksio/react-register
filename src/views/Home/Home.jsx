@@ -30,7 +30,6 @@ class Home extends Component {
     fetch(endpoint)
     .then((resp) => resp.json())
     .then(function(data){
-      console.log(data.public_repos);
       _this.setState({"repos": data.public_repos});
     })
     .catch(function(err) {
