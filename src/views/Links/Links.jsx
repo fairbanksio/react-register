@@ -31,7 +31,7 @@ class TableList extends Component {
                           <tr key={key}>
                             {prop.map((prop, key) => {
                               if({key}.key === 0) {
-                                return <a href={prop[1]} target='_blank'><td key={key}>{prop[0]}</td></a>;
+                                return <td key={key}><a href={prop[1]} target='_blank'>{prop[0]}</a></td>;
                               }else {
                                 return <td key={key}>{prop}</td>;
                               }
@@ -44,6 +44,7 @@ class TableList extends Component {
                 }
               />
             </Col>
+            {/* Additional Tables can be added by duplicating the <Col></Col> section above. */}
           </Row>
         </Grid>
       </div>
