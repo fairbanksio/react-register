@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { NavItem, Nav, NavDropdown, MenuItem } from "react-bootstrap";
 
-import { userConfig } from "variables/UserConfig.jsx";
-
 class HeaderLinks extends Component {
   render() {
     const notification = (
@@ -16,6 +14,9 @@ class HeaderLinks extends Component {
     return (
       <div>
         <Nav>
+          {/* Additional LeftNav items can be added here. */}
+        </Nav>
+        <Nav pullRight>
           <NavItem eventKey={1} href="#">
             <i className="fa fa-dashboard" />
             <p className="hidden-lg hidden-md">Dashboard</p>
@@ -26,20 +27,15 @@ class HeaderLinks extends Component {
             noCaret
             id="basic-nav-dropdown"
           >
-            <MenuItem eventKey={2.1}>Notification 1</MenuItem>
-            <MenuItem eventKey={2.2}>Notification 2</MenuItem>
-            <MenuItem eventKey={2.3}>Notification 3</MenuItem>
-            <MenuItem eventKey={2.4}>Notification 4</MenuItem>
-            <MenuItem eventKey={2.5}>Another notifications</MenuItem>
+            <MenuItem eventKey={2.1}>Never</MenuItem>
+            <MenuItem eventKey={2.2}>Gonna</MenuItem>
+            <MenuItem eventKey={2.3}>Give</MenuItem>
+            <MenuItem eventKey={2.4}>You</MenuItem>
+            <MenuItem eventKey={2.5}>Up</MenuItem>
           </NavDropdown>
           <NavItem eventKey={3} href="#">
             <i className="fa fa-search" />
             <p className="hidden-lg hidden-md">Search</p>
-          </NavItem>
-        </Nav>
-        <Nav pullRight>
-          <NavItem eventKey={3} href={"mailto:" + userConfig.Email}>
-            Contact Me
           </NavItem>
         </Nav>
       </div>

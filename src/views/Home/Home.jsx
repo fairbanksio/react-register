@@ -30,7 +30,6 @@ class Home extends Component {
     fetch(endpoint)
     .then((resp) => resp.json())
     .then(function(data){
-      console.log(data.public_repos);
       _this.setState({"repos": data.public_repos});
     })
     .catch(function(err) {
@@ -39,10 +38,11 @@ class Home extends Component {
   }
   componentWillMount() {
     this.setState({
-      "repos": 0
+      "repos": "-"
     });
   }
   componentDidMount() {
+    document.title = userConfig.SiteTitle;
     this.getRepoCount();
   }
   render() {
@@ -79,7 +79,7 @@ class Home extends Component {
             </Col>
             <Col lg={3} sm={6}>
               <StatsCard
-                bigIcon={<i className="fa fa-github" />}
+                bigIcon={<a style={{'color':'#000000'}} href={'https://github.com/' + userConfig.GitHub + '?tab=repositories'} target='_blank' rel='noopener noreferrer'><i className="fa fa-github" /></a>}
                 statsText="Repositories"
                 statsValue={this.state.repos}
                 statsIcon={<i className="fa fa-refresh" />}

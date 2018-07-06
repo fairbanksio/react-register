@@ -4,7 +4,12 @@ import { Grid, Row, Col } from "react-bootstrap";
 import Card from "components/Card/Card";
 import { iconsArray } from "variables/Variables.jsx";
 
+import { userConfig } from "variables/UserConfig.jsx";
+
 class Icons extends Component {
+  componentDidMount(){
+    document.title = 'Projects | ' + userConfig.SiteTitle;
+  }
   render() {
     return (
       <div className="content">
@@ -12,7 +17,7 @@ class Icons extends Component {
           <Row>
             <Col md={12}>
               <Card
-                title="202 Awesome Stroke Icons"
+                title="Recent Projects"
                 ctAllIcons
                 category={
                   <span>
