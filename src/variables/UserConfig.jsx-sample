@@ -8,6 +8,7 @@ var userConfig = {
   "LastName":"User",
   "FullName":"Test User",
   "Website":"https://yoursite.io/", // Include the /
+  "Facebook":"youruser",
   "LinkedIn":"youruser",
   "GitHub":"youruser",
   "NPM":"youruser",

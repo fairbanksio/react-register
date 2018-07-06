@@ -39,6 +39,11 @@ class UserProfile extends Component {
                 }
                 socials={
                   <div>
+                    <a href={'https://www.facebook.com/' + userConfig.Facebook} target='_blank'>
+                      <Button simple>
+                        <i className="fab fa-facebook" />
+                      </Button>
+                    </a>
                     <a href={'https://github.com/' + userConfig.GitHub} target='_blank'>
                       <Button simple>
                         <i className="fab fa-github" />
@@ -59,12 +64,12 @@ class UserProfile extends Component {
                         <i className="fab fa-npm" />
                       </Button>
                     </a>
-                    <a href={'https://paypal.me/' + userConfig.NPM} target='_blank'>
+                    <a href={'https://paypal.me/' + userConfig.PayPal} target='_blank'>
                       <Button simple>
                         <i className="fab fa-paypal" />
                       </Button>
                     </a>
-                    <a href={'mailto:' + userConfig.Email} target='_blank'>
+                    <a href={'mailto:' + userConfig.Email}>
                       <Button simple>
                         <i className="fa fa-envelope"></i>
                       </Button>
