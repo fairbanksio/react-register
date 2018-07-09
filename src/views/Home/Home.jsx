@@ -77,7 +77,7 @@ class Home extends Component {
                 statsIcon="fas fa-camera-retro"
                 id="chartHours"
                 title="Photo Gallery"
-                category="24 Hour Performance"
+                category="TO DO: Load Images from a Config"
                 stats="Updated 3 minutes ago"
                 content={ <Gallery /> }
               />
