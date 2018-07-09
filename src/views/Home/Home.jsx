@@ -8,12 +8,6 @@ import { ThisSiteCard } from "components/ThisSiteCard/ThisSiteCard.jsx";
 import { GitHubRepos } from "components/HomepageIcons/GitHubRepos/GitHubRepos.jsx";
 import { DigitalOcean } from "components/HomepageIcons/DigitalOcean/DigitalOcean.jsx";
 import { Gallery } from "components/Gallery/Gallery.jsx";
-import {
-  dataSales,
-  optionsSales,
-  responsiveSales,
-  legendSales
-} from "variables/Variables.jsx";
 
 import { userConfig, extraConfigs } from "variables/UserConfig.jsx";
 
