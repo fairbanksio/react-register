@@ -7,6 +7,7 @@ import { StatsCard } from "components/StatsCard/StatsCard.jsx";
 import { ThisSiteCard } from "components/ThisSiteCard/ThisSiteCard.jsx";
 import { GitHubRepos } from "components/HomepageIcons/GitHubRepos/GitHubRepos.jsx";
 import { DigitalOcean } from "components/HomepageIcons/DigitalOcean/DigitalOcean.jsx";
+import { Gallery } from "components/Gallery/Gallery.jsx";
 import {
   dataSales,
   optionsSales,
@@ -67,30 +68,18 @@ class Home extends Component {
               </a>
             </Col>
             <Col lg={3} sm={6}>
-              <DigitalOcean  style={{'minHeight':'100px'}}/>
+              <DigitalOcean />
             </Col>
           </Row>
           <Row>
             <Col md={8}>
               <Card
-                statsIcon="fa fa-history"
+                statsIcon="fas fa-camera-retro"
                 id="chartHours"
-                title="User Stats"
-                category="24 Hour Performance"
+                title="Photo Gallery"
+                category="TO DO: Load Images from a Config"
                 stats="Updated 3 minutes ago"
-                content={
-                  <div className="ct-chart">
-                    <ChartistGraph
-                      data={dataSales}
-                      type="Line"
-                      options={optionsSales}
-                      responsiveOptions={responsiveSales}
-                    />
-                  </div>
-                }
-                legend={
-                  <div className="legend">{this.createLegend(legendSales)}</div>
-                }
+                content={ <Gallery /> }
               />
             </Col>
             <Col md={4}>

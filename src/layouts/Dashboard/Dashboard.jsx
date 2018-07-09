@@ -95,7 +95,9 @@ class Dashboard extends Component {
     }
     if (e.history.action === "PUSH") {
       document.documentElement.scrollTop = 0;
-      document.scrollingElement.scrollTop = 0;
+      try{
+        document.scrollingElement.scrollTop = 0;
+      }catch(err){}
       this.refs.mainPanel.scrollTop = 0;
     }
   }
