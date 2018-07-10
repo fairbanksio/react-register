@@ -1,33 +1,17 @@
 import React, { Component } from "react";
-import ChartistGraph from "react-chartist";
 import { Grid, Row, Col } from "react-bootstrap";
 
 import { Card } from "components/Card/Card.jsx";
 import { StatsCard } from "components/StatsCard/StatsCard.jsx";
+import { MiniStatsCard } from "components/MiniStatsCard/MiniStatsCard.jsx";
 import { ThisSiteCard } from "components/ThisSiteCard/ThisSiteCard.jsx";
 import { GitHubRepos } from "components/HomepageIcons/GitHubRepos/GitHubRepos.jsx";
 import { DigitalOcean } from "components/HomepageIcons/DigitalOcean/DigitalOcean.jsx";
 import { Gallery } from "components/Gallery/Gallery.jsx";
-import {
-  dataSales,
-  optionsSales,
-  responsiveSales,
-  legendSales
-} from "variables/Variables.jsx";
 
 import { userConfig, extraConfigs } from "variables/UserConfig.jsx";
 
 class Home extends Component {
-  createLegend(json) {
-    var legend = [];
-    for (var i = 0; i < json["names"].length; i++) {
-      var type = "fa fa-circle text-" + json["types"][i];
-      legend.push(<i className={type} key={i} />);
-      legend.push(" ");
-      legend.push(json["names"][i]);
-    }
-    return legend;
-  }
   componentDidMount() {
     document.title = userConfig.SiteTitle;
   }
@@ -37,7 +21,7 @@ class Home extends Component {
         <Grid fluid>
           <Row>
             <Col lg={3} sm={6}>
-              <GitHubRepos style={{'minHeight':'100px'}}/>
+              <GitHubRepos />
             </Col>
             <Col lg={3} sm={6}>
             <a style={{'color':'#000000'}}
