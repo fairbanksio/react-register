@@ -2,17 +2,14 @@ import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 
 import { StatsCard } from "components/StatsCard/StatsCard.jsx";
-import { MiniStatsCard } from "components/MiniStatsCard/MiniStatsCard.jsx";
 import { ThisSiteCard } from "components/ThisSiteCard/ThisSiteCard.jsx";
 import { GitHubRepos } from "components/HomepageIcons/GitHubRepos/GitHubRepos.jsx";
 import { DigitalOcean } from "components/HomepageIcons/DigitalOcean/DigitalOcean.jsx";
 import { Gallery } from "components/Gallery/Gallery.jsx";
+import { GoogleMaps } from "components/Maps/Maps.jsx";
 
 import { userConfig, extraConfigs } from "variables/UserConfig.jsx";
-// eslint-disable-next-line
-import { galleryTitle1, gallerySubtitle1, galleryFooter1, galleryFooterLogo1, galleryPhotos1 } from "variables/GalleryConfig.jsx";
-// eslint-disable-next-line
-import { galleryTitle2, gallerySubtitle2, galleryFooter2, galleryFooterLogo2, galleryPhotos2 } from "variables/GalleryConfig.jsx";
+import { galleryPhotos } from "variables/GalleryConfig.jsx";
 
 class Home extends Component {
   componentDidMount() {
@@ -60,25 +57,11 @@ class Home extends Component {
           </Row>
           <Row>
             <Col md={8}>
-              <Gallery />
+              <Gallery photos={galleryPhotos} />
             </Col>
             <Col md={4}>
-              <MiniStatsCard style={{'color':'#A9A9A9'}}
-                bigIcon={<i className="fas fa-lg fa-code" style={{'color':'#A9A9A9'}}/>}
-                statsText="Code, Projects & Tutorials"
-                statsValue="Code, Projects & Tutorials"
-              />
-              <MiniStatsCard style={{'color':'#A9A9A9'}}
-                bigIcon={<i className="fas fa-lg fa-link" style={{'color':'#A9A9A9'}}/>}
-                statsText="Development Links & Tools"
-                statsValue="Development Links & Tools"
-              />
-              <MiniStatsCard style={{'color':'#A9A9A9'}}
-                bigIcon={<i className="fas fa-lg fa-id-card" style={{'color':'#A9A9A9'}}/>}
-                statsText="About Me"
-                statsValue="About Me"
-              />
               <ThisSiteCard />
+              <GoogleMaps />
             </Col>
           </Row>
         </Grid>

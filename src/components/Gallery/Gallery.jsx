@@ -5,7 +5,9 @@ import { Card } from "components/Card/Card.jsx";
 
 import { galleryTitle, gallerySubtitle, galleryFooter, galleryFooterLogo, galleryPhotos } from "variables/GalleryConfig.jsx";
 
-{/* const photos = this.props.photos; */}
+// eslint-disable-next-line
+{/* const photos = this.props.photos; TO DO: This data is here, but using it causes the component to fail. If we could use this, gallery would be re-usable. */}
+// eslint-disable-next-line
 const photos = galleryPhotos;
 
 export class Gallery extends Component {
@@ -38,6 +40,11 @@ export class Gallery extends Component {
     this.setState({
       currentImage: this.state.currentImage + 1,
     });
+  }
+  componentDidMount() {
+    try{
+      console.log("[components/Gallery]: " + this.props.photos);
+    }catch(err){}
   }
   render() {
     return (
