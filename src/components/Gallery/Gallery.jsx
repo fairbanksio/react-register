@@ -6,7 +6,7 @@ import { Card } from "components/Card/Card.jsx";
 import { galleryTitle, gallerySubtitle, galleryFooter, galleryFooterLogo, galleryPhotos } from "variables/GalleryConfig.jsx";
 
 {/* const photos = this.props.photos; */}
-const photos = galleryPhotos1;
+const photos = galleryPhotos;
 
 export class Gallery extends Component {
   constructor() {
@@ -42,11 +42,11 @@ export class Gallery extends Component {
   render() {
     return (
       <Card
-        id={galleryTitle1}
-        title={galleryTitle1}
-        category={gallerySubtitle1}
-        statsIcon={galleryFooterLogo1}
-        stats={galleryFooter1}
+        id={galleryTitle}
+        title={galleryTitle}
+        category={gallerySubtitle}
+        statsIcon={galleryFooterLogo}
+        stats={galleryFooter}
         content={
           <div>
             <ReactGallery photos={photos} onClick={this.openLightbox} />
