@@ -5,3 +5,4 @@ src/variables/Variables.jsx
 src/variables/UserConfig.jsx
 src/variables/SiteConfig.jsx
 src/variables/LinksConfig.jsx
+src/variables/GalleryConfig.jsx

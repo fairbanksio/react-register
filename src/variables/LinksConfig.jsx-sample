@@ -1,0 +1,20 @@
+//
+// //
+// // // Links table data
+// //
+//
+const tableTitle = "Sample Links";
+const tableSubtitle = "Sample Links";
+const thArray = ["Name", "Description"];
+const tdArray = [
+  [["Google","https://google.com"], "Google.com"],
+  [["Facebook", "https://facebook.com/"], "Facebook.com"],
+  [["Amazon","https://amazon.com"], "Amazon.com"],
+];
+
+module.exports = {
+  tableTitle,
+  tableSubtitle,
+  thArray,
+  tdArray
+};
