@@ -48,9 +48,9 @@ export class FullGallery extends Component {
 		});
 	}
   handleClickImage () {
-  if (this.state.currentImage === photos.length - 1) return;
+    if (this.state.currentImage === photos.length - 1) return;
 
-  this.gotoNext();
+    this.gotoNext();
   }
   componentDidMount() {
     try{
@@ -67,6 +67,7 @@ export class FullGallery extends Component {
           onClickNext={this.gotoNext}
           currentImage={this.state.currentImage}
           isOpen={this.state.lightboxIsOpen}
+          backdropClosesModal={true}
           showThumbnails={true}
           onClickThumbnail={this.gotoImage}
           onClickImage={this.handleClickImage}

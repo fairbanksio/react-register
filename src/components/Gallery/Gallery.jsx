@@ -18,6 +18,8 @@ export class Gallery extends Component {
     this.openLightbox = this.openLightbox.bind(this);
     this.gotoNext = this.gotoNext.bind(this);
     this.gotoPrevious = this.gotoPrevious.bind(this);
+    this.gotoImage = this.gotoImage.bind(this);
+    this.handleClickImage = this.handleClickImage.bind(this);
   }
   openLightbox(event, obj) {
     this.setState({
@@ -41,10 +43,15 @@ export class Gallery extends Component {
       currentImage: this.state.currentImage + 1,
     });
   }
-  componentDidMount() {
-    try{
-      console.log("[components/Gallery]: " + this.props.photos);
-    }catch(err){}
+  gotoImage (index) {
+    this.setState({
+      currentImage: index,
+    });
+  }
+  handleClickImage () {
+    if (this.state.currentImage === photos.length - 1) return;
+
+    this.gotoNext();
   }
   render() {
     return (
@@ -63,6 +70,10 @@ export class Gallery extends Component {
               onClickNext={this.gotoNext}
               currentImage={this.state.currentImage}
               isOpen={this.state.lightboxIsOpen}
+              backdropClosesModal={true}
+              showThumbnails={true}
+              onClickThumbnail={this.gotoImage}
+              onClickImage={this.handleClickImage}
             />
           </div>
         }
