@@ -5,7 +5,8 @@ import { StatsCard } from "components/StatsCard/StatsCard.jsx";
 import { ThisSiteCard } from "components/ThisSiteCard/ThisSiteCard.jsx";
 import { GitHubRepos } from "components/HomepageIcons/GitHubRepos/GitHubRepos.jsx";
 import { DigitalOcean } from "components/HomepageIcons/DigitalOcean/DigitalOcean.jsx";
-import { Gallery } from "components/Gallery/Gallery.jsx";
+import { LinkedIn } from "components/HomepageIcons/LinkedIn/LinkedIn.jsx";
+import { FullGallery } from "components/FullGallery/FullGallery.jsx";
 import { GoogleMaps } from "components/Maps/Maps.jsx";
 
 import { userConfig, extraConfigs } from "variables/UserConfig.jsx";
@@ -38,18 +39,7 @@ class Home extends Component {
               </a>
             </Col>
             <Col lg={3} sm={6}>
-            <a style={{'color':'#000000'}}
-              href={'https://linkedin.com/in/' + userConfig.LinkedIn}
-              target='_blank'
-              rel='noopener noreferrer'>
-                <StatsCard
-                  bigIcon={<i className="fab fa-linkedin" style={{'color':'#0077B5'}}/>}
-                  statsText="Contact me on"
-                  statsValue="LinkedIn"
-                  statsIcon={<i className="fa fa-envelope" />}
-                  statsIconText="Drop me a line"
-                />
-              </a>
+              <LinkedIn />
             </Col>
             <Col lg={3} sm={6}>
               <DigitalOcean />
@@ -57,7 +47,7 @@ class Home extends Component {
           </Row>
           <Row>
             <Col md={8}>
-              <Gallery photos={galleryPhotos} />
+              <FullGallery photos={galleryPhotos} />
             </Col>
             <Col md={4}>
               <ThisSiteCard />
