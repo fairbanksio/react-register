@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Grid, Row, Col, Table } from "react-bootstrap";
 
 import dashboardRoutes from "routes/dashboard.jsx";
-import Card from "components/Card/Card.jsx";
+import CardNoFooter from "components/Card/CardNoFooter.jsx";
 
 import { userConfig } from "variables/UserConfig.jsx";
 import { tableTitle, tableSubtitle, thArray, tdArray } from "variables/LinksConfig.jsx";
@@ -42,13 +42,13 @@ class TableList extends Component {
         <Grid fluid>
           <Row>
             <Col md={12}>
-              <Card
+              <CardNoFooter
                 title={tableTitle}
                 category={tableSubtitle}
                 ctTableFullWidth
                 ctTableResponsive
                 content={
-                  <Table striped hover>
+                  <Table striped hover style={{"marginBottom":"0px"}}>
                     <thead>
                       <tr>
                         {thArray.map((prop, key) => {
