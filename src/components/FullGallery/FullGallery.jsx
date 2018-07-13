@@ -48,7 +48,7 @@ export class FullGallery extends Component {
 		});
 	}
   handleClickImage () {
-  if (this.state.currentImage === this.props.images.length - 1) return;
+  if (this.state.currentImage === photos.length - 1) return;
 
   this.gotoNext();
   }
