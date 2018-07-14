@@ -7,3 +7,4 @@ src/variables/SiteConfig.jsx
 src/variables/LinksConfig.jsx
 src/variables/GalleryConfig.jsx
 src/variables/MapsConfig.jsx
+.idea/
