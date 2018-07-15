@@ -4,7 +4,7 @@
 // //
 //
 var userConfig = {
-  "FirstName":"Tet",
+  "FirstName":"Test",
   "LastName":"User",
   "FullName":"Test User",
   "Website":"https://yoursite.io/", // Include the /
@@ -21,7 +21,13 @@ var userConfig = {
   "SiteTitle":"Website Title"
 }
 
+var extraConfigs = {
+  "doReferral":"#",
+  "siteRepo":"https://github.com/Fairbanks-io/react-register",
+  "healthMonitor":"#"
+}
 
 module.exports = {
-  userConfig
+  userConfig,
+  extraConfigs
 };

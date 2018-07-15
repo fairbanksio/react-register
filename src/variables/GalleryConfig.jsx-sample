@@ -12,7 +12,7 @@ var galleryPhotos = [
   { src: 'https://source.unsplash.com/NQSWvyVRIJk/800x599', width: 4, height: 3, caption: "Image 6", alt: "Image6" },
   { src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4, caption: "Image 7", alt: "Image7" },
   { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3, caption: "Image 8", alt: "Image8" },
-  { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', width: 4, height: 3, caption: "Image 9", alt: "Image9" },
+  { src: 'assets/images/local_file.jpg', width: 4, height: 3, caption: "Image 9", alt: "Image9" },
 ];
 
 // The below options are NOT used by <FullGallery />
