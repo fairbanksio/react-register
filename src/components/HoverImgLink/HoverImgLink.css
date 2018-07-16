@@ -1,0 +1,58 @@
+.hover-container {
+  position: relative;
+}
+
+.hover-image {
+  width: 100%;
+  overflow: hidden;
+  height: 200px;
+  border-radius: 4px;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  transition: .5s ease;
+}
+
+.hover-container:hover .hover-overlay {
+  background: rgba(26, 33, 43, 0.85);
+  border-radius: 4px ;
+}
+
+.hover-container:hover .hover-text {
+  opacity: 1;
+}
+
+.hover-text {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  width: 100%;
+}
+
+
+.hover-title{
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(26, 33, 43, 0.65);
+  width: 100%;
+}
