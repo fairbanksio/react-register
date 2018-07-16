@@ -10,10 +10,10 @@ export class DigitalOcean extends Component {
         target='_blank'
         rel='noopener noreferrer'>
         <StatsCard
-          bigIcon={<i className="fab fa-lg fa-digital-ocean" style={{'color':'#008bcf'}}/>}
+          bigIcon={ <i className="fab fa-lg fa-digital-ocean" style={{'color':'#008bcf'}} /> }
           statsText="Powered By"
           statsValue='Digital Ocean'
-          statsIcon={<i className="fa fa-cloud" />}
+          statsIcon={ <i className="fa fa-cloud" /> }
           statsIconText="Simplicity at scale."
         />
       </a>

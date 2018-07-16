@@ -3,25 +3,31 @@
 // // // Portfolio Configuration
 // //
 //
+var workExperienceTitle = "Work Experience"
+var workExperienceSubtitle = "Work Experience Subtitle"
 var workExperience = [
   {
-    "EmployerName":"",
-    "JobTitle":"",
-    "JobLocation":"",
-    "JobDescription":"",
-    "StartDate":"",
-    "EndDate":""
+    "EmployerName":"Job 2",
+    "JobTitle":"Job Title 2",
+    "JobLocation":"J0b 2",
+    "JobDescription":"This is a description for Job 2",
+    "StartDate":"Aug 2015",
+    "EndDate":"Current",
+    "JobIcon":""
   },
   {
-    "EmployerName":"",
-    "JobTitle":"",
-    "JobLocation":"",
-    "JobDescription":"",
-    "StartDate":"",
-    "EndDate":""
+    "EmployerName":"Job 1",
+    "JobTitle":"Job Title 1",
+    "JobLocation":"Job 1",
+    "JobDescription":"This is a description for Job 1",
+    "StartDate":"Jan 2009",
+    "EndDate":"August 2015",
+    "JobIcon":""
   },
 ]
 
+var educationInfoTitle = "Schooling and Certifications"
+var educationInfoSubtitle = "Schooling and Certifications Subtitle"
 var educationInfo = [
   {
     "SchoolName":"",
@@ -39,11 +45,15 @@ var educationInfo = [
   },
 ]
 
+var skillsTitle = "Skills"
+var skillsSubitle = "Skills Subtitle"
 var skills = [
   "Node.js",
   "React",
 ]
 
 module.exports = {
-  workExperience, educationInfo, skills
+  workExperienceTitle, workExperienceSubtitle, workExperience,
+  educationInfoTitle, educationInfoSubtitle, educationInfo,
+  skillsTitle, skillsSubitle, skills
 };

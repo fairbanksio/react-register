@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import { Card } from "components/Card/Card";
 import { Grid, Row, Col } from "react-bootstrap";
 
-import Card from "components/Card/Card";
-import { iconsArray } from "variables/Variables.jsx";
+import WorkExperience from "components/WorkExperience/WorkExperience";
+import EducationInfo from "components/EducationInfo/EducationInfo";
+import { skillsTitle, skillsSubitle, skills } from "variables/PortfolioConfig.jsx";
 
 import { userConfig } from "variables/UserConfig.jsx";
 
@@ -17,40 +19,11 @@ class Icons extends Component {
           <Row>
             <Col md={12}>
               <Card
-                title="Recent Projects"
-                ctAllIcons
-                category={
-                  <span>
-                    Handcrafted by our friends from{" "}
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="http://themes-pixeden.com/font-demos/7-stroke/index.html"
-                    >
-                      Pixeden
-                    </a>
-                  </span>
-                }
+                title={'More Projects from ' + userConfig.FirstName}
                 content={
-                  <Row>
-                    {iconsArray.map((prop, key) => {
-                      return (
-                        <Col
-                          lg={2}
-                          md={3}
-                          sm={4}
-                          xs={6}
-                          className="font-icon-list"
-                          key={key}
-                        >
-                          <div className="font-icon-detail">
-                            <i className={prop} />
-                            <input type="text" defaultValue={prop} />
-                          </div>
-                        </Col>
-                      );
-                    })}
-                  </Row>
+                  <div>
+                    This is just a test div. Fill me!
+                  </div>
                 }
               />
             </Col>

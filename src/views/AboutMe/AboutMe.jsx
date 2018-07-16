@@ -9,6 +9,8 @@ import { userConfig } from "variables/UserConfig.jsx";
 import { Card } from "components/Card/Card.jsx";
 import { UserCard } from "components/UserCard/UserCard.jsx";
 import Button from "components/CustomButton/CustomButton.jsx";
+import WorkExperience from "components/WorkExperience/WorkExperience";
+import EducationInfo from "components/EducationInfo/EducationInfo";
 
 class UserProfile extends Component {
   componentDidMount(){
@@ -72,14 +74,8 @@ class UserProfile extends Component {
               />
             </Col>
             <Col md={8}>
-              <Card
-                title={'More Information About ' + userConfig.FirstName}
-                content={
-                  <div>
-                    This is just a test div. Fill me!
-                  </div>
-                }
-              />
+              <WorkExperience />
+              <EducationInfo />
             </Col>
           </Row>
         </Grid>
