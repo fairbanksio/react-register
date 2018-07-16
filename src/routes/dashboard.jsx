@@ -2,6 +2,7 @@ import Home from "views/Home/Home";
 import Projects from "views/Projects/Projects";
 import Links from "views/Links/Links";
 import AboutMe from "views/AboutMe/AboutMe";
+import Gallery from "views/Gallery/Gallery";
 
 const dashboardRoutes = [
   {
@@ -21,6 +22,12 @@ const dashboardRoutes = [
     name: "Links",
     icon: "pe-7s-link",
     component: Links
+  },
+  {
+    path: "/gallery",
+    name: "Gallery",
+    icon: "pe-7s-link",
+    component: Gallery
   },
   {
     path: "/about",
