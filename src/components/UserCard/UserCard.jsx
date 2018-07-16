@@ -1,6 +1,19 @@
 import React, { Component } from "react";
 
 export class UserCard extends Component {
+  randomQuote() {
+    var quotes = this.props.quotes;
+    var quote = quotes[Math.floor(Math.random() * quotes.length)];
+    this.setState({"quote":quote});
+  }
+  componentWillMount() {
+    this.setState({
+      "quote":"-"
+    })
+  }
+  componentDidMount() {
+    this.randomQuote();
+  }
   render() {
     return (
       <div className="card card-user">
@@ -17,10 +30,11 @@ export class UserCard extends Component {
             <h4 className="title">
               {this.props.name}
               <br />
-              <small>{this.props.userName}</small>
+              <small style={{'fontSize':'14px'}}>{this.props.jobTitle}</small>
             </h4>
           </div>
-          <p className="description text-center">{this.props.description}</p>
+          <br />
+          <p className="description text-center">{this.state.quote}</p>
         </div>
         <hr />
         <div className="text-center">{this.props.socials}</div>

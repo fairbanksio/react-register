@@ -7,6 +7,7 @@ var userConfig = {
   "FirstName":"Test",
   "LastName":"User",
   "FullName":"Test User",
+  "JobTitle":"My Job Title",
   "Website":"https://yoursite.io/", // Include the /
   "Facebook":"youruser",
   "LinkedIn":"youruser",
@@ -27,7 +28,14 @@ var extraConfigs = {
   "healthMonitor":"#"
 }
 
+var quotes = [
+  "What would you say... you do around here? - The Bobs",
+  "You come at the king you best not miss. - Omar Little",
+  "Multipass? - Leeloo Dallas"
+];
+
 module.exports = {
   userConfig,
-  extraConfigs
+  extraConfigs,
+  quotes
 };

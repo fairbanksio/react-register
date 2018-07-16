@@ -4,7 +4,7 @@ import {
   Row,
   Col
 } from "react-bootstrap";
-import { userConfig } from "variables/UserConfig.jsx";
+import { userConfig, quotes } from "variables/UserConfig.jsx";
 
 import { UserCard } from "components/UserCard/UserCard.jsx";
 import Button from "components/CustomButton/CustomButton.jsx";
@@ -25,7 +25,8 @@ class UserProfile extends Component {
                 bgImage={userConfig.ProfileBanner}
                 avatar={userConfig.ProfileImage}
                 name={userConfig.FullName}
-                userName={userConfig.Twitter}
+                jobTitle={userConfig.JobTitle}
+                quotes={quotes}
                 description={
                   <span>
                     {userConfig.Description}
