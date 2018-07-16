@@ -1,0 +1,49 @@
+//
+// //
+// // // Portfolio Configuration
+// //
+//
+var workExperience = [
+  {
+    "EmployerName":"",
+    "JobTitle":"",
+    "JobLocation":"",
+    "JobDescription":"",
+    "StartDate":"",
+    "EndDate":""
+  },
+  {
+    "EmployerName":"",
+    "JobTitle":"",
+    "JobLocation":"",
+    "JobDescription":"",
+    "StartDate":"",
+    "EndDate":""
+  },
+]
+
+var educationInfo = [
+  {
+    "SchoolName":"",
+    "DegreeName":"",
+    "StartDate":"",
+    "EndDate":"",
+    "DegreeDescription":""
+  },
+  {
+    "SchoolName":"",
+    "DegreeName":"",
+    "StartDate":"",
+    "EndDate":"",
+    "DegreeDescription":""
+  },
+]
+
+var skills = [
+  "Node.js",
+  "React",
+]
+
+module.exports = {
+  workExperience, educationInfo, skills
+};
