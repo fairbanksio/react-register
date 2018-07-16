@@ -6,7 +6,6 @@ import { ThisSiteCard } from "components/ThisSiteCard/ThisSiteCard.jsx";
 import { GitHubRepos } from "components/HomepageIcons/GitHubRepos/GitHubRepos.jsx";
 import { DigitalOcean } from "components/HomepageIcons/DigitalOcean/DigitalOcean.jsx";
 import { LinkedIn } from "components/HomepageIcons/LinkedIn/LinkedIn.jsx";
-import { TestComponent } from "components/HomepageIcons/TestComponent/TestComponent.jsx";
 import { FullGallery } from "components/FullGallery/FullGallery.jsx";
 import { GoogleMaps } from "components/Maps/Maps.jsx";
 
