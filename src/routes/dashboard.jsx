@@ -26,7 +26,7 @@ const dashboardRoutes = [
   {
     path: "/gallery",
     name: "Gallery",
-    icon: "pe-7s-photo-gallery",
+    icon: "pe-7s-photo",
     component: Gallery
   },
   {
