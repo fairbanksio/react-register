@@ -6,7 +6,6 @@ import {
 } from "react-bootstrap";
 import { userConfig } from "variables/UserConfig.jsx";
 
-import { Card } from "components/Card/Card.jsx";
 import { UserCard } from "components/UserCard/UserCard.jsx";
 import Button from "components/CustomButton/CustomButton.jsx";
 import WorkExperience from "components/WorkExperience/WorkExperience";

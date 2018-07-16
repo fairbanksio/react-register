@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import { Card } from "components/Card/Card";
 import { Grid, Row, Col } from "react-bootstrap";
 
-import WorkExperience from "components/WorkExperience/WorkExperience";
-import EducationInfo from "components/EducationInfo/EducationInfo";
-import { skillsTitle, skillsSubitle, skills } from "variables/PortfolioConfig.jsx";
-
 import { userConfig } from "variables/UserConfig.jsx";
 
 class Icons extends Component {
