@@ -1,8 +1,11 @@
 {
-  "name": "light-bootstrap-dashboard-react",
+  "name": "react-register",
   "version": "1.2.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0",
+    "@fortawesome/react-fontawesome": "^0.1.0",
     "bootstrap": "3.3.7",
     "chartist": "0.10.1",
     "node-sass": "4.6.1",
@@ -12,8 +15,10 @@
     "react-bootstrap": "0.32.1",
     "react-chartist": "0.13.1",
     "react-dom": "16.2.0",
+    "react-images": "^0.5.17",
     "react-google-maps": "9.4.5",
     "react-notification-system": "0.2.17",
+    "react-photo-gallery": "^6.0.28",
     "react-router-dom": "4.2.2",
     "react-scripts": "1.1.1"
   },
@@ -25,5 +30,8 @@
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.1.0"
   }
 }
