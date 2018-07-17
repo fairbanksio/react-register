@@ -5,27 +5,21 @@ import CardNoFooter from "components/Card/CardNoFooter.jsx";
 import HoverImgLink from "components/HoverImgLink/HoverImgLink.jsx";
 
 import { userConfig } from "variables/UserConfig.jsx";
-import { UserLinks, UserLinksHead } from "variables/LinksConfig.jsx";
+import { userLinks, userLinksHead } from "variables/LinksConfig.jsx";
 
 class LinksGrid extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      links: UserLinks,
-      linksHead: UserLinksHead,
+      links: userLinks,
+      linksHead: userLinksHead,
     };
   }
-
 
   componentDidMount(){
     document.title = 'Links | ' + userConfig.SiteTitle;
   }
-
-
   render() {
-
-    //MAP THE LINKS IN CONFIG TO THE HoverImgLink component
     const links = this.state.links.map((link, key) => {
       return (
         <HoverImgLink
@@ -45,7 +39,7 @@ class LinksGrid extends Component {
             <Col md={12}>
               <CardNoFooter
                 title={this.state.linksHead.Title}
-                category={this.state.linksHead.SubTitle}
+                category={this.state.linksHead.Subtitle}
                 content={
                   <Row>
                     {links}

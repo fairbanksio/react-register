@@ -3,17 +3,15 @@
 // // // Links table data
 // //
 //
-
-var UserLinksHead = {Title: "Links", SubTitle: "These are some user specified links"}
-var UserLinks = [
-  { Img: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', Name:"Google", URL: "https://google.com", Desc: "This is a link description"  },
-  { Img: 'assets/images/local_file.jpg', Name:"GitHub", URL: "https://github.com", Desc: "This is a link description" },
-  { Img: 'https://source.unsplash.com/epcsn8Ed8kY/600x799', Name:"YouTube", URL: "https://youtube.com", Desc: "This is a link description" },
-  { Img: 'https://source.unsplash.com/Dm-qxdynoEc/800x799', Name:"DockerHub", URL: "https://Hub.docker.com", Desc: "This is a link description" }
+var userLinksHead = {Title: 'Links', Subtitle: 'These are some user specified links'}
+var userLinks = [
+  { Img: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', Name:'Google', URL: 'https://google.com', Desc: 'This is a link description' },
+  { Img: 'assets/images/local_file.jpg', Name:'GitHub', URL: 'https://github.com', Desc: 'This is a link description' },
+  { Img: 'https://source.unsplash.com/epcsn8Ed8kY/600x799', Name:'YouTube', URL: 'https://youtube.com', Desc: 'This is a link description' },
+  { Img: 'https://source.unsplash.com/Dm-qxdynoEc/800x799', Name:'DockerHub', URL: 'https://hub.docker.com', Desc: 'This is a link description' }
 ];
 
 module.exports = {
-
-  UserLinks,
-  UserLinksHead
+  userLinksHead,
+  userLinks
 };
