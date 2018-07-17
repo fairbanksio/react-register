@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 
-import { StatsCard } from "components/StatsCard/StatsCard.jsx";
 import { ThisSiteCard } from "components/ThisSiteCard/ThisSiteCard.jsx";
 import { GitHubRepos } from "components/HomepageIcons/GitHubRepos/GitHubRepos.jsx";
 import { DigitalOcean } from "components/HomepageIcons/DigitalOcean/DigitalOcean.jsx";
@@ -10,7 +9,7 @@ import { DockerPulls } from "components/HomepageIcons/DockerPulls/DockerPulls.js
 import { FullGallery } from "components/FullGallery/FullGallery.jsx";
 import { GoogleMaps } from "components/Maps/Maps.jsx";
 
-import { userConfig, extraConfigs } from "variables/UserConfig.jsx";
+import { userConfig } from "variables/UserConfig.jsx";
 import { galleryPhotos } from "variables/GalleryConfig.jsx";
 
 class Home extends Component {
