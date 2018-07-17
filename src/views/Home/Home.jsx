@@ -6,6 +6,7 @@ import { ThisSiteCard } from "components/ThisSiteCard/ThisSiteCard.jsx";
 import { GitHubRepos } from "components/HomepageIcons/GitHubRepos/GitHubRepos.jsx";
 import { DigitalOcean } from "components/HomepageIcons/DigitalOcean/DigitalOcean.jsx";
 import { LinkedIn } from "components/HomepageIcons/LinkedIn/LinkedIn.jsx";
+import { DockerPulls } from "components/HomepageIcons/DockerPulls/DockerPulls.jsx";
 import { FullGallery } from "components/FullGallery/FullGallery.jsx";
 import { GoogleMaps } from "components/Maps/Maps.jsx";
 
@@ -25,18 +26,7 @@ class Home extends Component {
               <GitHubRepos />
             </Col>
             <Col lg={3} sm={6}>
-              <a style={{'color':'#000000'}}
-                href={extraConfigs.healthMonitor}
-                target='_blank'
-                rel='noopener noreferrer'>
-                  <StatsCard
-                    bigIcon={ <i className="pe-7s-graph1 text-danger" /> }
-                    statsText="Errors"
-                    statsValue="23"
-                    statsIcon={ <i className="fa fa-clock-o" /> }
-                    statsIconText="In the last hour"
-                  />
-              </a>
+              <DockerPulls />
             </Col>
             <Col lg={3} sm={6}>
               <LinkedIn />
