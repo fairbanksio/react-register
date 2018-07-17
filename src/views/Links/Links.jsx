@@ -8,19 +8,11 @@ import { userConfig } from "variables/UserConfig.jsx";
 import { userLinks, userLinksHead } from "variables/LinksConfig.jsx";
 
 class LinksGrid extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      links: userLinks,
-      linksHead: userLinksHead,
-    };
-  }
-
   componentDidMount(){
     document.title = 'Links | ' + userConfig.SiteTitle;
   }
   render() {
-    const links = this.state.links.map((link, key) => {
+    const links = userLinks.map((link, key) => {
       return (
         <HoverImgLink
           key={key}
@@ -38,8 +30,8 @@ class LinksGrid extends Component {
           <Row>
             <Col md={12}>
               <CardNoFooter
-                title={this.state.linksHead.Title}
-                category={this.state.linksHead.Subtitle}
+                title={userLinksHead.Title}
+                category={userLinksHead.Subtitle}
                 content={
                   <Row>
                     {links}
