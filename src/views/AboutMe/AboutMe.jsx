@@ -35,41 +35,78 @@ class UserProfile extends Component {
                 }
                 socials={
                   <div>
-                    <a href={'https://www.facebook.com/' + userConfig.Facebook} target='_blank'>
-                      <Button simple>
-                        <i className="fab fa-facebook" />
-                      </Button>
-                    </a>
-                    <a href={'https://github.com/' + userConfig.GitHub} target='_blank'>
-                      <Button simple>
-                        <i className="fab fa-github" />
-                      </Button>
-                    </a>
-                    <a href={'https://linkedin.com/in/' + userConfig.LinkedIn} target='_blank'>
-                      <Button simple>
-                        <i className="fab fa-linkedin" />
-                      </Button>
-                    </a>
-                    <a href={'https://hub.docker.com/r/' + userConfig.Docker} target='_blank'>
-                      <Button simple>
-                        <i className="fab fa-docker" />
-                      </Button>
-                    </a>
-                    <a href={'https://npmjs.com/~' + userConfig.NPM} target='_blank'>
-                      <Button simple>
-                        <i className="fab fa-npm" />
-                      </Button>
-                    </a>
-                    <a href={'https://paypal.me/' + userConfig.PayPal} target='_blank'>
-                      <Button simple>
-                        <i className="fab fa-paypal" />
-                      </Button>
-                    </a>
-                    <a href={'mailto:' + userConfig.Email}>
-                      <Button simple>
-                        <i className="fa fa-envelope" />
-                      </Button>
-                    </a>
+                    {userConfig.Facebook ?
+                      <a href={'https://www.facebook.com/' + userConfig.Facebook} target='_blank' rel='noopener noreferrer'>
+                        <Button simple>
+                          <i className="fab fa-facebook" />
+                        </Button>
+                      </a>
+                      : <div></div>
+                    }
+                    {userConfig.Twitter ?
+                      <a href={'https://twitter.com/' + userConfig.Twitter} target='_blank' rel='noopener noreferrer'>
+                        <Button simple>
+                          <i className="fab fa-twitter" />
+                        </Button>
+                      </a>
+                      : null
+                    }
+                    {userConfig.GitHub ?
+                      <a href={'https://github.com/' + userConfig.GitHub} target='_blank' rel='noopener noreferrer'>
+                        <Button simple>
+                          <i className="fab fa-github" />
+                        </Button>
+                      </a>
+                      : null
+                    }
+                    {userConfig.LinkedIn ?
+                      <a href={'https://linkedin.com/in/' + userConfig.LinkedIn} target='_blank' rel='noopener noreferrer'>
+                        <Button simple>
+                          <i className="fab fa-linkedin" />
+                        </Button>
+                      </a>
+                      : null
+                    }
+                    {userConfig.Docker ?
+                      <a href={'https://hub.docker.com/r/' + userConfig.Docker} target='_blank' rel='noopener noreferrer'>
+                        <Button simple>
+                          <i className="fab fa-docker" />
+                        </Button>
+                      </a>
+                      : null
+                    }
+                    {userConfig.NPM ?
+                      <a href={'https://npmjs.com/~' + userConfig.NPM} target='_blank' rel='noopener noreferrer'>
+                        <Button simple>
+                          <i className="fab fa-npm" />
+                        </Button>
+                      </a>
+                      : null
+                    }
+                    {userConfig.Behance ?
+                      <a href={'https://behance.net/' + userConfig.Behance} target='_blank' rel='noopener noreferrer'>
+                        <Button simple>
+                          <i className="fab fa-behance" />
+                        </Button>
+                      </a>
+                      : null
+                    }
+                    {userConfig.PayPal ?
+                      <a href={'https://paypal.me/' + userConfig.PayPal} target='_blank' rel='noopener noreferrer'>
+                        <Button simple>
+                          <i className="fab fa-paypal" />
+                        </Button>
+                      </a>
+                      : null
+                    }
+                    {userConfig.Email ?
+                      <a href={'mailto:' + userConfig.Email}>
+                        <Button simple>
+                          <i className="fa fa-envelope" />
+                        </Button>
+                      </a>
+                      : null
+                    }
                   </div>
                 }
               />
