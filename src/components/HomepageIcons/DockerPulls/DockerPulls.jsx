@@ -6,7 +6,6 @@ export class DockerPulls extends Component {
   getPullCount() {
     var _this = this;
     var endpoint = 'https://hub.docker.com/v2/repositories/' + userConfig.Docker;
-    console.log('DockerHub Endpoint: ' + endpoint);
     fetch(endpoint, { 'mode':'no-cors' })
     .then((resp) => resp.json())
     .then((data) => {
