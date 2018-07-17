@@ -17,7 +17,7 @@ export class GitHubRepos extends Component {
   }
   componentWillMount() {
     this.setState({
-      "repos": "-"
+      "repos": "--"
     });
   }
   componentDidMount() {
@@ -30,10 +30,10 @@ export class GitHubRepos extends Component {
         target='_blank'
         rel='noopener noreferrer'>
         <StatsCard
-          bigIcon={<i className="fab fa-lg fa-github" style={{'color':'#6E5494'}}/>}
-          statsText="GitHub Repositories"
+          bigIcon={ <i className="fab fa-lg fa-github" style={{'color':'#6E5494'}}/> }
+          statsText="GitHub Repos"
           statsValue={this.state.repos}
-          statsIcon={<i className="fa fa-refresh" />}
+          statsIcon={ <i className="fa fa-refresh" /> }
           statsIconText="Updated now"
         />
       </a>
