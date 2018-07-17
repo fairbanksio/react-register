@@ -1,16 +1,23 @@
 import React, { Component } from "react";
 import { StatsCard } from "components/StatsCard/StatsCard.jsx";
-import { userConfig } from "variables/UserConfig.jsx";
+import { userConfig, corsProxy } from "variables/UserConfig.jsx";
 
 export class DockerPulls extends Component {
   getPullCount() {
     var _this = this;
-    var endpoint = 'https://hub.docker.com/v2/repositories/' + userConfig.Docker;
-    fetch(endpoint, { 'mode':'no-cors' })
+    if(corsProxy){
+      var endpoint = corsProxy + 'https://hub.docker.com/v2/repositories/' + userConfig.Docker;
+    } else {
+      var endpoint = 'https://hub.docker.com/v2/repositories/' + userConfig.Docker;
+    }
+
+    fetch(endpoint)
     .then((resp) => resp.json())
     .then((data) => {
-      console.log('Resp: ' + JSON.stringify(data, null, ' '))
-      var total_pulls = "?";
+      var total_pulls = 0;
+      data.results.forEach(function(repo){
+        total_pulls += repo.pull_count;
+      });
       _this.setState({"pulls": total_pulls})
     })
     .catch((err) => console.log(err))
