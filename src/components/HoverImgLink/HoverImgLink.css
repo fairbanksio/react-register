@@ -5,7 +5,6 @@
 .hover-image {
   width: 100%;
   overflow: hidden;
-  height: 200px;
   border-radius: 4px;
   position: relative;
   -webkit-transform-style: preserve-3d;
