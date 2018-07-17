@@ -1,81 +1,52 @@
 import React, { Component } from "react";
-import { Grid, Row, Col, Table } from "react-bootstrap";
+import { Grid, Row, Col} from "react-bootstrap";
 
-import dashboardRoutes from "routes/dashboard.jsx";
 import CardNoFooter from "components/Card/CardNoFooter.jsx";
+import HoverImgLink from "components/HoverImgLink/HoverImgLink.jsx";
 
 import { userConfig } from "variables/UserConfig.jsx";
-import { tableTitle, tableSubtitle, thArray, tdArray } from "variables/LinksConfig.jsx";
+import { userLinks, userLinksHead } from "variables/LinksConfig.jsx";
 
-class TableList extends Component {
-  getBrand() {
-    var name;
-    dashboardRoutes.map((prop, key) => {
-      if (prop.collapse) {
-        prop.views.map((prop, key) => {
-          if (prop.path === this.props.location.pathname) {
-            name = prop.name;
-          }
-          return null;
-        });
-      } else {
-        if (prop.redirect) {
-          if (prop.path === this.props.location.pathname) {
-            name = prop.name;
-          }
-        } else {
-          if (prop.path === this.props.location.pathname) {
-            name = prop.name;
-          }
-        }
-      }
-      return null;
-    });
-    return name;
+class LinksGrid extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      links: userLinks,
+      linksHead: userLinksHead,
+    };
   }
+
   componentDidMount(){
-    document.title = this.getBrand() + ' | ' + userConfig.SiteTitle;
+    document.title = 'Links | ' + userConfig.SiteTitle;
   }
   render() {
+    const links = this.state.links.map((link, key) => {
+      return (
+        <HoverImgLink
+          key={key}
+          linkImg={link.Img}
+          linkURL={link.URL}
+          linkName={link.Name}
+          linkDesc={link.Desc}
+        />
+      );
+    });
+
     return (
       <div className="content">
         <Grid fluid>
           <Row>
             <Col md={12}>
               <CardNoFooter
-                title={tableTitle}
-                category={tableSubtitle}
-                ctTableFullWidth
-                ctTableResponsive
+                title={this.state.linksHead.Title}
+                category={this.state.linksHead.Subtitle}
                 content={
-                  <Table striped hover style={{"marginBottom":"0px"}}>
-                    <thead>
-                      <tr>
-                        {thArray.map((prop, key) => {
-                          return <th key={key}>{prop}</th>;
-                        })}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {tdArray.map((prop, key) => {
-                        return (
-                          <tr key={key}>
-                            {prop.map((prop, key) => {
-                              if({key}.key === 0) {
-                                return <td key={key}><a href={prop[1]} target='_blank' rel='noopener noreferrer'>{prop[0]}</a></td>;
-                              }else {
-                                return <td key={key}>{prop}</td>;
-                              }
-                            })}
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </Table>
+                  <Row>
+                    {links}
+                  </Row>
                 }
               />
             </Col>
-            {/* Additional Tables can be added by duplicating the <Col></Col> section above. */}
           </Row>
         </Grid>
       </div>
@@ -83,4 +54,4 @@ class TableList extends Component {
   }
 }
 
-export default TableList;
+export default LinksGrid;
