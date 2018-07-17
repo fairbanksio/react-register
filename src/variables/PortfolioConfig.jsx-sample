@@ -58,13 +58,10 @@ var skillsData = [
   {type: "Javascript", level: 75},
 ];
 var skillsColors = {
-  "bar": {
-    "hue": 0,
-    "saturation": 50,
-    "level": {
-      "minimum": 80,
-      "maximum": 100
-    }
+  "bar": "#CCC",
+  "title": {
+    "text": "#FFF",
+    "background": "#494C4F"
   }
 }
 
