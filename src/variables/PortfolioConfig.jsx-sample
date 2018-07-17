@@ -13,7 +13,8 @@ var workExperience = [
     "JobDescription":"This is a description for Job 2",
     "StartDate":"Aug 2015",
     "EndDate":"Current",
-    "JobIcon":""
+    "JobIcon":"",
+    "JobIconColor":""
   },
   {
     "EmployerName":"Job 1",
@@ -22,7 +23,8 @@ var workExperience = [
     "JobDescription":"This is a description for Job 1",
     "StartDate":"Jan 2009",
     "EndDate":"August 2015",
-    "JobIcon":""
+    "JobIcon":"",
+    "JobIconColor":""
   },
 ]
 
@@ -30,27 +32,33 @@ var educationInfoTitle = "Schooling and Certifications"
 var educationInfoSubtitle = "Schooling and Certifications Subtitle"
 var educationInfo = [
   {
-    "SchoolName":"",
-    "DegreeName":"",
-    "StartDate":"",
-    "EndDate":"",
-    "DegreeDescription":""
+    "SchoolName":"My College",
+    "SchoolLocation":"Test City, CA",
+    "DegreeName":"Bachelor's of Science",
+    "StartDate":"2000",
+    "EndDate":"2004",
+    "DegreeDescription":"General Science Studies",
+    "SchoolIcon":"fas fa-5x fa-university",
+    "SchoolIconColor":"#FFCC00"
   },
   {
-    "SchoolName":"",
-    "DegreeName":"",
-    "StartDate":"",
-    "EndDate":"",
-    "DegreeDescription":""
+    "SchoolName":"My School",
+    "SchoolLocation":"Test City, CA",
+    "DegreeName":"General Studies",
+    "StartDate":"1996",
+    "EndDate":"2000",
+    "DegreeDescription":"General Studies",
+    "SchoolIcon":"fas fa-5x fa-star",
+    "SchoolIconColor":"#AE1301"
   },
 ]
 
 var skillsTitle = "Skills"
 var skillsSubitle = "Skills Subtitle"
 var skills = [
-  "Node.js",
-  "React",
-]
+  {type: "Node", level: 85},
+  {type: "Javascript", level: 75},
+];
 
 module.exports = {
   workExperienceTitle, workExperienceSubtitle, workExperience,
