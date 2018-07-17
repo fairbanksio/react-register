@@ -53,15 +53,23 @@ var educationInfo = [
   },
 ]
 
-var skillsTitle = "Skills"
-var skillsSubitle = "Skills Subtitle"
-var skills = [
+var skillsData = [
   {type: "Node", level: 85},
   {type: "Javascript", level: 75},
 ];
+var skillsColors = {
+  "bar": {
+    "hue": 0,
+    "saturation": 50,
+    "level": {
+      "minimum": 80,
+      "maximum": 100
+    }
+  }
+}
 
 module.exports = {
   workExperienceTitle, workExperienceSubtitle, workExperience,
   educationInfoTitle, educationInfoSubtitle, educationInfo,
-  skillsTitle, skillsSubitle, skills
+  skillsData, skillsColors
 };
