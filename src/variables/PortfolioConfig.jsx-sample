@@ -56,9 +56,9 @@ var educationInfo = [
 var skillsTitle = "Skills"
 var skillsSubitle = "Skills Subtitle"
 var skills = [
-  "Node.js",
-  "React",
-]
+  {type: "Node", level: 85},
+  {type: "Javascript", level: 75},
+];
 
 module.exports = {
   workExperienceTitle, workExperienceSubtitle, workExperience,

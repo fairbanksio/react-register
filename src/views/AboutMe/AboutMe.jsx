@@ -10,6 +10,7 @@ import { UserCard } from "components/UserCard/UserCard.jsx";
 import Button from "components/CustomButton/CustomButton.jsx";
 import WorkExperience from "components/WorkExperience/WorkExperience";
 import EducationInfo from "components/EducationInfo/EducationInfo";
+import SkillsCard from "components/SkillsCard/SkillsCard";
 
 class UserProfile extends Component {
   componentDidMount(){
@@ -72,6 +73,7 @@ class UserProfile extends Component {
                   </div>
                 }
               />
+              <SkillsCard />
             </Col>
             <Col md={8}>
               <WorkExperience />
