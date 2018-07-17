@@ -6,10 +6,9 @@ import {
 } from "react-bootstrap";
 import { userConfig, quotes } from "variables/UserConfig.jsx";
 
+import { Card } from "components/Card/Card.jsx";
 import { UserCard } from "components/UserCard/UserCard.jsx";
 import Button from "components/CustomButton/CustomButton.jsx";
-import WorkExperience from "components/WorkExperience/WorkExperience";
-import EducationInfo from "components/EducationInfo/EducationInfo";
 
 class UserProfile extends Component {
   componentDidMount(){
@@ -25,7 +24,7 @@ class UserProfile extends Component {
                 bgImage={userConfig.ProfileBanner}
                 avatar={userConfig.ProfileImage}
                 name={userConfig.FullName}
-                jobTitle={userConfig.JobTitle}
+                userName={userConfig.Twitter}
                 quotes={quotes}
                 description={
                   <span>
@@ -34,34 +33,14 @@ class UserProfile extends Component {
                 }
                 socials={
                   <div>
-                    <a href={'https://www.facebook.com/' + userConfig.Facebook} target='_blank'>
-                      <Button simple>
-                        <i className="fab fa-facebook" />
-                      </Button>
-                    </a>
-                    <a href={'https://github.com/' + userConfig.GitHub} target='_blank'>
-                      <Button simple>
-                        <i className="fab fa-github" />
-                      </Button>
-                    </a>
-                    <a href={'https://linkedin.com/in/' + userConfig.LinkedIn} target='_blank'>
+                    <a href={'https://www.linkedin.com/' + userConfig.LinkedIn} target='_blank'>
                       <Button simple>
                         <i className="fab fa-linkedin" />
                       </Button>
                     </a>
-                    <a href={'https://hub.docker.com/r/' + userConfig.Docker} target='_blank'>
+                    <a href={'https://www.behance.net/' + userConfig.Behance} target='_blank'>
                       <Button simple>
-                        <i className="fab fa-docker" />
-                      </Button>
-                    </a>
-                    <a href={'https://npmjs.com/~' + userConfig.NPM} target='_blank'>
-                      <Button simple>
-                        <i className="fab fa-npm" />
-                      </Button>
-                    </a>
-                    <a href={'https://paypal.me/' + userConfig.PayPal} target='_blank'>
-                      <Button simple>
-                        <i className="fab fa-paypal" />
+                        <i className="fab fa-behance-square" />
                       </Button>
                     </a>
                     <a href={'mailto:' + userConfig.Email}>
@@ -74,8 +53,14 @@ class UserProfile extends Component {
               />
             </Col>
             <Col md={8}>
-              <WorkExperience />
-              <EducationInfo />
+              <Card
+                title={'Program Knowledge'}
+                content={
+                  <div>
+                    Adobe
+                  </div>
+                }
+              />
             </Col>
           </Row>
         </Grid>
