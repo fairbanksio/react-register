@@ -7,6 +7,7 @@ var userConfig = {
   "FirstName":"Test",
   "LastName":"User",
   "FullName":"Test User",
+  "JobTitle":"My Job Title",
   "Website":"https://yoursite.io/", // Include the /
   "Facebook":"youruser",
   "LinkedIn":"youruser",
@@ -27,7 +28,16 @@ var extraConfigs = {
   "healthMonitor":"#"
 }
 
+var quotes = [
+  "What's the most you ever lost on a coin toss?",
+  "Are you not entertained! Are you not entertained! Is this not why you are here!",
+  "I don't know how to put this, but I'm kind of a big deal...People know me...",
+  "You mean I actually have frickin' sharks with frickin' laser beams attached to their frickin' heads?",
+  "In the face of overwhelming odds, I'm left with only one option. I'm gonna have to science the shit outta this.",
+];
+
 module.exports = {
   userConfig,
-  extraConfigs
+  extraConfigs,
+  quotes
 };
