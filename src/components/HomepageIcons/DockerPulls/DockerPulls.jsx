@@ -5,10 +5,11 @@ import { userConfig, corsProxy } from "variables/UserConfig.jsx";
 export class DockerPulls extends Component {
   getPullCount() {
     var _this = this;
+    var endpoint = '';
     if(corsProxy){
-      var endpoint = corsProxy + 'https://hub.docker.com/v2/repositories/' + userConfig.Docker;
+      endpoint = corsProxy + 'https://hub.docker.com/v2/repositories/' + userConfig.Docker;
     } else {
-      var endpoint = 'https://hub.docker.com/v2/repositories/' + userConfig.Docker;
+      endpoint = 'https://hub.docker.com/v2/repositories/' + userConfig.Docker;
     }
 
     fetch(endpoint)
