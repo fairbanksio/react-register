@@ -41,7 +41,7 @@ class UserProfile extends Component {
                           <i className="fab fa-facebook" />
                         </Button>
                       </a>
-                      : <div></div>
+                      : null
                     }
                     {userConfig.Twitter ?
                       <a href={'https://twitter.com/' + userConfig.Twitter} target='_blank' rel='noopener noreferrer'>

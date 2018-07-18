@@ -2,13 +2,6 @@ import React, { Component } from "react";
 import ReactGallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
 
-import { galleryPhotos } from "variables/GalleryConfig.jsx";
-
-// eslint-disable-next-line
-{/* const photos = this.props.photos; TO DO: This data is here, but using it causes the component to fail. If we could use this, gallery would be re-usable. */}
-// eslint-disable-next-line
-const photos = galleryPhotos;
-
 export class FullGallery extends Component {
   constructor() {
     super();
@@ -48,20 +41,14 @@ export class FullGallery extends Component {
 		});
 	}
   handleClickImage () {
-    if (this.state.currentImage === photos.length - 1) return;
-
+    if (this.state.currentImage === this.props.photos.length - 1) return;
     this.gotoNext();
-  }
-  componentDidMount() {
-    try{
-      console.log("[components/FullGallery]: " + JSON.stringify(this.props, null, ' '));
-    }catch(err){}
   }
   render() {
     return (
       <div>
-        <ReactGallery photos={photos} onClick={this.openLightbox} />
-        <Lightbox images={photos}
+        <ReactGallery photos={this.props.photos} onClick={this.openLightbox} />
+        <Lightbox images={this.props.photos}
           onClose={this.closeLightbox}
           onClickPrev={this.gotoPrevious}
           onClickNext={this.gotoNext}
