@@ -6,7 +6,6 @@ import {
 } from "react-bootstrap";
 import { userConfig, quotes } from "variables/UserConfig.jsx";
 
-import { Card } from "components/Card/Card.jsx";
 import { UserCard } from "components/UserCard/UserCard.jsx";
 import Button from "components/CustomButton/CustomButton.jsx";
 import WorkExperience from "components/WorkExperience/WorkExperience";
@@ -27,7 +26,7 @@ class UserProfile extends Component {
                 bgImage={userConfig.ProfileBanner}
                 avatar={userConfig.ProfileImage}
                 name={userConfig.FullName}
-                userName={userConfig.Twitter}
+                jobTitle={userConfig.JobTitle}
                 quotes={quotes}
                 description={
                   <span>
@@ -114,14 +113,8 @@ class UserProfile extends Component {
               <SkillsCard />
             </Col>
             <Col md={8}>
-              <Card
-                title={'Program Knowledge'}
-                content={
-                  <div>
-                    Adobe
-                  </div>
-                }
-              />
+              <WorkExperience />
+              <EducationInfo />
             </Col>
           </Row>
         </Grid>
