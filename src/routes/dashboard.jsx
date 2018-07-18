@@ -12,6 +12,12 @@ const dashboardRoutes = [
     component: Home
   },
   {
+    path: "/gallery",
+    name: "Gallery",
+    icon: "pe-7s-photo",
+    component: Gallery
+  },
+  {
       path: "/projects",
       name: "Projects",
       icon: "pe-7s-plugin",
@@ -22,12 +28,6 @@ const dashboardRoutes = [
     name: "Links",
     icon: "pe-7s-link",
     component: Links
-  },
-  {
-    path: "/gallery",
-    name: "Gallery",
-    icon: "pe-7s-photo",
-    component: Gallery
   },
   {
     path: "/about",
