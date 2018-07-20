@@ -5,7 +5,10 @@ import { skillsData, skillsColors } from 'variables/PortfolioConfig.jsx'
 export class SkillsCard extends Component {
   render() {
     return (
-      <SkillBar skills={skillsData} colors={skillsColors} />
+      <div>
+        <SkillBar skills={skillsData} colors={skillsColors} />
+        <br/>
+      </div>
     );
   }
 }
