@@ -46,6 +46,8 @@
   text-align: center;
   opacity: 0;
   width: 100%;
+  paddingLeft: 20px;
+  paddingRight: 20px;
 }
 
 
