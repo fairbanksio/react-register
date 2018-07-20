@@ -3,13 +3,6 @@ import ReactGallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
 import { Card } from "components/Card/Card.jsx";
 
-import { galleryTitle, gallerySubtitle, galleryFooter, galleryFooterLogo, galleryPhotos } from "variables/GalleryConfig.jsx";
-
-// eslint-disable-next-line
-{/* const photos = this.props.photos; TO DO: This data is here, but using it causes the component to fail. If we could use this, gallery would be re-usable. */}
-// eslint-disable-next-line
-const photos = galleryPhotos;
-
 export class Gallery extends Component {
   constructor() {
     super();
@@ -49,22 +42,22 @@ export class Gallery extends Component {
     });
   }
   handleClickImage () {
-    if (this.state.currentImage === photos.length - 1) return;
+    if (this.state.currentImage === this.props.photos.length - 1) return;
 
     this.gotoNext();
   }
   render() {
     return (
       <Card
-        id={galleryTitle}
-        title={galleryTitle}
-        category={gallerySubtitle}
-        statsIcon={galleryFooterLogo}
-        stats={galleryFooter}
+        id={this.props.galleryTitle}
+        title={this.props.galleryTitle}
+        category={this.props.gallerySubtitle}
+        statsIcon={this.props.galleryFooterLogo}
+        stats={this.props.galleryFooter}
         content={
           <div>
-            <ReactGallery photos={photos} onClick={this.openLightbox} />
-            <Lightbox images={photos}
+            <ReactGallery photos={this.props.photos} onClick={this.openLightbox} />
+            <Lightbox images={this.props.photos}
               onClose={this.closeLightbox}
               onClickPrev={this.gotoPrevious}
               onClickNext={this.gotoNext}
