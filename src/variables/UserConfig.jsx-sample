@@ -38,7 +38,7 @@ var quotes = [
   "In the face of overwhelming odds, I'm left with only one option. I'm gonna have to science the shit outta this.",
 ];
 
-var corsProxy = '' //make sure to apply trailing slash format is 'https://cop.hostname.com/' (must have your own cross origin proxy such as CrossOrigin.me)
+var corsProxy = 'https://myproxy.yoursite.io' //Include the / (Need a CORS Proxy?  --->  https://CrossOrigin.me)
 
 module.exports = {
   userConfig,
