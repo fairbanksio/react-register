@@ -6,10 +6,9 @@
 
 var projectsHead = {Title: "Projects", SubTitle: "Checkout my latest work!"}
 var myProjects = [
-  { Img: 'https://source.unsplash.com/2ShvY8Lf6l0/800x600', Name:"Google", URL: "https://google.com", Desc: "This is a link description"  },
-  { Img: 'https://source.unsplash.com/epcsn8Ed8kY/800x600', Name:"YouTube", URL: "https://youtube.com", Desc: "This is a link description" },
-  { Img: 'https://source.unsplash.com/Dm-qxdynoEc/800x600', Name:"DockerHub", URL: "https://Hub.docker.com", Desc: "This is a link description" },
-  { Img: 'assets/images/local_file.jpg', Name:"GitHub", URL: "https://github.com", Desc: "This is a link description" }
+  { Img: 'https://source.unsplash.com/2ShvY8Lf6l0/800x600', Name:"Node", URL: "https://nodejs.org/en/", Desc: "Checkout my cool project!"  },
+  { Img: 'https://source.unsplash.com/epcsn8Ed8kY/800x600', Name:"React", URL: "https://reactjs.org/", Desc: "Checkout my cool project!" },
+  { Img: 'https://source.unsplash.com/Dm-qxdynoEc/800x600', Name:"Docker", URL: "https://www.docker.com/", Desc: "Checkout my cool project!" },
 ];
 
 module.exports = {

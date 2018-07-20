@@ -1,5 +1,9 @@
 .hover-container {
   position: relative;
+  height: 250px;
+  width:auto;
+  background: transparent no-repeat center;
+  background-size: cover;
 }
 
 .hover-image {
@@ -9,6 +13,9 @@
   position: relative;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  height: 250px;
+  background: transparent no-repeat center;
+  background-size: 100%;
 }
 
 .hover-overlay {

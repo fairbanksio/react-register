@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { Card } from "components/Card/Card";
 import { Grid, Row, Col } from "react-bootstrap";
+
+import CardNoFooter from "components/Card/CardNoFooter.jsx";
+import HoverImgLink from "components/HoverImgLink/HoverImgLink.jsx";
 
 import { userConfig } from "variables/UserConfig.jsx";
 import { myProjects, projectsHead } from "variables/ProjectsConfig.jsx";
