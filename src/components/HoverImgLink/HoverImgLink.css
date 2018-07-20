@@ -2,8 +2,6 @@
   position: relative;
   height: 250px;
   width:auto;
-  background: transparent no-repeat center;
-  background-size: cover;
 }
 
 .hover-image {
