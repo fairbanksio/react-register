@@ -9,7 +9,7 @@ class HoverImgLink extends Component {
           <div className="card">
             <a href={this.props.linkURL}>
               <div className="hover-container">
-                <img className="hover-image" src={this.props.linkImg} alt="..." />
+                <img className="hover-image" src={this.props.linkImg} alt={this.props.Name} />
                 <div className="hover-overlay">
                   <h4 className="hover-title">
                     {this.props.linkName}
