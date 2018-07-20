@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import SkillBar from 'react-skillbars';
-import { skillsData, skillsColors } from 'variables/PortfolioConfig.jsx'
 
 export class SkillsCard extends Component {
   render() {
     return (
-      <SkillBar skills={skillsData} colors={skillsColors} />
+      <SkillBar skills={this.props.skillsData} colors={this.props.skillsColors} />
     );
   }
 }

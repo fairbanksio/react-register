@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { StatsCard } from "components/StatsCard/StatsCard.jsx";
-import { userConfig } from "variables/UserConfig.jsx";
 
 export class LinkedIn extends Component {
   render() {
     return (
       <a style={{'color':'#000000'}}
-        href={'https://linkedin.com/in/' + userConfig.LinkedIn}
+        href={'https://linkedin.com/in/' + this.props.username}
         target='_blank'
         rel='noopener noreferrer'>
           <StatsCard

@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import { StatsCard } from "components/StatsCard/StatsCard.jsx";
-import { userConfig, corsProxy } from "variables/UserConfig.jsx";
 
 export class DockerPulls extends Component {
   getPullCount() {
     var _this = this;
     var endpoint = '';
-    if(corsProxy){
-      endpoint = corsProxy + 'https://hub.docker.com/v2/repositories/' + userConfig.Docker;
+    if(this.props.corsproxy){
+      endpoint = this.props.corsproxy + 'https://hub.docker.com/v2/repositories/' + this.props.username;
     } else {
-      endpoint = 'https://hub.docker.com/v2/repositories/' + userConfig.Docker;
+      endpoint = 'https://hub.docker.com/v2/repositories/' + this.props.username;
     }
 
     fetch(endpoint)
@@ -34,7 +33,7 @@ export class DockerPulls extends Component {
   render() {
     return (
       <a style={{'color':'#000000'}}
-        href={'https://hub.docker.com/r/' + userConfig.Docker}
+        href={'https://hub.docker.com/r/' + this.props.username}
         target='_blank'
         rel='noopener noreferrer'>
         <StatsCard

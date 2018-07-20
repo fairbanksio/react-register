@@ -4,15 +4,15 @@ import { Grid, Row, Col} from "react-bootstrap";
 import CardNoFooter from "components/Card/CardNoFooter.jsx";
 import HoverImgLink from "components/HoverImgLink/HoverImgLink.jsx";
 
-import { userConfig } from "variables/UserConfig.jsx";
-import { userLinks, userLinksHead } from "variables/LinksConfig.jsx";
+
+
 
 class LinksGrid extends Component {
   componentDidMount(){
-    document.title = 'Links | ' + userConfig.SiteTitle;
+    document.title = 'Links';
   }
   render() {
-    const links = userLinks.map((link, key) => {
+    const links = this.props.userLinks.map((link, key) => {
       return (
         <HoverImgLink
           key={key}
@@ -30,8 +30,8 @@ class LinksGrid extends Component {
           <Row>
             <Col md={12}>
               <CardNoFooter
-                title={userLinksHead.Title}
-                category={userLinksHead.Subtitle}
+                title={this.props.userLinksHead.Title}
+                category={this.props.userLinksHead.SubTitle}
                 content={
                   <Row>
                     {links}
