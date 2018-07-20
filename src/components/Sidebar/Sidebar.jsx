@@ -8,7 +8,9 @@ import logo from "assets/img/site-logo.png";
 
 import dashboardRoutes from "routes/dashboard.jsx";
 
-import { userConfig } from "../../variables/UserConfig.jsx";
+import siteData from "variables/SiteData";
+
+
 
 class Sidebar extends Component {
   constructor(props) {
@@ -41,7 +43,7 @@ class Sidebar extends Component {
         <div className="sidebar-background" style={sidebarBackground} />
         <div className="logo">
           <a
-            href={userConfig.Website}
+            href={siteData.Website}
             className="simple-text logo-mini"
           >
             <div className="logo-img">
@@ -49,10 +51,10 @@ class Sidebar extends Component {
             </div>
           </a>
           <a
-            href={userConfig.Website}
+            href={siteData.Website}
             className="simple-text logo-normal"
           >
-            {userConfig.SiteTitle}
+            {siteData.SiteTitle}
           </a>
         </div>
         <div className="sidebar-wrapper">

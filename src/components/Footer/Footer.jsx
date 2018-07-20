@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Grid } from "react-bootstrap";
-import { userConfig } from "../../variables/UserConfig.jsx";
 import dashboardRoutes from "routes/dashboard.jsx";
 import { NavLink } from "react-router-dom";
 
+import siteData from "variables/SiteData";
+
 class Footer extends Component {
+
   render() {
     return (
       <footer className="footer">
@@ -28,8 +30,7 @@ class Footer extends Component {
           </nav>
           <p className="copyright pull-right">
             &copy; {new Date().getFullYear()}{" "}
-            <a href={userConfig.Website}>{userConfig.SiteTitle}</a>, made with
-            love in React
+            <a href={siteData.Website}>{siteData.SiteTitle}</a>, {siteData.FooterNote}
           </p>
         </Grid>
       </footer>

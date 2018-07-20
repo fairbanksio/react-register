@@ -10,7 +10,7 @@ import { style } from "variables/Variables.jsx";
 
 import dashboardRoutes from "routes/dashboard.jsx";
 
-import { userConfig } from "variables/UserConfig.jsx";
+import siteData from "variables/SiteData";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class Dashboard extends Component {
       title: <span data-notify="icon" className="pe-7s-rocket" />,
       message: (
         <div>
-          Welcome to <b>{userConfig.SiteTitle}</b> - this site is under active development. Please stay tuned!
+          Welcome to <b>{siteData.SiteTitle}</b> - this site is under active development. Please stay tuned!
         </div>
       ),
       level: level,
@@ -77,7 +77,7 @@ class Dashboard extends Component {
       title: <span data-notify="icon" className="pe-7s-rocket" />,
       message: (
         <div>
-          Welcome to <b>{userConfig.SiteTitle}</b> - this site is under active development. Please stay tuned!
+          Welcome to <b>{siteData.Website}</b> - this site is under active development. Please stay tuned!
         </div>
       ),
       level: level,
