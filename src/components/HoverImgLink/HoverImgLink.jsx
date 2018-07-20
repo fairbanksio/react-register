@@ -7,7 +7,7 @@ class HoverImgLink extends Component {
     return (
         <Col lg={3} md={4} sm={6} xs={12}>
           <div className="card">
-            <a href={this.props.linkURL}>
+            <a href={this.props.linkURL} target='_blank' rel='noopener noreferrer'>
               <div className="hover-container">
                 <img className="hover-image" src={this.props.linkImg} alt={this.props.Name} />
                 <div className="hover-overlay">
