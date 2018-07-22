@@ -3,9 +3,11 @@ import { Grid, Row, Col } from "react-bootstrap";
 
 import CardNoFooter from "components/Card/CardNoFooter.jsx";
 import HoverImgLink from "components/HoverImgLink/HoverImgLink.jsx";
+import ProjectsGallery from "components/Projects/ProjectsGallery.jsx";
 
 import { userConfig } from "variables/UserConfig.jsx";
 import { myProjects, projectsHead } from "variables/ProjectsConfig.jsx";
+import { galleryPhotos } from "variables/GalleryConfig.jsx"
 
 class Icons extends Component {
   componentDidMount(){
@@ -33,9 +35,7 @@ class Icons extends Component {
                 title={projectsHead.Title}
                 category={projectsHead.Subtitle}
                 content={
-                  <Row>
-                    {proj}
-                  </Row>
+                  <ProjectsGallery photos={galleryPhotos} />
                 }
               />
             </Col>
