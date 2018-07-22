@@ -8,7 +8,7 @@
   width: 100%;
   overflow: hidden;
   border-radius: 4px;
-  position: relative;
+  position: absolute;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   height: 250px;
