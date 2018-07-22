@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import {
-  Grid,
-  Row,
-  Col
-} from "react-bootstrap";
+import { Grid, Row, Col } from "react-bootstrap";
+
 import { userConfig, quotes, socials } from "variables/UserConfig.jsx";
 
 import { UserCard } from "components/UserCard/UserCard.jsx";
