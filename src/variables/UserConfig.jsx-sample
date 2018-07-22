@@ -12,7 +12,6 @@ var userConfig = {
   "Email":"#",
   "ProfileImage":"https://yoursite.io/image.jpg", // 500px x 500px works best
   "ProfileBanner":"https://yoursite.io/banner.jpg", // 800 x 400 works best
-  "Description":"Sample Description",
   "SiteTitle":"Website Title"
 }
 
