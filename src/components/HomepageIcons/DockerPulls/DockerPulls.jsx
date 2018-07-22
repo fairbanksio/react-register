@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { StatsCard } from "components/StatsCard/StatsCard.jsx";
-import { userConfig, corsProxy } from "variables/UserConfig.jsx";
+import { corsProxy, socials } from "variables/UserConfig.jsx";
 
 export class DockerPulls extends Component {
   getPullCount() {
     var _this = this;
     var endpoint = '';
     if(corsProxy){
-      endpoint = corsProxy + 'https://hub.docker.com/v2/repositories/' + userConfig.Docker;
+      endpoint = corsProxy + 'https://hub.docker.com/v2/repositories/' + socials.Docker;
     } else {
-      endpoint = 'https://hub.docker.com/v2/repositories/' + userConfig.Docker;
+      endpoint = 'https://hub.docker.com/v2/repositories/' + socials.Docker;
     }
 
     fetch(endpoint)
@@ -34,7 +34,7 @@ export class DockerPulls extends Component {
   render() {
     return (
       <a style={{'color':'#000000'}}
-        href={'https://hub.docker.com/r/' + userConfig.Docker}
+        href={'https://hub.docker.com/r/' + socials.Docker}
         target='_blank'
         rel='noopener noreferrer'>
         <StatsCard

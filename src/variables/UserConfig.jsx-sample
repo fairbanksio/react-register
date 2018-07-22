@@ -9,19 +9,23 @@ var userConfig = {
   "FullName":"Test User",
   "JobTitle":"My Job Title",
   "Website":"https://yoursite.io/", // Include the /
-  "Facebook":"youruser",
-  "Twitter":"youruser",
-  "LinkedIn":"youruser",
-  "GitHub":"youruser",
-  "NPM":"youruser",
-  "Docker":"youruser",
-  "Behance":"youruser",
-  "PayPal":"youruser/35", // Add "/<dollar amount>" to automatically request an amount when users are redirected to PayPal!
-  "Email":"you@yoursite.io",
+  "Email":"#",
   "ProfileImage":"https://yoursite.io/image.jpg", // 500px x 500px works best
   "ProfileBanner":"https://yoursite.io/banner.jpg", // 800 x 400 works best
-  "Description":"Soo... what would you say ya do around here?",
+  "Description":"Sample Description",
   "SiteTitle":"Website Title"
+}
+
+// If a value is set below, a corresponding icon will be shown on About Me
+var socials = {
+  "Facebook":"#",
+  "Twitter":"#",
+  "LinkedIn":"#",
+  "GitHub":"#",
+  "NPM":"#",
+  "Docker":"#",
+  "Behance":"#",
+  "PayPal":"#", // Add "/<dollar amount>" to automatically request an amount when users are redirected to PayPal!
 }
 
 var extraConfigs = {
@@ -30,18 +34,18 @@ var extraConfigs = {
   "healthMonitor":"#"
 }
 
-var quotes = [
-  "What's the most you ever lost on a coin toss?",
-  "Are you not entertained! Are you not entertained! Is this not why you are here!",
-  "I don't know how to put this, but I'm kind of a big deal...People know me...",
-  "You mean I actually have frickin' sharks with frickin' laser beams attached to their frickin' heads?",
-  "In the face of overwhelming odds, I'm left with only one option. I'm gonna have to science the shit outta this.",
-];
-
 var corsProxy = 'https://myproxy.yoursite.io' //Include the / (Need a CORS Proxy?  --->  https://CrossOrigin.me)
+
+var quotes = [
+  "Quote 1",
+  "Quote 2",
+  "Quote 3",
+  "Quote 4",
+];
 
 module.exports = {
   userConfig,
+  socials,
   extraConfigs,
   corsProxy,
   quotes
