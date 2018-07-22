@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 
 import CardNoFooter from "components/Card/CardNoFooter.jsx";
-import HoverImgLink from "components/HoverImgLink/HoverImgLink.jsx";
 import ProjectsGallery from "components/Projects/ProjectsGallery.jsx";
 
 import { userConfig } from "variables/UserConfig.jsx";
@@ -14,18 +13,6 @@ class Icons extends Component {
     document.title = 'Projects | ' + userConfig.SiteTitle;
   }
   render() {
-    const proj = myProjects.map((proj, key) => {
-      return (
-        <HoverImgLink
-          key={key}
-          linkImg={proj.Img}
-          linkURL={proj.URL}
-          linkName={proj.Name}
-          linkDesc={proj.Desc}
-        />
-      );
-    });
-
     return (
       <div className="content">
         <Grid fluid>
