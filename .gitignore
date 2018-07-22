@@ -10,3 +10,4 @@ src/variables/MapsConfig.jsx
 .idea/
 src/variables/PortfolioConfig.jsx
 public/assets/images
+src/variables/ProjectsConfig.jsx

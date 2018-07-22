@@ -59,6 +59,7 @@ export class FullGallery extends Component {
           onClickThumbnail={this.gotoImage}
           onClickImage={this.handleClickImage}
         />
+        <br/>
       </div>
     )
   }

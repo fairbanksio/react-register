@@ -1,25 +1,41 @@
 import React, { Component } from "react";
-import { Card } from "components/Card/Card";
 import { Grid, Row, Col } from "react-bootstrap";
 
+import CardNoFooter from "components/Card/CardNoFooter.jsx";
+import HoverImgLink from "components/HoverImgLink/HoverImgLink.jsx";
+
 import { userConfig } from "variables/UserConfig.jsx";
+import { myProjects, projectsHead } from "variables/ProjectsConfig.jsx";
 
 class Icons extends Component {
   componentDidMount(){
     document.title = 'Projects | ' + userConfig.SiteTitle;
   }
   render() {
+    const proj = myProjects.map((proj, key) => {
+      return (
+        <HoverImgLink
+          key={key}
+          linkImg={proj.Img}
+          linkURL={proj.URL}
+          linkName={proj.Name}
+          linkDesc={proj.Desc}
+        />
+      );
+    });
+
     return (
       <div className="content">
         <Grid fluid>
           <Row>
             <Col md={12}>
-              <Card
-                title={'More Projects from ' + userConfig.FirstName}
+              <CardNoFooter
+                title={projectsHead.Title}
+                category={projectsHead.Subtitle}
                 content={
-                  <div>
-                    This is just a test div. Fill me!
-                  </div>
+                  <Row>
+                    {proj}
+                  </Row>
                 }
               />
             </Col>

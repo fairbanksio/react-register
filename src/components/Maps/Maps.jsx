@@ -25,9 +25,9 @@ export class GoogleMaps extends Component {
     return (
       <CustomMap
         googleMapURL={"https://maps.googleapis.com/maps/api/js?key=" + mapConfig.apiKey}
-        loadingElement={<div style={{ height: `80%` }} />}
-        containerElement={<div style={{ height: `80vh` }} />}
-        mapElement={<div style={{ height: `80%` }} />}
+        loadingElement={<div style={{ height: mapConfig.mapSize + `%` }} />}
+        containerElement={<div style={{ height: mapConfig.mapSize + `vh` }} />}
+        mapElement={<div style={{ height: mapConfig.mapSize + `%` }} />}
       />
     );
   }

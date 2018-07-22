@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import {
-  Grid,
-  Row,
-  Col
-} from "react-bootstrap";
-import { userConfig, quotes } from "variables/UserConfig.jsx";
+import { Grid, Row, Col } from "react-bootstrap";
+
+import { userConfig, quotes, socials } from "variables/UserConfig.jsx";
 
 import { UserCard } from "components/UserCard/UserCard.jsx";
 import Button from "components/CustomButton/CustomButton.jsx";
@@ -35,64 +32,64 @@ class UserProfile extends Component {
                 }
                 socials={
                   <div>
-                    {userConfig.Facebook ?
-                      <a href={'https://www.facebook.com/' + userConfig.Facebook} target='_blank' rel='noopener noreferrer'>
+                    {socials.Facebook ?
+                      <a href={'https://www.facebook.com/' + socials.Facebook} target='_blank' rel='noopener noreferrer'>
                         <Button simple>
                           <i className="fab fa-facebook" />
                         </Button>
                       </a>
                       : null
                     }
-                    {userConfig.Twitter ?
-                      <a href={'https://twitter.com/' + userConfig.Twitter} target='_blank' rel='noopener noreferrer'>
+                    {socials.Twitter ?
+                      <a href={'https://twitter.com/' + socials.Twitter} target='_blank' rel='noopener noreferrer'>
                         <Button simple>
                           <i className="fab fa-twitter" />
                         </Button>
                       </a>
                       : null
                     }
-                    {userConfig.GitHub ?
-                      <a href={'https://github.com/' + userConfig.GitHub} target='_blank' rel='noopener noreferrer'>
+                    {socials.GitHub ?
+                      <a href={'https://github.com/' + socials.GitHub} target='_blank' rel='noopener noreferrer'>
                         <Button simple>
                           <i className="fab fa-github" />
                         </Button>
                       </a>
                       : null
                     }
-                    {userConfig.LinkedIn ?
-                      <a href={'https://linkedin.com/in/' + userConfig.LinkedIn} target='_blank' rel='noopener noreferrer'>
+                    {socials.LinkedIn ?
+                      <a href={'https://linkedin.com/in/' + socials.LinkedIn} target='_blank' rel='noopener noreferrer'>
                         <Button simple>
                           <i className="fab fa-linkedin" />
                         </Button>
                       </a>
                       : null
                     }
-                    {userConfig.Docker ?
-                      <a href={'https://hub.docker.com/r/' + userConfig.Docker} target='_blank' rel='noopener noreferrer'>
+                    {socials.Docker ?
+                      <a href={'https://hub.docker.com/r/' + socials.Docker} target='_blank' rel='noopener noreferrer'>
                         <Button simple>
                           <i className="fab fa-docker" />
                         </Button>
                       </a>
                       : null
                     }
-                    {userConfig.NPM ?
-                      <a href={'https://npmjs.com/~' + userConfig.NPM} target='_blank' rel='noopener noreferrer'>
+                    {socials.NPM ?
+                      <a href={'https://npmjs.com/~' + socials.NPM} target='_blank' rel='noopener noreferrer'>
                         <Button simple>
                           <i className="fab fa-npm" />
                         </Button>
                       </a>
                       : null
                     }
-                    {userConfig.Behance ?
-                      <a href={'https://behance.net/' + userConfig.Behance} target='_blank' rel='noopener noreferrer'>
+                    {socials.Behance ?
+                      <a href={'https://behance.net/' + socials.Behance} target='_blank' rel='noopener noreferrer'>
                         <Button simple>
                           <i className="fab fa-behance" />
                         </Button>
                       </a>
                       : null
                     }
-                    {userConfig.PayPal ?
-                      <a href={'https://paypal.me/' + userConfig.PayPal} target='_blank' rel='noopener noreferrer'>
+                    {socials.PayPal ?
+                      <a href={'https://paypal.me/' + socials.PayPal} target='_blank' rel='noopener noreferrer'>
                         <Button simple>
                           <i className="fab fa-paypal" />
                         </Button>

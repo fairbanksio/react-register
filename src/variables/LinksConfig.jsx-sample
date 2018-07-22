@@ -1,11 +1,11 @@
 //
 // //
-// // // Links table data
+// // // Links Page Data
 // //
 //
 
-var UserLinksHead = {Title: "Links", SubTitle: "These are some user specified links"}
-var UserLinks = [
+var userLinksHead = {Title: "My Links", SubTitle: "These are some of my favorite links!"}
+var userLinks = [
   { Img: 'https://source.unsplash.com/2ShvY8Lf6l0/800x600', Name:"Google", URL: "https://google.com", Desc: "This is a link description"  },
   { Img: 'https://source.unsplash.com/epcsn8Ed8kY/800x600', Name:"YouTube", URL: "https://youtube.com", Desc: "This is a link description" },
   { Img: 'https://source.unsplash.com/Dm-qxdynoEc/800x600', Name:"DockerHub", URL: "https://Hub.docker.com", Desc: "This is a link description" },
@@ -13,7 +13,6 @@ var UserLinks = [
 ];
 
 module.exports = {
-
-  UserLinks,
-  UserLinksHead
+  userLinks,
+  userLinksHead
 };
