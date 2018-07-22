@@ -53,6 +53,8 @@ var educationInfo = [
   },
 ]
 
+var skillsTitle = "Software Skills";
+var skillsSubtitle = "Web and Computer Programming";
 var skillsData = [
   {type: "Node", level: 85},
   {type: "Javascript", level: 75},
