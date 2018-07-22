@@ -33,7 +33,7 @@ var extraConfigs = {
   "healthMonitor":"#"
 }
 
-var corsProxy = 'https://myproxy.yoursite.io' //Include the / (Need a CORS Proxy?  --->  https://CrossOrigin.me)
+var corsProxy = '' //Include the / (Need a CORS Proxy?  --->  https://CrossOrigin.me)
 
 var quotes = [
   "Quote 1",
