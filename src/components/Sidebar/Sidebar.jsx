@@ -4,11 +4,10 @@ import { NavLink } from "react-router-dom";
 import HeaderLinks from "../Header/HeaderLinks.jsx";
 
 import imagine from "assets/img/sidebar-background.jpg";
-import logo from "assets/img/site-logo.png";
 
 import dashboardRoutes from "routes/dashboard.jsx";
 
-import { userConfig } from "../../variables/UserConfig.jsx";
+import { userConfig, site } from "../../variables/UserConfig.jsx";
 
 class Sidebar extends Component {
   constructor(props) {
@@ -45,7 +44,7 @@ class Sidebar extends Component {
             className="simple-text logo-mini"
           >
             <div className="logo-img">
-              <img src={logo} alt="logo_image" />
+              <i style={{color: site.siteLogoColor}} class={site.siteLogo}></i>
             </div>
           </a>
           <a
