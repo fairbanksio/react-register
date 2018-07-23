@@ -3,7 +3,7 @@ import { Grid, Row, Col } from "react-bootstrap";
 
 import Gallery from "views/Gallery/Gallery";
 import Links from "views/Links/Links";
-import { ThisSiteCard } from "components/ThisSiteCard/ThisSiteCard.jsx";
+import { UnorderedListCard } from "components/UnorderedListCard/UnorderedListCard.jsx";
 import { GitHubRepos } from "components/HomepageIcons/GitHubRepos/GitHubRepos.jsx";
 import { DigitalOcean } from "components/HomepageIcons/DigitalOcean/DigitalOcean.jsx";
 import { LinkedIn } from "components/HomepageIcons/LinkedIn/LinkedIn.jsx";
@@ -25,7 +25,7 @@ var Components = {
     'LinkedIn': LinkedIn,
     'DigitalOcean': DigitalOcean,
     'FullGallery': FullGallery,
-    'ThisSiteCard': ThisSiteCard,
+    'UnorderedListCard': UnorderedListCard,
     'GoogleMaps': GoogleMaps,
     'UserCard': UserCard,
     'SkillsCard': SkillsCard,
