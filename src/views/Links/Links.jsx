@@ -1,13 +1,38 @@
 import React, { Component } from "react";
-import { Grid, Row, Col} from "react-bootstrap";
+import { Grid, Row, Col, Table } from "react-bootstrap";
 
+import dashboardRoutes from "routes/dashboard.jsx";
 import CardNoFooter from "components/Card/CardNoFooter.jsx";
-import HoverImgLink from "components/HoverImgLink/HoverImgLink.jsx";
 
 
 
 
-class LinksGrid extends Component {
+class TableList extends Component {
+  getBrand() {
+    var name;
+    dashboardRoutes.map((prop, key) => {
+      if (prop.collapse) {
+        prop.views.map((prop, key) => {
+          if (prop.path === this.props.location.pathname) {
+            name = prop.name;
+          }
+          return null;
+        });
+      } else {
+        if (prop.redirect) {
+          if (prop.path === this.props.location.pathname) {
+            name = prop.name;
+          }
+        } else {
+          if (prop.path === this.props.location.pathname) {
+            name = prop.name;
+          }
+        }
+      }
+      return null;
+    });
+    return name;
+  }
   componentDidMount(){
     document.title = 'Links';
   }
@@ -33,12 +58,28 @@ class LinksGrid extends Component {
                 title={this.props.userLinksHead.Title}
                 category={this.props.userLinksHead.SubTitle}
                 content={
-                  <Row>
-                    {links}
-                  </Row>
+                  <Table striped hover style={{"marginBottom":"0px"}}>
+                    <thead>
+                      <tr>
+                        <th key='0'>Name</th>
+                        <th key='1'>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {userLinks.map((prop, key) => {
+                        return (
+                          <tr key={key}>
+                            <td><a href={prop.URL} target='_blank' rel='noopener noreferrer'>{prop.Name}</a></td>
+                            <td>{prop.Desc}</td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </Table>
                 }
               />
             </Col>
+            {/* Additional Tables can be added by duplicating the <Col></Col> section above. */}
           </Row>
         </Grid>
       </div>
@@ -46,4 +87,4 @@ class LinksGrid extends Component {
   }
 }
 
-export default LinksGrid;
+export default TableList;
