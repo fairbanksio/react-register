@@ -1884,7 +1884,7 @@ body > .navbar-collapse[data-color="purple"]:after {
     line-height: 59px; }
 
 .card-stats .numbers {
-  font-size: 2em;
+  font-size: 1.7em;
   text-align: right; }
   .card-stats .numbers p {
     margin: 0; }
