@@ -41,7 +41,7 @@ var quotes = [
 
 var site = {
   "siteLogo":"fab fa-2x fa-pied-piper-hat",
-  "siteLogoColor":"#28A041"
+  "siteLogoColor":"#28A041",
   "welcomeBanner":true, // If true, the welcome banner will be displayed.
   "welcomeBannerText":"Welcome to React-Register - this site is under active development. Please stay tuned!",
   "welcomeBannerLogo":"fas fa-cogs",

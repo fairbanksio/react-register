@@ -53,22 +53,35 @@ var educationInfo = [
   },
 ]
 
-var skillsTitle = "Software Skills";
-var skillsSubtitle = "Web and Computer Programming";
 var skillsData = [
-  {type: "Node", level: 85},
-  {type: "Javascript", level: 75},
-];
-var skillsColors = {
-  "bar": "#CCC",
-  "title": {
-    "text": "#FFF",
-    "background": "#494C4F"
-  }
-}
+  {
+    "type": "Skills",
+    "level": 50,
+    "color": {
+      "bar": "#e170d7",
+      "title": {
+        "text": "#fff",
+        "background": "#dd04c9"
+      }
+    }
+  },
+  {
+    "type": "Skills",
+    "level": 50,
+    "color": {
+      "bar": "#6b7fdf",
+      "title": {
+        "text": "#fff",
+        "background": "#0e33ea"
+      }
+    }
+  },
+  ]
 
-module.exports = {
-  workExperienceTitle, workExperienceSubtitle, workExperience,
-  educationInfoTitle, educationInfoSubtitle, educationInfo,
-  skillsData, skillsColors
-};
+  var skillsColors = {}
+
+  module.exports = {
+    workExperienceTitle, workExperienceSubtitle, workExperience,
+    educationInfoTitle, educationInfoSubtitle, educationInfo,
+    skillsData, skillsColors
+  };
