@@ -76,12 +76,12 @@ var skillsData = [
       }
     }
   },
-  ]
+]
 
-  var skillsColors = {}
+var skillsColors = {} // skillsColors can be used to set a default theme across all SkillsBars
 
-  module.exports = {
-    workExperienceTitle, workExperienceSubtitle, workExperience,
-    educationInfoTitle, educationInfoSubtitle, educationInfo,
-    skillsData, skillsColors
-  };
+module.exports = {
+  workExperienceTitle, workExperienceSubtitle, workExperience,
+  educationInfoTitle, educationInfoSubtitle, educationInfo,
+  skillsData, skillsColors
+};

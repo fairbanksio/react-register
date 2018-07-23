@@ -5,7 +5,7 @@ import CardNoFooter from "components/Card/CardNoFooter.jsx";
 import ProjectsGallery from "components/Projects/ProjectsGallery.jsx";
 
 import { userConfig } from "variables/UserConfig.jsx";
-import { myProjects, projectsHead } from "variables/ProjectsConfig.jsx";
+import { projectsHead } from "variables/ProjectsConfig.jsx";
 import { galleryPhotos } from "variables/GalleryConfig.jsx"
 
 class Icons extends Component {
