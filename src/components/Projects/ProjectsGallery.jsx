@@ -14,18 +14,7 @@ export class Gallery extends Component {
   }
   render() {
     return (
-      <Card
-        id={this.props.galleryTitle}
-        title={this.props.galleryTitle}
-        category={this.props.gallerySubtitle}
-        statsIcon={this.props.galleryFooterLogo}
-        stats={this.props.galleryFooter}
-        content={
-          <div>
-            <ReactGallery photos={this.props.photos} onClick={this.redirect} />
-          </div>
-        }
-      />
+      <ReactGallery photos={this.props.photos} onClick={this.redirect} />
     )
   }
 }
