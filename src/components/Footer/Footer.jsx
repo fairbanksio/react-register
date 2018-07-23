@@ -14,7 +14,7 @@ class Footer extends Component {
 
             <ul>
               {this.props.sitePages.map((prop, key) => {
-                if (!prop.redirect)
+                if (!prop.redirect && !prop.hidden)
                   return (
                     <li key={key}>
                       <NavLink to={prop.path}>
