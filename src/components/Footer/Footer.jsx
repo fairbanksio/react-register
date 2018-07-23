@@ -3,7 +3,6 @@ import { Grid } from "react-bootstrap";
 import dashboardRoutes from "routes/dashboard.jsx";
 import { NavLink } from "react-router-dom";
 
-import siteData from "variables/SiteData";
 
 class Footer extends Component {
 
@@ -30,7 +29,7 @@ class Footer extends Component {
           </nav>
           <p className="copyright pull-right">
             &copy; {new Date().getFullYear()}{" "}
-            <a href={siteData.Website}>{siteData.SiteTitle}</a>, {siteData.FooterNote}
+            <a href={this.props.Website}>{this.props.SiteTitle}</a>, {this.props.FooterNote}
           </p>
         </Grid>
       </footer>

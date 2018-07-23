@@ -8,8 +8,6 @@ import logo from "assets/img/site-logo.png";
 
 import dashboardRoutes from "routes/dashboard.jsx";
 
-import siteData from "variables/SiteData";
-
 
 
 class Sidebar extends Component {
@@ -43,7 +41,7 @@ class Sidebar extends Component {
         <div className="sidebar-background" style={sidebarBackground} />
         <div className="logo">
           <a
-            href={siteData.Website}
+            href={this.props.Website}
             className="simple-text logo-mini"
           >
             <div className="logo-img">
@@ -51,10 +49,10 @@ class Sidebar extends Component {
             </div>
           </a>
           <a
-            href={siteData.Website}
+            href={this.props.Website}
             className="simple-text logo-normal"
           >
-            {siteData.SiteTitle}
+            {this.props.SiteTitle}
           </a>
         </div>
         <div className="sidebar-wrapper">
