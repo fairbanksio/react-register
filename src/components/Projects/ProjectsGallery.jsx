@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ReactGallery from 'react-photo-gallery';
-import { Card } from "components/Card/Card.jsx";
 
 export class Gallery extends Component {
   constructor() {

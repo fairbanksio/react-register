@@ -10,7 +10,7 @@ import { style } from "variables/Variables.jsx";
 
 import dashboardRoutes from "routes/dashboard.jsx";
 
-import { userConfig } from "variables/UserConfig.jsx";
+import { site } from "variables/UserConfig.jsx";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -22,68 +22,24 @@ class Dashboard extends Component {
     };
   }
   handleNotificationClick(position) {
-    var color = Math.floor(Math.random() * 4 + 1);
-    var level;
-    switch (color) {
-      case 1:
-        level = "success";
-        break;
-      case 2:
-        level = "warning";
-        break;
-      case 3:
-        level = "error";
-        break;
-      case 4:
-        level = "info";
-        break;
-      default:
-        break;
-    }
-    this.state._notificationSystem.addNotification({
-      title: <span data-notify="icon" className="pe-7s-rocket" />,
-      message: (
-        <div>
-          Welcome to <b>{userConfig.SiteTitle}</b> - this site is under active development. Please stay tuned!
-        </div>
-      ),
-      level: level,
-      position: position,
-      autoDismiss: 15
-    });
+    console.log("Hello there!")
   }
   componentDidMount() {
-    this.setState({ _notificationSystem: this.refs.notificationSystem });
-    var _notificationSystem = this.refs.notificationSystem;
-    var color = Math.floor(Math.random() * 4 + 1);
-    var level;
-    switch (color) {
-      case 1:
-        level = "success";
-        break;
-      case 2:
-        level = "warning";
-        break;
-      case 3:
-        level = "error";
-        break;
-      case 4:
-        level = "info";
-        break;
-      default:
-        break;
+    if(site.welcomeBanner){
+      this.setState({ _notificationSystem: this.refs.notificationSystem });
+      var _notificationSystem = this.refs.notificationSystem;
+      _notificationSystem.addNotification({
+        title: <span data-notify="icon" className={site.welcomeBannerLogo} />,
+        message: (
+          <div>
+            {site.welcomeBannerText}
+          </div>
+        ),
+        level: site.welcomeBannerType,
+        position: "tc",
+        autoDismiss: 15
+      });
     }
-    _notificationSystem.addNotification({
-      title: <span data-notify="icon" className="pe-7s-rocket" />,
-      message: (
-        <div>
-          Welcome to <b>{userConfig.SiteTitle}</b> - this site is under active development. Please stay tuned!
-        </div>
-      ),
-      level: level,
-      position: "tc",
-      autoDismiss: 15
-    });
   }
   componentDidUpdate(e) {
     if (
