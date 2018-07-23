@@ -56,20 +56,25 @@ class Dashboard extends Component {
     });
   }
   componentDidMount() {
-    if(site.welcomeBanner){
-      this.setState({ _notificationSystem: this.refs.notificationSystem });
-      var _notificationSystem = this.refs.notificationSystem;
-      _notificationSystem.addNotification({
-        title: <span data-notify="icon" className={site.welcomeBannerLogo} />,
-        message: (
-          <div className="text-center">
-            {site.welcomeBannerText}
-          </div>
-        ),
-        level: site.welcomeBannerType,
-        position: "tc",
-        autoDismiss: 15
-      });
+    this.setState({ _notificationSystem: this.refs.notificationSystem });
+    var _notificationSystem = this.refs.notificationSystem;
+    var color = Math.floor(Math.random() * 4 + 1);
+    var level;
+    switch (color) {
+      case 1:
+        level = "success";
+        break;
+      case 2:
+        level = "warning";
+        break;
+      case 3:
+        level = "error";
+        break;
+      case 4:
+        level = "info";
+        break;
+      default:
+        break;
     }
     _notificationSystem.addNotification({
       title: <span data-notify="icon" className="pe-7s-rocket" />,
