@@ -130,8 +130,8 @@ var siteData = {
           props: {
             col_md: 4,
             name: 'John Doe',
-            avatar: 'assets/images/profilecard.jpg',
-            bgImage: 'assets/images/profilecardbg.jpg',
+            avatar: 'assets/images/UserProfileExample.jpg',
+            bgImage: 'assets/images/UserProfileBGExample.jpg',
             jobTitle: 'Sr Systems Engineer | Software Developer',
             socials: [
               {icon: "fab fa-github", url: "https://github.com/GITHUBUSERNAME"},
