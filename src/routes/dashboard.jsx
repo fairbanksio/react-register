@@ -70,7 +70,6 @@ class Page extends Component {
 
 
 var sitePages = siteData.pages.map(function(page){
-  console.log(page);
 
   if (page.redirect === true) {
     return { redirect: true, path: page.path, to: page.to, name: page.name}
