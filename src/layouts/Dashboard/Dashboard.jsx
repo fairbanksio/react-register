@@ -31,7 +31,7 @@ class Dashboard extends Component {
       _notificationSystem.addNotification({
         title: <span data-notify="icon" className={site.welcomeBannerLogo} />,
         message: (
-          <div>
+          <div className="text-center">
             {site.welcomeBannerText}
           </div>
         ),
