@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StatsCard } from "components/StatsCard/StatsCard.jsx";
-import { corsProxy, socials } from "variables/UserConfig.jsx";
+import { corsProxy } from "variables/UserConfig.jsx";
 
 export class DockerPulls extends Component {
   getPullCount() {
