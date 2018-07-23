@@ -68,9 +68,18 @@ class Page extends Component {
     }
 }
 
+
 var sitePages = siteData.pages.map(function(page){
-  var pageComponent = (props) => <DynamicPage page={page}/>
-  return { path: page.path, name: page.name, icon: page.icon, component: pageComponent}
+  console.log(page);
+
+  if (page.redirect === true) {
+    return { redirect: true, path: page.path, to: page.to, name: page.name}
+  } else {
+    var pageComponent = (props) => <DynamicPage page={page}/>
+    return { path: page.path, name: page.name, icon: page.icon, component: pageComponent}
+  }
+
+
 })
 
 export default sitePages;
