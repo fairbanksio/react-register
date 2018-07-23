@@ -11,3 +11,4 @@ src/variables/MapsConfig.jsx
 src/variables/PortfolioConfig.jsx
 public/assets/images
 src/variables/ProjectsConfig.jsx
+src/variables/ChartsConfig.jsx

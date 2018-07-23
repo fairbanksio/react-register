@@ -44,7 +44,7 @@ class Sidebar extends Component {
             className="simple-text logo-mini"
           >
             <div className="logo-img">
-              <i style={{color: site.siteLogoColor}} class={site.siteLogo}></i>
+              <i style={{color: site.siteLogoColor}} className={site.siteLogo}></i>
             </div>
           </a>
           <a
