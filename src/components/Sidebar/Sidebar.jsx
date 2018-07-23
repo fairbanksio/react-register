@@ -59,26 +59,27 @@ class Sidebar extends Component {
           <ul className="nav">
             {this.state.width <= 991 ? <HeaderLinks /> : null}
             {this.props.sitePages.map((prop, key) => {
-              if (!prop.redirect)
-                return (
-                  <li
-                    className={
-                      prop.upgrade
-                        ? "active active-pro"
-                        : this.activeRoute(prop.path)
-                    }
-                    key={key}
-                  >
-                    <NavLink
-                      to={prop.path}
-                      className="nav-link"
-                      activeClassName="active"
+
+              if (!prop.redirect && !prop.hidden)
+                  return (
+                    <li
+                      className={
+                        prop.upgrade
+                          ? "active active-pro"
+                          : this.activeRoute(prop.path)
+                      }
+                      key={key}
                     >
-                      <i className={prop.icon} />
-                      <p>{prop.name}</p>
-                    </NavLink>
-                  </li>
-                );
+                      <NavLink
+                        to={prop.path}
+                        className="nav-link"
+                        activeClassName="active"
+                      >
+                        <i className={prop.icon} />
+                        <p>{prop.name}</p>
+                      </NavLink>
+                    </li>
+                  );
               return null;
             })}
           </ul>
