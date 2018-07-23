@@ -51,11 +51,21 @@ var siteData = {
             ]
           }
         },
-        { component: 'ThisSiteCard',
+        { component: 'UnorderedListCard',
           props: {
             col_md: 4,
-            doReferral: '/#',
-            siteRepo: "https://github.com/Fairbanks-io/react-register"
+            listTitle: "Behind the scenes",
+            listDescription: "This site is brought to you by...",
+            listItems: [
+              "<a href='https://m.do.co/c/c1cae1e90c1c' target='_blank' rel='noopener noreferrer'>Digital Ocean Droplets</a>",
+              "<a href='https://github.com/Fairbanks-io/react-register' target='_blank' rel='noopener noreferrer'>This React Dashboard</a> with special thanks to Tim, Brandon and Jon",
+              "Node, courtesy of <a href='https://github.com/creationix/nvm' target='_blank' rel='noopener noreferrer'>NVM</a>",
+              "<a href='https://docs.docker.com/' target='_blank' rel='noopener noreferrer'>Docker Virtualization</a>",
+              "Load balancing, rate limiting and proxy support from <a href='https://nginx.org/en/' target='_blank' rel='noopener noreferrer'>Nginx!</a>",
+              "Modules such as <a href='https://expressjs.com/' target='_blank' rel='noopener noreferrer'>Express</a> and <a href='https://github.com/krakenjs/lusca' target='_blank' rel='noopener noreferrer'>Lusca</a>",
+              "<a href='https://letsencrypt.org/' target='_blank' rel='noopener noreferrer'>Let's Encrypt</a> SSL certificates auto-renewed with <a href='https://github.com/srvrco/getssl' target='_blank' rel='noopener noreferrer'>GetSSL</a>",
+              "<a href='https://www.splunk.com/en_us/software/splunk-enterprise.html' target='_blank' rel='noopener noreferrer'>Splunk</a> Monitoring and Alerting",
+            ]
           }
         },
         { component: 'GoogleMaps',
