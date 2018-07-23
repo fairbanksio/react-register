@@ -8,9 +8,9 @@ import Sidebar from "components/Sidebar/Sidebar";
 
 import { style } from "variables/Variables.jsx";
 
-import dashboardRoutes from "routes/dashboard.jsx";
-
-import { site } from "variables/UserConfig.jsx";
+//import routes and data from config
+import sitePages from "routes/dashboard.jsx";
+import siteData from "variables/SiteData.jsx";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -20,27 +20,75 @@ class Dashboard extends Component {
     this.state = {
       _notificationSystem: null
     };
+
+    this.siteData = siteData;
   }
+
   handleNotificationClick(position) {
-    console.log("Hello there!")
+    var color = Math.floor(Math.random() * 4 + 1);
+    var level;
+    switch (color) {
+      case 1:
+        level = "success";
+        break;
+      case 2:
+        level = "warning";
+        break;
+      case 3:
+        level = "error";
+        break;
+      case 4:
+        level = "info";
+        break;
+      default:
+        break;
+    }
+    this.state._notificationSystem.addNotification({
+      title: <span data-notify="icon" className="pe-7s-rocket" />,
+      message: (
+        <div>
+          Welcome to <b>{this.siteData.SiteTitle}</b> - this site is under active development. Please stay tuned!
+        </div>
+      ),
+      level: level,
+      position: position,
+      autoDismiss: 15
+    });
   }
   componentDidMount() {
-    if(site.welcomeBanner){
-      this.setState({ _notificationSystem: this.refs.notificationSystem });
-      var _notificationSystem = this.refs.notificationSystem;
-      _notificationSystem.addNotification({
-        title: <span data-notify="icon" className={site.welcomeBannerLogo} />,
-        message: (
-          <div className="text-center">
-            {site.welcomeBannerText}
-          </div>
-        ),
-        level: site.welcomeBannerType,
-        position: "tc",
-        autoDismiss: 15
-      });
+    this.setState({ _notificationSystem: this.refs.notificationSystem });
+    var _notificationSystem = this.refs.notificationSystem;
+    var color = Math.floor(Math.random() * 4 + 1);
+    var level;
+    switch (color) {
+      case 1:
+        level = "success";
+        break;
+      case 2:
+        level = "warning";
+        break;
+      case 3:
+        level = "error";
+        break;
+      case 4:
+        level = "info";
+        break;
+      default:
+        break;
     }
+    _notificationSystem.addNotification({
+      title: <span data-notify="icon" className="pe-7s-rocket" />,
+      message: (
+        <div>
+          Welcome to <b>{this.siteData.Website}</b> - this site is under active development. Please stay tuned!
+        </div>
+      ),
+      level: level,
+      position: "tc",
+      autoDismiss: 15
+    });
   }
+
   componentDidUpdate(e) {
     if (
       window.innerWidth < 993 &&
@@ -61,11 +109,11 @@ class Dashboard extends Component {
     return (
       <div className="wrapper">
         <NotificationSystem ref="notificationSystem" style={style} />
-        <Sidebar {...this.props} />
+        <Sidebar {...this.props} Website={this.siteData.Website} SiteTitle={this.siteData.SiteTitle} sitePages={sitePages}/>
         <div id="main-panel" className="main-panel" ref="mainPanel">
-          <Header {...this.props} />
+          <Header {...this.props}  sitePages={sitePages}/>
           <Switch>
-            {dashboardRoutes.map((prop, key) => {
+            {sitePages.map((prop, key) => {
               if (prop.name === "Notifications")
                 return (
                   <Route
@@ -86,7 +134,7 @@ class Dashboard extends Component {
               );
             })}
           </Switch>
-          <Footer />
+          <Footer {...this.props} Website={this.siteData.Website} SiteTitle={this.siteData.SiteTitle} FooterNote={this.siteData.FooterNote}  sitePages={sitePages}/>
         </div>
       </div>
     );

@@ -7,6 +7,7 @@ src/variables/SiteConfig.jsx
 src/variables/LinksConfig.jsx
 src/variables/GalleryConfig.jsx
 src/variables/MapsConfig.jsx
+src/variables/SiteConfig.jsx
 .idea/
 src/variables/PortfolioConfig.jsx
 public/assets/images

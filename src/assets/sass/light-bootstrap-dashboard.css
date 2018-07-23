@@ -441,7 +441,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   width: calc(100% - 260px); }
   .main-panel > .content {
     padding: 30px 15px;
-    min-height: calc(100% - 123px); }
+    min-height: calc(100vh - 123px); }
   .main-panel > .footer {
     border-top: 1px solid #e7e7e7; }
   .main-panel .navbar {
@@ -1861,11 +1861,6 @@ body > .navbar-collapse[data-color="purple"]:after {
 .card-user .title {
   line-height: 24px; }
 
-{/*
-.card-user .content {
-  min-height: 240px; }
-*/}
-
 .card-user .footer,
 .card-price .footer {
   padding: 5px 15px 10px; }
@@ -1889,7 +1884,7 @@ body > .navbar-collapse[data-color="purple"]:after {
     line-height: 59px; }
 
 .card-stats .numbers {
-  font-size: 2em;
+  font-size: 1.7em;
   text-align: right; }
   .card-stats .numbers p {
     margin: 0; }
@@ -2531,8 +2526,8 @@ body > .navbar-collapse[data-color="purple"]:after {
     transform-origin: 29px -50px; }
   .navbar-nav > li > .dropdown-menu:before {
     border-bottom: 11px solid rgba(0, 0, 0, 0.2);
-    border-left: 11px solid transparent;
-    border-right: 11px solid transparent;
+    border-left: 11px solid rgba(0, 0, 0, 0);
+    border-right: 11px solid rgba(0, 0, 0, 0);
     content: "";
     display: inline-block;
     position: absolute;
@@ -2540,8 +2535,8 @@ body > .navbar-collapse[data-color="purple"]:after {
     top: -11px; }
   .navbar-nav > li > .dropdown-menu:after {
     border-bottom: 11px solid #FFFFFF;
-    border-left: 11px solid transparent;
-    border-right: 11px solid transparent;
+    border-left: 11px solid rgba(0, 0, 0, 0);
+    border-right: 11px solid rgba(0, 0, 0, 0);
     content: "";
     display: inline-block;
     position: absolute;
