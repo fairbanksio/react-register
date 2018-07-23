@@ -33,19 +33,24 @@ var extraConfigs = {
   "healthMonitor":"#"
 }
 
-var corsProxy = '' //Include the / (Need a CORS Proxy?  --->  https://CrossOrigin.me)
-
 var quotes = [
-  "Quote 1",
-  "Quote 2",
-  "Quote 3",
-  "Quote 4",
+  "Time's Person of the Year 2006",
+  "I see what you did there...",
+  "Yo dawg..."
 ];
+
+var site = {
+  "siteLogo":"fab fa-2x fa-pied-piper-hat",
+  "siteLogoColor":"#28A041"
+}
+
+var corsProxy = '' //Include the / (Need a CORS Proxy?  --->  https://CrossOrigin.me)
 
 module.exports = {
   userConfig,
   socials,
   extraConfigs,
+  quotes,
+  site,
   corsProxy,
-  quotes
 };
