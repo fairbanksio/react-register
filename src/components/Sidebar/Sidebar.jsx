@@ -6,7 +6,7 @@ import HeaderLinks from "../Header/HeaderLinks.jsx";
 import imagine from "assets/img/sidebar-background.jpg";
 import logo from "assets/img/site-logo.png";
 
-import dashboardRoutes from "routes/dashboard.jsx";
+//import dashboardRoutes from "routes/dashboard.jsx";
 
 
 
@@ -58,7 +58,7 @@ class Sidebar extends Component {
         <div className="sidebar-wrapper">
           <ul className="nav">
             {this.state.width <= 991 ? <HeaderLinks /> : null}
-            {dashboardRoutes.map((prop, key) => {
+            {this.props.sitePages.map((prop, key) => {
               if (!prop.redirect)
                 return (
                   <li

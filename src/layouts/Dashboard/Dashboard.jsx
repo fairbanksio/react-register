@@ -8,9 +8,9 @@ import Sidebar from "components/Sidebar/Sidebar";
 
 import { style } from "variables/Variables.jsx";
 
-import dashboardRoutes from "routes/dashboard.jsx";
-
-import siteData from "variables/SiteData";
+//import routes and data from config
+import sitePages from "routes/dashboard.jsx";
+import siteData from "variables/SiteData.jsx";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -20,7 +20,10 @@ class Dashboard extends Component {
     this.state = {
       _notificationSystem: null
     };
+
+    this.siteData = siteData;
   }
+
   handleNotificationClick(position) {
     var color = Math.floor(Math.random() * 4 + 1);
     var level;
@@ -44,7 +47,7 @@ class Dashboard extends Component {
       title: <span data-notify="icon" className="pe-7s-rocket" />,
       message: (
         <div>
-          Welcome to <b>{siteData.SiteTitle}</b> - this site is under active development. Please stay tuned!
+          Welcome to <b>{this.siteData.SiteTitle}</b> - this site is under active development. Please stay tuned!
         </div>
       ),
       level: level,
@@ -77,7 +80,7 @@ class Dashboard extends Component {
       title: <span data-notify="icon" className="pe-7s-rocket" />,
       message: (
         <div>
-          Welcome to <b>{siteData.Website}</b> - this site is under active development. Please stay tuned!
+          Welcome to <b>{this.siteData.Website}</b> - this site is under active development. Please stay tuned!
         </div>
       ),
       level: level,
@@ -85,6 +88,7 @@ class Dashboard extends Component {
       autoDismiss: 15
     });
   }
+
   componentDidUpdate(e) {
     if (
       window.innerWidth < 993 &&
@@ -105,11 +109,11 @@ class Dashboard extends Component {
     return (
       <div className="wrapper">
         <NotificationSystem ref="notificationSystem" style={style} />
-        <Sidebar {...this.props} Website={siteData.Website} SiteTitle={siteData.SiteTitle}/>
+        <Sidebar {...this.props} Website={this.siteData.Website} SiteTitle={this.siteData.SiteTitle} sitePages={sitePages}/>
         <div id="main-panel" className="main-panel" ref="mainPanel">
-          <Header {...this.props} />
+          <Header {...this.props}  sitePages={sitePages}/>
           <Switch>
-            {dashboardRoutes.map((prop, key) => {
+            {sitePages.map((prop, key) => {
               if (prop.name === "Notifications")
                 return (
                   <Route
@@ -130,7 +134,7 @@ class Dashboard extends Component {
               );
             })}
           </Switch>
-          <Footer {...this.props} Website={siteData.Website} SiteTitle={siteData.SiteTitle} FooterNote={siteData.FooterNote} />
+          <Footer {...this.props} Website={this.siteData.Website} SiteTitle={this.siteData.SiteTitle} FooterNote={this.siteData.FooterNote}  sitePages={sitePages}/>
         </div>
       </div>
     );

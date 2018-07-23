@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Grid } from "react-bootstrap";
-import dashboardRoutes from "routes/dashboard.jsx";
+//import dashboardRoutes from "routes/dashboard.jsx";
 import { NavLink } from "react-router-dom";
 
 
@@ -13,7 +13,7 @@ class Footer extends Component {
           <nav className="pull-left">
 
             <ul>
-              {dashboardRoutes.map((prop, key) => {
+              {this.props.sitePages.map((prop, key) => {
                 if (!prop.redirect)
                   return (
                     <li key={key}>
