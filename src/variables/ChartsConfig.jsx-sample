@@ -1,0 +1,54 @@
+//
+// //
+// // // HighCharts Data
+// //
+//
+
+var chartData = {
+  /* HighCharts Config */
+  chart: {
+    type: 'line'
+  },
+  title: {
+    text: 'Lana - Weight Tracking'
+  },
+  subtitle: {
+    text: '<em>Breed: Pembroke Welsh Corgi || Sex: Female</em>'
+  },
+  xAxis: {
+    categories: ['12/1', '12/2', '12/3', '12/4', '12/5', '12/6', '12/7', '12/8', '12/9', '12/10', '12/11', '12/12', '12/13', '12/14', '12/15', '12/16', '12/17', '12/18', '12/19', '12/20', '12/21', '12/31', '1/6', '1/12', '1/28', '2/12', '2/15', '2/19', '2/25', '3/5', '3/25', '4/8', '4/18', '5/6', '7/9'],
+    plotLines: [{
+      label: {
+        text: '<em>New Food</em>'
+      },
+      color: '#ebf0e8',
+      from: 24,
+      to: 999
+    }]
+  },
+  yAxis: {
+    title: {
+        text: 'Weight (Lbs.)'
+    }
+  },
+  plotOptions: {
+    line: {
+        dataLabels: {
+            enabled: true
+        },
+        enableMouseTracking: true,
+        color: '#ED6A5A'
+    },
+  },
+  series: [{
+    name: 'Lana',
+    data: [28.8, 28.8, 28.6, 28.8, 28.6, 29, 29.2, 28.8, 28.6, 27.8, 29, 28.8, 29, 29, 28.2, 28.6, 28.4, 28.4, 28.4, 28.8, 29.2, 28.2, 28.4, 29, 29, 28.8, 28.2, 28.4, 27.8, 28, 27.4, 26.4, 26.4, 26.6, 26.0]
+  }],
+  credits: {
+    enabled: false
+  }
+};
+
+module.exports = {
+  chartData
+};
