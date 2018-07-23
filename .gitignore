@@ -11,3 +11,5 @@ src/variables/SiteConfig.jsx
 .idea/
 src/variables/PortfolioConfig.jsx
 public/assets/images
+src/variables/ProjectsConfig.jsx
+src/variables/ChartsConfig.jsx

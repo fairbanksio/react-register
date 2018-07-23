@@ -1,8 +1,12 @@
 import React, { Component } from "react";
-import { Card } from "components/Card/Card";
 import { Grid, Row, Col } from "react-bootstrap";
 
+import CardNoFooter from "components/Card/CardNoFooter.jsx";
+import ProjectsGallery from "components/Projects/ProjectsGallery.jsx";
+
 import { userConfig } from "variables/UserConfig.jsx";
+import { projectsHead } from "variables/ProjectsConfig.jsx";
+import { galleryPhotos } from "variables/GalleryConfig.jsx"
 
 class Icons extends Component {
   componentDidMount(){
@@ -14,12 +18,11 @@ class Icons extends Component {
         <Grid fluid>
           <Row>
             <Col md={12}>
-              <Card
-                title={'More Projects from ' + userConfig.FirstName}
+              <CardNoFooter
+                title={projectsHead.Title}
+                category={projectsHead.Subtitle}
                 content={
-                  <div>
-                    This is just a test div. Fill me!
-                  </div>
+                  <ProjectsGallery photos={galleryPhotos} />
                 }
               />
             </Col>
