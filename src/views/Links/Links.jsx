@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Grid, Row, Col, Table } from "react-bootstrap";
 
 import CardNoFooter from "components/Card/CardNoFooter.jsx";
-import HoverImgLink from "components/HoverImgLink/HoverImgLink"
 
 
 
