@@ -18,33 +18,33 @@ var siteData = {
     icon: "pe-7s-home",
     elements: [
         { component: 'Github',
+          col: { md: 3 },
           props: {
             repo: 'GITHUBUSERNAME',
-            col_md: 3
           },
         },
         { component: 'Docker',
+          col: { md: 3 },
           props: {
             username: 'DOCKERUSERNAME',
             corsproxy: 'https://cop.proxy.io/', //required due to the way docker hub handles api requests
-            col_md: 3
           }
         },
         { component: 'LinkedIn',
+          col: { md: 3 },
           props: {
             username: 'LINKEDINUSERNAME',
-            col_md: 3
           }
         },
         { component: 'DigitalOcean',
+          col: { md: 3 },
           props: {
-            col_md: 3,
             doReferral: '/#' // DigitalOcean referal link
           }
         },
         { component: 'FullGallery',
+          col: { md: 8 },
           props: {
-            col_md: 8,
             photos: [
               { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3, caption: "Image 1", alt: "Image1" },
               { src: 'https://source.unsplash.com/Dm-qxdynoEc/800x799', width: 1, height: 1, caption: "Image 2", alt: "Image2" },
@@ -59,8 +59,8 @@ var siteData = {
           }
         },
         { component: 'UnorderedListCard',
+          col: { md: 4 },
           props: {
-            col_md: 4,
             listTitle: "Behind the scenes",
             listDescription: "This site is brought to you by...",
             listItems: [
@@ -76,6 +76,7 @@ var siteData = {
           }
         },
         { component: 'GoogleMaps',
+          col: { md: 4 },
           props: {
             mapConfig: {
               "apiKey":"MAPSAPIKEYHERE",
@@ -85,8 +86,7 @@ var siteData = {
               "markerLon":-96.637798,
               "defaultZoom": 11,
               "defaultOptions": { scrollwheel: false, zoomControl: true }
-            },
-            col_md: 4
+            }
           }
         },
       ]
@@ -99,8 +99,8 @@ var siteData = {
       icon: "pe-7s-photo",
       elements: [
         { component: 'FullGallery',
+          col: { md: 12 },
           props: {
-            col_md: 12,
             photos: [
               { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3, caption: "Image 1", alt: "Image1" },
               { src: 'https://source.unsplash.com/Dm-qxdynoEc/800x799', width: 1, height: 1, caption: "Image 2", alt: "Image2" },
@@ -144,8 +144,8 @@ var siteData = {
     icon: "pe-7s-id",
     elements: [
         { component: 'UserCard',
+          col: { md: 4 },
           props: {
-            col_md: 4,
             name: 'John Doe',
             avatar: 'assets/images/UserProfileExample.jpg',
             bgImage: 'assets/images/UserProfileBGExample.jpg',
@@ -166,8 +166,8 @@ var siteData = {
           }
         },
         { component: 'SkillsCard',
+          col: { md: 4 },
           props: {
-            col_md: 4,
             skillsData: [
               {type: "Node", level: 85},
               {type: "Javascript", level: 75},
@@ -187,6 +187,7 @@ var siteData = {
           }
         },
         { component: 'WorkExperience',
+          col: { md: 12 },
           props: {
             workExperienceTitle: "Work Experience",
             workExperienceSubtitle: "Work Experience Subtitle",
@@ -235,6 +236,7 @@ var siteData = {
           }
         },
         { component: 'EducationInfo',
+          col: { md: 12 },
           props: {
             educationInfoTitle: "Schooling and Certifications",
             educationInfoSubtitle: "Schooling and Certifications Subtitle",
@@ -273,8 +275,8 @@ var siteData = {
       hidden: true,
       elements: [
         { component: 'FullGallery',
+          col: { md: 6 },
           props: {
-            col_md: 6,
             photos: [
               { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3, caption: "Image 1", alt: "Image1" },
               { src: 'https://source.unsplash.com/Dm-qxdynoEc/800x799', width: 1, height: 1, caption: "Image 2", alt: "Image2" },
