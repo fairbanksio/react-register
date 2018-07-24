@@ -109,7 +109,7 @@ class Dashboard extends Component {
     return (
       <div className="wrapper">
         <NotificationSystem ref="notificationSystem" style={style} />
-        <Sidebar {...this.props} Website={this.siteData.Website} SiteTitle={this.siteData.SiteTitle} sitePages={sitePages} siteLogo={this.siteData.siteLogo}/>
+        <Sidebar {...this.props} Website={this.siteData.Website} SiteTitle={this.siteData.SiteTitle} sitePages={sitePages} siteLogo={this.siteData.siteLogo} siteLogoColor={this.siteData.siteLogoColor}/>
         <div id="main-panel" className="main-panel" ref="mainPanel">
           <Header {...this.props}  sitePages={sitePages}/>
           <Switch>
