@@ -49,7 +49,7 @@ class DynamicPage extends Component{
               <Row>
 
                   {elements.map(function(element, i){
-                     return <Col md={element.props.col_md || 12} key={i}> {element} </Col>;
+                     return <Col xs={element.props.col_xs} sm={element.props.col_sm} md={element.props.col_md} lg={element.props.col_lg} key={i}> {element} </Col>;
                   })}
 
               </Row>
