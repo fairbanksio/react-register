@@ -39,17 +39,17 @@ class DynamicPage extends Component{
     }
     render() {
         var elements = this.props.page["elements"].map(function(elementData) {
-            var component = Components[elementData['component']] || elementData['component'];
-            return React.createElement(component, elementData.props);
+            var Component = Components[elementData['component']] || elementData['component'];
+            return <Component {...elementData.props} {...elementData}/>
         });
 
         return (
           <div className="content">
             <Grid fluid>
               <Row>
-
+              
                   {elements.map(function(element, i){
-                     return <Col xs={element.props.col_xs} sm={element.props.col_sm} md={element.props.col_md} lg={element.props.col_lg} key={i}> {element} </Col>;
+                     return <Col {...element.props.col} key={i}> {element} </Col>;
                   })}
 
               </Row>
