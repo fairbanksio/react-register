@@ -2,6 +2,13 @@ var siteData = {
   Website:"https://yourFQDN.io/",
   SiteTitle:"Website Title",
   FooterNote: "Made with love in React",
+  siteLogo:"fab fa-2x fa-bimobject",
+  siteLogoColor:"#CD4B4B",
+  sidebarBackground: "assets/images/sidebar-background.jpg",
+  welcomeBanner:true, // If true, the welcome banner will be displayed.
+  welcomeBannerText:"Welcome to <b>Fairbanks.io</b> - this site is under active development. Please stay tuned!",
+  welcomeBannerLogo:"fas fa-fighter-jet",
+  welcomeBannerType:"warning", // Must be of type: info | success | warning | error
 
   pages: [
     {
