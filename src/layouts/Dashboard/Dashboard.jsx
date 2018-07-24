@@ -56,37 +56,19 @@ class Dashboard extends Component {
     });
   }
   componentDidMount() {
-    this.setState({ _notificationSystem: this.refs.notificationSystem });
-    var _notificationSystem = this.refs.notificationSystem;
-    var color = Math.floor(Math.random() * 4 + 1);
-    var level;
-    switch (color) {
-      case 1:
-        level = "success";
-        break;
-      case 2:
-        level = "warning";
-        break;
-      case 3:
-        level = "error";
-        break;
-      case 4:
-        level = "info";
-        break;
-      default:
-        break;
+    if(this.siteData.welcomeBanner){
+      this.setState({ _notificationSystem: this.refs.notificationSystem });
+      var _notificationSystem = this.refs.notificationSystem;
+      _notificationSystem.addNotification({
+        title: <span data-notify="icon" className={this.siteData.welcomeBannerLogo} />,
+        message: (
+          <div className="text-center" dangerouslySetInnerHTML={{__html: this.siteData.welcomeBannerText}} />
+        ),
+        level: this.siteData.welcomeBannerType,
+        position: "tc",
+        autoDismiss: 15
+      });
     }
-    _notificationSystem.addNotification({
-      title: <span data-notify="icon" className="pe-7s-rocket" />,
-      message: (
-        <div>
-          Welcome to <b>{this.siteData.Website}</b> - this site is under active development. Please stay tuned!
-        </div>
-      ),
-      level: level,
-      position: "tc",
-      autoDismiss: 15
-    });
   }
 
   componentDidUpdate(e) {
@@ -109,7 +91,7 @@ class Dashboard extends Component {
     return (
       <div className="wrapper">
         <NotificationSystem ref="notificationSystem" style={style} />
-        <Sidebar {...this.props} Website={this.siteData.Website} SiteTitle={this.siteData.SiteTitle} sitePages={sitePages}/>
+        <Sidebar {...this.props} Website={this.siteData.Website} SiteTitle={this.siteData.SiteTitle} sitePages={sitePages} siteLogo={this.siteData.siteLogo} siteLogoColor={this.siteData.siteLogoColor} sidebarBackground={this.siteData.sidebarBackground}/>
         <div id="main-panel" className="main-panel" ref="mainPanel">
           <Header {...this.props}  sitePages={sitePages}/>
           <Switch>

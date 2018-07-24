@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Grid, Row, Col, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 
 import CardNoFooter from "components/Card/CardNoFooter.jsx";
-import HoverImgLink from "components/HoverImgLink/HoverImgLink"
 
 
 
@@ -14,10 +13,7 @@ class Links extends Component {
   render() {
 
     return (
-      <div className="content">
-        <Grid fluid>
-          <Row>
-            <Col md={12}>
+
               <CardNoFooter
                 title={this.props.userLinksHead.Title}
                 category={this.props.userLinksHead.SubTitle}
@@ -42,11 +38,7 @@ class Links extends Component {
                   </Table>
                 }
               />
-            </Col>
-            {/* Additional Tables can be added by duplicating the <Col></Col> section above. */}
-          </Row>
-        </Grid>
-      </div>
+
     );
   }
 }
