@@ -33,23 +33,41 @@ var Components = {
     'EducationInfo': EducationInfo,
 };
 
+
+
 class DynamicPage extends Component{
     componentDidMount(){
       document.title = this.props.page.name;
     }
-    render() {
-        var elements = this.props.page["elements"].map(function(elementData) {
+
+    renderElements(elements){
+      var rtrnElements = elements.map(function(elementData){
+        if (Array.isArray(elementData.group)){
+          var subElements = elementData.group.map(function(elementData, i){
             var Component = Components[elementData['component']] || elementData['component'];
-            return <Component {...elementData.props} {...elementData}/>
-        });
+            return <Component {...elementData.props} {...elementData} key={i}/>
+          });
+          return (<Col md={elementData.col.md}> {subElements} </Col>);
+        } else {
+          var Component = Components[elementData['component']] || elementData['component'];
+          return <Component {...elementData.props} {...elementData}/>
+        }
+      });
+      return rtrnElements;
+    }
+
+    render() {
+        var elements = this.renderElements(this.props.page["elements"]);
 
         return (
           <div className="content">
             <Grid fluid>
               <Row>
-              
+
                   {elements.map(function(element, i){
-                     return <Col {...element.props.col} key={i}> {element} </Col>;
+
+                      return <Col {...element.props.col} key={i}> {element} </Col>;
+
                   })}
 
               </Row>

@@ -143,127 +143,136 @@ var siteData = {
     name: "About Me",
     icon: "pe-7s-id",
     elements: [
-        { component: 'UserCard',
-          col: { md: 4 },
-          props: {
-            name: 'John Doe',
-            avatar: 'assets/images/UserProfileExample.jpg',
-            bgImage: 'assets/images/UserProfileBGExample.jpg',
-            jobTitle: 'Sr Systems Engineer | Software Developer',
-            socials: [
-              {icon: "fab fa-github", url: "https://github.com/GITHUBUSERNAME"},
-              {icon: "fab fa-linkedin", url: "https://linkedin.com/in/LINKEDINUSERNAME"},
-              {icon: "fab fa-docker", url: "https://hub.docker.com/r/DOCKERUSERNAME"},
-              {icon: "fab fa-npm", url: "https://npmjs.com/NPMUSERNAME"},
-              {icon: "fab fa-paypal", url: "https://paypal.me/PAYPALUSERNAME/25"},
-              {icon: "fa fa-envelope", url: "mailto:EMAILADDRESS@DOMAIN.COM"},
+        { group: [
+          { component: 'UserCard',
+            col: { md: 4 },
+            props: {
+              name: 'John Doe',
+              avatar: 'assets/images/UserProfileExample.jpg',
+              bgImage: 'assets/images/UserProfileBGExample.jpg',
+              jobTitle: 'Sr Systems Engineer | Software Developer',
+              socials: [
+                {icon: "fab fa-github", url: "https://github.com/GITHUBUSERNAME"},
+                {icon: "fab fa-linkedin", url: "https://linkedin.com/in/LINKEDINUSERNAME"},
+                {icon: "fab fa-docker", url: "https://hub.docker.com/r/DOCKERUSERNAME"},
+                {icon: "fab fa-npm", url: "https://npmjs.com/NPMUSERNAME"},
+                {icon: "fab fa-paypal", url: "https://paypal.me/PAYPALUSERNAME/25"},
+                {icon: "fa fa-envelope", url: "mailto:EMAILADDRESS@DOMAIN.COM"},
 
-            ],
-            quotes: [
-              'Some catchy quote that you like here',
-            ],
+              ],
+              quotes: [
+                'Some catchy quote that you like here',
+              ],
 
-          }
-        },
-        { component: 'SkillsCard',
-          col: { md: 4 },
-          props: {
-            skillsData: [
-              {type: "Node", level: 85},
-              {type: "Javascript", level: 75},
-              {type: "Powershell", level: 60},
-              {type: "CSS", level: 10},
-              {type: "Automation", level: 90},
-              {type: "OCD", level: 100},
-              {type: "WLB", level: 69},
-            ],
-            skillsColors: {
-              bar: '#959595',
-              title: {
-                text: '#FFF',
-                background: '#265874'
+            }
+          },
+          { component: 'SkillsCard',
+            col: { md: 4 },
+            props: {
+              skillsData: [
+                {type: "Node", level: 85},
+                {type: "Javascript", level: 75},
+                {type: "Powershell", level: 60},
+                {type: "CSS", level: 10},
+                {type: "Automation", level: 90},
+                {type: "OCD", level: 100},
+                {type: "WLB", level: 69},
+              ],
+              skillsColors: {
+                bar: '#959595',
+                title: {
+                  text: '#FFF',
+                  background: '#265874'
+                }
               }
             }
-          }
+          },
+        ],
+        col:{md:4},
         },
-        { component: 'WorkExperience',
-          col: { md: 12 },
-          props: {
-            workExperienceTitle: "Work Experience",
-            workExperienceSubtitle: "Work Experience Subtitle",
-            workExperience: [
-              {
-                "EmployerName":"COMPANY 1",
-                "JobTitle":"SR ENGINEERING TITLE",
-                "JobLocation":"Some Major City, CA",
-                "JobDescription":"This is where you put 2-3 breif statements about what you did/do for this job.",
-                "StartDate":"Nov 2017",
-                "EndDate":"Current",
-                "JobIcon":"fas fa-5x fa-user-cog",
-                "JobIconColor":"#009CDE"
-              },
-              {
-                "EmployerName":"COMPANY 2",
-                "JobTitle":"JR ENGINEERING TITLE",
-                "JobLocation":"Some Smaller City, IA",
-                "JobDescription":"This is also where you put a breif description about what you did at your last job.",
-                "StartDate":"Feb 2014",
-                "EndDate":"Nov 2017",
-                "JobIcon":"fas fa-5x fa-user-cog",
-                "JobIconColor":"#265874"
-              },
-              {
-                "EmployerName":"COMPANY 2",
-                "JobTitle":"TECHNICIAN TITLE",
-                "JobLocation":"Tim Buk Tu, RI",
-                "JobDescription":"Some more descriptive words about your past life, but is still kinda sorta relevant, even if you don't want it to be.",
-                "StartDate":"Jun 2009",
-                "EndDate":"Feb 2014",
-                "JobIcon":"fas fa-5x fa-user-tie",
-                "JobIconColor":"#265874"
-              },
-              {
-                "EmployerName":"Self Employeed",
-                "JobTitle":"FREELANCE TITLE",
-                "JobLocation":"NEWHERE BUT, CA",
-                "JobDescription":"Describe how you manage to make a living by yourself in a major city, or how many side projects you have pending completion.",
-                "StartDate":"Jan 2008",
-                "EndDate":"Current",
-                "JobIcon":"fas fa-5x fa-code",
-                "JobIconColor":"#959595"
-              },
-            ],
-          }
-        },
-        { component: 'EducationInfo',
-          col: { md: 12 },
-          props: {
-            educationInfoTitle: "Schooling and Certifications",
-            educationInfoSubtitle: "Schooling and Certifications Subtitle",
-            educationInfo: [
-              {
-                "SchoolName":"TECHNICAL SCHOOL NAME",
-                "SchoolLocation":"Cloud 9, FTW",
-                "DegreeName":"NA - Computer Science",
-                "StartDate":"2007",
-                "EndDate":"2009",
-                "DegreeDescription":"Computer Science",
-                "SchoolIcon":"fas fa-5x fa-university",
-                "SchoolIconColor":"#00634A"
-              },
-              {
-                "SchoolName":"NON TECHNICAL SCHOOL NAME",
-                "SchoolLocation":"Halo 2, GG",
-                "DegreeName":"General Studies",
-                "StartDate":"2003",
-                "EndDate":"2007",
-                "DegreeDescription":"General Studies",
-                "SchoolIcon":"fas fa-5x fa-star",
-                "SchoolIconColor":"#AE1301"
-              },
-            ]
-          }
-        },
+        { group: [
+          { component: 'WorkExperience',
+            col: { md: 8 },
+            props: {
+              workExperienceTitle: "Work Experience",
+              workExperienceSubtitle: "Work Experience Subtitle",
+              workExperience: [
+                {
+                  "EmployerName":"COMPANY 1",
+                  "JobTitle":"SR ENGINEERING TITLE",
+                  "JobLocation":"Some Major City, CA",
+                  "JobDescription":"This is where you put 2-3 breif statements about what you did/do for this job.",
+                  "StartDate":"Nov 2017",
+                  "EndDate":"Current",
+                  "JobIcon":"fas fa-5x fa-user-cog",
+                  "JobIconColor":"#009CDE"
+                },
+                {
+                  "EmployerName":"COMPANY 2",
+                  "JobTitle":"JR ENGINEERING TITLE",
+                  "JobLocation":"Some Smaller City, IA",
+                  "JobDescription":"This is also where you put a breif description about what you did at your last job.",
+                  "StartDate":"Feb 2014",
+                  "EndDate":"Nov 2017",
+                  "JobIcon":"fas fa-5x fa-user-cog",
+                  "JobIconColor":"#265874"
+                },
+                {
+                  "EmployerName":"COMPANY 2",
+                  "JobTitle":"TECHNICIAN TITLE",
+                  "JobLocation":"Tim Buk Tu, RI",
+                  "JobDescription":"Some more descriptive words about your past life, but is still kinda sorta relevant, even if you don't want it to be.",
+                  "StartDate":"Jun 2009",
+                  "EndDate":"Feb 2014",
+                  "JobIcon":"fas fa-5x fa-user-tie",
+                  "JobIconColor":"#265874"
+                },
+                {
+                  "EmployerName":"Self Employeed",
+                  "JobTitle":"FREELANCE TITLE",
+                  "JobLocation":"NEWHERE BUT, CA",
+                  "JobDescription":"Describe how you manage to make a living by yourself in a major city, or how many side projects you have pending completion.",
+                  "StartDate":"Jan 2008",
+                  "EndDate":"Current",
+                  "JobIcon":"fas fa-5x fa-code",
+                  "JobIconColor":"#959595"
+                },
+              ],
+            }
+          },
+          { component: 'EducationInfo',
+            col: { md: 8 },
+            props: {
+              educationInfoTitle: "Schooling and Certifications",
+              educationInfoSubtitle: "Schooling and Certifications Subtitle",
+              educationInfo: [
+                {
+                  "SchoolName":"TECHNICAL SCHOOL NAME",
+                  "SchoolLocation":"Cloud 9, FTW",
+                  "DegreeName":"NA - Computer Science",
+                  "StartDate":"2007",
+                  "EndDate":"2009",
+                  "DegreeDescription":"Computer Science",
+                  "SchoolIcon":"fas fa-5x fa-university",
+                  "SchoolIconColor":"#00634A"
+                },
+                {
+                  "SchoolName":"NON TECHNICAL SCHOOL NAME",
+                  "SchoolLocation":"Halo 2, GG",
+                  "DegreeName":"General Studies",
+                  "StartDate":"2003",
+                  "EndDate":"2007",
+                  "DegreeDescription":"General Studies",
+                  "SchoolIcon":"fas fa-5x fa-star",
+                  "SchoolIconColor":"#AE1301"
+                },
+              ]
+            }
+          },
+        ],
+        col:{md:8},
+        }
+
       ]
     },
 
