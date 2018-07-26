@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Card } from "components/Card/CardNoFooter.jsx";
-import { chartData } from "variables/ChartsConfig.jsx";
 import ReactHighcharts from "react-highcharts";
 
 export class HighCharts extends Component {
@@ -9,7 +8,7 @@ export class HighCharts extends Component {
       <Card
         content={
           <div>
-            <ReactHighcharts config={chartData}></ReactHighcharts>
+            <ReactHighcharts config={this.props.chartData}></ReactHighcharts>
           </div>
         }
       />
