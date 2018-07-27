@@ -14,8 +14,7 @@ import Links from "components/Links/Links";
 import WorkExperience from "components/WorkExperience/WorkExperience";
 import EducationInfo from "components/EducationInfo/EducationInfo";
 import SkillsCard from "components/SkillsCard/SkillsCard";
-
-
+import HighCharts from "components/HighCharts/HighCharts";
 
 var Components = {
     'Links': Links,
@@ -30,15 +29,13 @@ var Components = {
     'SkillsCard': SkillsCard,
     'WorkExperience': WorkExperience,
     'EducationInfo': EducationInfo,
+    'HighCharts': HighCharts
 };
-
-
 
 class DynamicPage extends Component{
     componentDidMount(){
       document.title = this.props.page.name;
     }
-
     renderElements(elements){
       var rtrnElements = elements.map(function(elementData){
         if (Array.isArray(elementData.group)){
@@ -54,7 +51,6 @@ class DynamicPage extends Component{
       });
       return rtrnElements;
     }
-
     render() {
         var elements = this.renderElements(this.props.page["elements"]);
 

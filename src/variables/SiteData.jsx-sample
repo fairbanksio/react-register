@@ -1,12 +1,12 @@
 var siteData = {
-  Website:"https://yourFQDN.io/",
+  Website:"https://yoursite.io/",
   SiteTitle:"Website Title",
   FooterNote: "Made with love in React",
   siteLogo:"fab fa-2x fa-bimobject",
   siteLogoColor:"#CD4B4B",
   sidebarBackground: "assets/images/sidebar-background.jpg",
   welcomeBanner:true, // If true, the welcome banner will be displayed.
-  welcomeBannerText:"Welcome to <b>Fairbanks.io</b> - this site is under active development. Please stay tuned!",
+  welcomeBannerText:"Welcome to <b>My Site</b> - this site is under active development. Please stay tuned!",
   welcomeBannerLogo:"fas fa-fighter-jet",
   welcomeBannerType:"warning", // Must be of type: info | success | warning | error
 
@@ -272,7 +272,6 @@ var siteData = {
         ],
         col:{md:8},
         }
-
       ]
     },
 
@@ -302,11 +301,71 @@ var siteData = {
       ]
     },
 
+    {
+      // HighCharts Sample
+      path: "/highcharts",
+      name: "HighCharts Sample",
+      icon: "pe-7s-photo",
+      hidden: true,
+      elements: [
+        { component: 'HighCharts',
+          props: {
+            col_xs: 8,
+            col_sm: 8,
+            col_md: 12,
+            col_lg: 12,
+            chartData: {
+              /* HighCharts Config */
+              chart: {
+                type: 'line'
+              },
+              title: {
+                text: 'Lana - Weight Tracking'
+              },
+              subtitle: {
+                text: '<em>Breed: Pembroke Welsh Corgi || Sex: Female</em>'
+              },
+              xAxis: {
+                categories: ['12/1', '12/2', '12/3', '12/4', '12/5', '12/6', '12/7', '12/8', '12/9', '12/10', '12/11', '12/12', '12/13', '12/14', '12/15', '12/16', '12/17', '12/18', '12/19', '12/20', '12/21', '12/31', '1/6', '1/12', '1/28', '2/12', '2/15', '2/19', '2/25', '3/5', '3/25', '4/8', '4/18', '5/6', '7/9'],
+                plotLines: [{
+                  label: {
+                    text: '<em>New Food</em>'
+                  },
+                  color: '#ebf0e8',
+                  from: 24,
+                  to: 999
+                }]
+              },
+              yAxis: {
+                title: {
+                    text: 'Weight (Lbs.)'
+                }
+              },
+              plotOptions: {
+                line: {
+                    dataLabels: {
+                        enabled: true
+                    },
+                    enableMouseTracking: true,
+                    color: '#ED6A5A'
+                },
+              },
+              series: [{
+                name: 'Lana',
+                data: [28.8, 28.8, 28.6, 28.8, 28.6, 29, 29.2, 28.8, 28.6, 27.8, 29, 28.8, 29, 29, 28.2, 28.6, 28.4, 28.4, 28.4, 28.8, 29.2, 28.2, 28.4, 29, 29, 28.8, 28.2, 28.4, 27.8, 28, 27.4, 26.4, 26.4, 26.6, 26.0]
+              }],
+              credits: {
+                enabled: false
+              }
+            }
+          }
+        }
+      ]
+    },
+
     //Root landing redirect (not necessary if you define a page with path of '/' on a page)
     { redirect: true, path: "/", to: "/home", name: "Home" },
-
   ]
 };
 
 export default siteData;
-//export default MasterConfig;
