@@ -10,8 +10,14 @@ src/variables/MapsConfig.jsx
 src/variables/SiteConfig.jsx
 .idea/
 src/variables/PortfolioConfig.jsx
-public/assets/images
 src/variables/ProjectsConfig.jsx
 src/variables/ChartsConfig.jsx
 src/variables/SiteData.jsx
 public/images/
+
+!public/assets/images
+public/assets/images/*
+!public/assets/images/local_file.jpg
+!public/assets/images/sidebar-background.jpg
+!public/assets/images/UserProfileBGExample.jpg
+!public/assets/images/UserProfileExample.jpg
