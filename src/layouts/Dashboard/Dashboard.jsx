@@ -6,7 +6,7 @@ import Header from "components/Header/Header";
 import Footer from "components/Footer/Footer";
 import Sidebar from "components/Sidebar/Sidebar";
 
-import { style } from "views/Notifications/NotificationsVariables.jsx";
+import { style } from "components/Notifications/NotificationsVariables.jsx";
 
 //import routes and data from config
 import sitePages from "routes/dashboard.jsx";
