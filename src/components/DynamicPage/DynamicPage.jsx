@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 
-import Gallery from "views/Gallery/Gallery";
-import Links from "views/Links/Links";
+
 import { UnorderedListCard } from "components/UnorderedListCard/UnorderedListCard.jsx";
 import { GitHubRepos } from "components/HomepageIcons/GitHubRepos/GitHubRepos.jsx";
 import { DigitalOcean } from "components/HomepageIcons/DigitalOcean/DigitalOcean.jsx";
@@ -11,13 +10,13 @@ import { DockerPulls } from "components/HomepageIcons/DockerPulls/DockerPulls.js
 import { FullGallery } from "components/FullGallery/FullGallery.jsx";
 import { GoogleMaps } from "components/Maps/Maps.jsx";
 import { UserCard } from "components/UserCard/UserCard.jsx";
+import Links from "components/Links/Links";
 import WorkExperience from "components/WorkExperience/WorkExperience";
 import EducationInfo from "components/EducationInfo/EducationInfo";
 import SkillsCard from "components/SkillsCard/SkillsCard";
 import HighCharts from "components/HighCharts/HighCharts";
 
 var Components = {
-    'Gallery': Gallery,
     'Links': Links,
     'Github': GitHubRepos,
     'Docker': DockerPulls,
