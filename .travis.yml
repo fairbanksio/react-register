@@ -1,6 +1,16 @@
 language: node_js
 node_js:
- - "stable"
+  - "stable"
 cache:
   directories:
   - node_modules #Cache node_modules for faster builds
+script:
+  - npm test
+  - if [ -f src/variables/SiteData.jsx ]; then npm-run-all -p watch-css start-js; else cp src/variables/SiteData.jsx-sample src/variables/SiteData.jsx && npm run build; fi
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: 8855cd7131b8dcaf12438af13e691c355929c17e
+  local_dir: build
+  on:
+    branch: develop
