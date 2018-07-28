@@ -2,7 +2,7 @@
 ### Summary
 ![react-register](https://raw.githubusercontent.com/Fairbanks-io/react-register/develop/imgs/react-register-sm.png)
 
-[![Build Status](https://travis-ci.com/Fairbanks-io/react-register.svg?branch=develop)](https://travis-ci.com/Fairbanks-io/react-register)
+[![Build Status](https://travis-ci.org/Fairbanks-io/react-register.svg?branch=develop)](https://travis-ci.org/Fairbanks-io/react-register)
 
 A MaterialUI based dashboard built on React.
 
