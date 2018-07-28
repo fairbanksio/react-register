@@ -6,7 +6,7 @@ cache:
   - node_modules
 script:
   - npm test
-  - npm run build
+  - if [ -f src/variables/SiteData.jsx ]; then npm-run-all -p watch-css start-js; else cp src/variables/SiteData.jsx-sample src/variables/SiteData.jsx && npm run build; fi
 deploy:
   provider: pages
   skip_cleanup: true
