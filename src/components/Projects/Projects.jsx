@@ -44,18 +44,14 @@ const styles = theme => ({
   },
 });
 
-class Projects extends React.Component {
-  state = {
-    value: 0,
-  };
-
+export class Projects extends React.Component {
+  constructor() {
+    super();
+    this.state = { value: 0 };
+  }
   handleChange = (event, value) => {
     this.setState({ value });
   };
-  componentDidMount(){
-    //console.log(JSON.stringify(this.props, null, ' '));
-  }
-
   render() {
     const { classes } = this.props;
     const { value } = this.state;
@@ -84,7 +80,7 @@ class Projects extends React.Component {
               <Row>
                 {tab.items.map(function(item, i){
                   return (
-                    <Col xs={12} sm={12} md={2} lg={2} key={i}>
+                    <Col xs={6} sm={6} md={2} lg={2} key={i}>
                       <Card className={classes.card}>
                         <CardMedia
                           className={classes.media}
@@ -101,13 +97,13 @@ class Projects extends React.Component {
                         </CardContent>
                         <CardActions>
                           {item.buttonText1
-                            ? <Button size="small" color="primary">
+                            ? <Button size="small" color="primary" onClick={() => window.open(item.buttonLink1)}>
                               <span>{item.buttonText1}</span>
                             </Button>
                             : null
                           }
                           {item.buttonText2
-                            ? <Button size="small" color="primary">
+                            ? <Button size="small" color="primary" onClick={() => window.open(item.buttonLink2)}>
                               <span>{item.buttonText2}</span>
                             </Button>
                             : null
