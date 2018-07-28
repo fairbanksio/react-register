@@ -32,37 +32,39 @@ const styles = theme => ({
   },
   card: {
     maxWidth: 250,
-    minHeight: 250,
-    marginBottom: 20
-  },
-  appBar: {
-    width: '100%'
+    minHeight: 270,
+    marginBottom: 25
   },
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
   },
+  title: {
+    fontSize: '2em'
+  },
+  text: {
+    fontSize: '1.25em'
+  },
+  tabLabel: {
+    fontSize: '11px'
+  }
 });
 
-class Projects extends React.Component {
-  state = {
-    value: 0,
-  };
-
+export class Projects extends React.Component {
+  constructor() {
+    super();
+    this.state = { value: 0 };
+  }
   handleChange = (event, value) => {
     this.setState({ value });
   };
-  componentDidMount(){
-    //console.log(JSON.stringify(this.props, null, ' '));
-  }
-
   render() {
     const { classes } = this.props;
     const { value } = this.state;
 
     return (
       <div className={classes.root}>
-        <AppBar position="static" color="inherit">
+        <AppBar position="static" color="inherit" style={{ fontSize: '10px' }}>
           <Tabs
             value={value}
             onChange={this.handleChange}
@@ -72,7 +74,7 @@ class Projects extends React.Component {
             scrollButtons="auto"
           >
             {this.props.tabs.map(function(tab, i){
-              return <Tab label={tab.tabname} key={i} />;
+              return <Tab label={<span className={classes.tabLabel}>{tab.tabname}</span>} key={i}/>;
             })}
           </Tabs>
         </AppBar>
@@ -84,31 +86,31 @@ class Projects extends React.Component {
               <Row>
                 {tab.items.map(function(item, i){
                   return (
-                    <Col xs={12} sm={12} md={2} lg={2} key={i}>
+                    <Col xs={6} sm={6} md={2} lg={2} key={i}>
                       <Card className={classes.card}>
                         <CardMedia
                           className={classes.media}
                           image={item.img}
                           title={item.name}
                         />
-                        <CardContent>
-                          <Typography gutterBottom variant="headline" component="h2">
+                        <CardContent style={{ minHeight: '125px' }}>
+                          <Typography gutterBottom variant="headline" component="h2" className={classes.title}>
                             {item.name}
                           </Typography>
-                          <Typography component="p">
+                          <Typography component="h5" className={classes.text}>
                             {item.desc}
                           </Typography>
                         </CardContent>
                         <CardActions>
                           {item.buttonText1
-                            ? <Button size="small" color="primary">
-                              <span>{item.buttonText1}</span>
+                            ? <Button size="small" color="primary" onClick={() => window.open(item.buttonLink1)}>
+                              <span className={classes.text}>{item.buttonText1}</span>
                             </Button>
                             : null
                           }
                           {item.buttonText2
-                            ? <Button size="small" color="primary">
-                              <span>{item.buttonText2}</span>
+                            ? <Button size="small" color="primary" onClick={() => window.open(item.buttonLink2)}>
+                              <span className={classes.text}>{item.buttonText2}</span>
                             </Button>
                             : null
                           }
