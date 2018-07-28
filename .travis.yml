@@ -13,4 +13,4 @@ deploy:
   github_token: 8855cd7131b8dcaf12438af13e691c355929c17e
   local_dir: build
   on:
-    branch: master
+    branch: develop
