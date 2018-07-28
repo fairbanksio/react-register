@@ -15,6 +15,7 @@ import EducationInfo from "components/EducationInfo/EducationInfo";
 import SkillsCard from "components/SkillsCard/SkillsCard";
 import HighCharts from "components/HighCharts/HighCharts";
 import Projects from "components/Projects/Projects";
+import mdEditor from "components/mdEditor/mdEditor";
 
 var Components = {
     'Links': Links,
@@ -30,7 +31,8 @@ var Components = {
     'WorkExperience': WorkExperience,
     'EducationInfo': EducationInfo,
     'HighCharts': HighCharts,
-    'Projects': Projects
+    'Projects': Projects,
+    'mdEditor': mdEditor,
 };
 
 class DynamicPage extends Component{
