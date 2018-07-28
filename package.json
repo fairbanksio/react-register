@@ -32,11 +32,13 @@
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
+    "start-old": "npm-run-all -p watch-css start-js",
+    "start": "if [ -f src/variables/SiteData.jsx ]; then npm-run-all -p watch-css start-js; else cp src/variables/SiteData.jsx-sample src/variables/SiteData.jsx && npm-run-all -p watch-css start-js; fi",
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "load-sample": "mv src/variables/SiteData.jsx-sample src/variables/SiteData.jsx"
+    "load-sample": "cp src/variables/SiteData.jsx-sample src/variables/SiteData.jsx"
+
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.1.0"
