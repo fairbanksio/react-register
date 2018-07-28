@@ -437,6 +437,25 @@ var siteData = {
       ]
     },
 
+    {
+      // Markdown Editor
+      path: "/md",
+      name: "Markdown Editor",
+      icon: "",
+      hidden: true,
+      elements: [
+        { component: 'mdEditor',
+          col: { md: 12 },
+          props: {
+            title: "", // Set if desired
+            subtitle: "", // Set if desired
+            layout: "horizontal", // Must be of type: vertical | horizontal | tabbed | noPreview
+            markdown: "# Edit some Markdown!\n* A list\n\nSome **bold** and _italic_ text\n> A quote... \n\nCheckout the [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet)"
+          }
+        }
+      ]
+    },
+
     //Root landing redirect (not necessary if you define a page with path of '/' on a page)
     { redirect: true, path: "/", to: "/home", name: "Home" },
   ]
