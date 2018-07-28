@@ -93,6 +93,78 @@ var siteData = {
     },
 
     {
+      // Projects Page
+      path: "/projects",
+      name: "Projects",
+      icon: "pe-7s-portfolio",
+      elements: [
+        { component: "Projects",
+          col: { lg:12, md:12, sm:12, xs:12 },
+          props: {
+            tabs: [
+              { tabname: "Node", items: [
+                  {
+                    name:"ExpressHTTP",
+                    desc: "Express HTTP File Server with Lusca and DDoS Rate Limiting",
+                    img: "https://cdn.shockoe.com/wp-content/uploads/2015/06/15124722/expess-node.jpg",
+                    buttonText1: "Source",
+                    buttonLink1: ""
+                  },
+                  {
+                    name: "Hubot",
+                    desc: "Your friendly robot sidekick for Slack",
+                    img: "https://i.ytimg.com/vi/kCGeB3ewHyA/maxresdefault.jpg",
+                    buttonText1: "Source",
+                    buttonLink1: "",
+                  },
+                  {
+                    name: "Braintree SDK Demo",
+                    desc: "A Basic Implementation of the Braintree Node.JS SDK",
+                    img: "https://i.stack.imgur.com/0KBX3.png",
+                    buttonText1: "Source",
+                    buttonLink1: "",
+                  },
+                ]
+              },
+              { tabname: "React", items: [
+                  {
+                    name:"React-Register",
+                    desc: "A MaterialUI based dashboard built on React.",
+                    img: "https://raw.githubusercontent.com/Fairbanks-io/react-register/develop/imgs/react-register-sm.png",
+                    buttonText1: "Demo",
+                    buttonLink1: "",
+                    buttonText2: "Source",
+                    buttonLink2: ""
+                  },
+                ]
+              },
+              { tabname: "Python", items: [
+                  {
+                    name:"Expansa",
+                    desc: "Python3 Multi-Threaded Reverse Shell Prototype",
+                    img: "https://raw.githubusercontent.com/jonfairbanks/Expansa/master/expansa.png",
+                    buttonText1: "Source",
+                    buttonLink1: "",
+                  },
+                ]
+              },
+              { tabname: "Linux", items: [
+                  {
+                    name:"Basic Nginx",
+                    desc: "Basic Error Pages and Configs for Nginx",
+                    img: "https://tr2.cbsistatic.com/hub/i/r/2017/09/28/3a9d4076-ba4c-4f6f-a5d8-161625cc8716/resize/770x/2db5d54233e54e1a7e45d1ce9a434cac/nginxhero.jpg",
+                    buttonText1: "Source",
+                    buttonLink1: ""
+                  },
+                ]
+              },
+            ]
+          }
+        }
+      ]
+    },
+
+    {
       //Gallery Page
       path: "/gallery",
       name: "Gallery",
