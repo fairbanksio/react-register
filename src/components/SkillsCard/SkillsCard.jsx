@@ -11,7 +11,7 @@ export class SkillsCard extends Component {
         title={this.props.skillsTitle}
         category={this.props.skillsSubtitle}
         content={
-          <SkillBar skills={this.props.skillsData} colors={this.props.skillsColors} animationDelay='20ms' offset='1000'/>
+          <SkillBar skills={this.props.skillsData} colors={this.props.skillsColors} animationDelay={20} offset={1000}/>
         }
       />
     );
