@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 
-
 import { UnorderedListCard } from "components/UnorderedListCard/UnorderedListCard.jsx";
 import { GitHubRepos } from "components/HomepageIcons/GitHubRepos/GitHubRepos.jsx";
 import { DigitalOcean } from "components/HomepageIcons/DigitalOcean/DigitalOcean.jsx";
@@ -15,6 +14,7 @@ import WorkExperience from "components/WorkExperience/WorkExperience";
 import EducationInfo from "components/EducationInfo/EducationInfo";
 import SkillsCard from "components/SkillsCard/SkillsCard";
 import HighCharts from "components/HighCharts/HighCharts";
+import Projects from "components/Projects/Projects";
 
 var Components = {
     'Links': Links,
@@ -29,7 +29,8 @@ var Components = {
     'SkillsCard': SkillsCard,
     'WorkExperience': WorkExperience,
     'EducationInfo': EducationInfo,
-    'HighCharts': HighCharts
+    'HighCharts': HighCharts,
+    'Projects': Projects
 };
 
 class DynamicPage extends Component{
@@ -53,18 +54,13 @@ class DynamicPage extends Component{
     }
     render() {
         var elements = this.renderElements(this.props.page["elements"]);
-
         return (
           <div className="content">
             <Grid fluid>
               <Row>
-
-                  {elements.map(function(element, i){
-
-                      return <Col {...element.props.col} key={i}> {element} </Col>;
-
-                  })}
-
+                {elements.map(function(element, i){
+                  return <Col {...element.props.col} key={i}>{element}</Col>;
+                })}
               </Row>
             </Grid>
           </div>
