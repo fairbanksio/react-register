@@ -3,12 +3,6 @@ import { NavLink } from "react-router-dom";
 
 import HeaderLinks from "../Header/HeaderLinks.jsx";
 
-//import imagine from "assets/img/sidebar-background.jpg";
-
-//import dashboardRoutes from "routes/dashboard.jsx";
-
-
-
 class Sidebar extends Component {
   constructor(props) {
     super(props);
@@ -58,7 +52,6 @@ class Sidebar extends Component {
           <ul className="nav">
             {this.state.width <= 991 ? <HeaderLinks /> : null}
             {this.props.sitePages.map((prop, key) => {
-
               if (!prop.redirect && !prop.hidden)
                   return (
                     <li

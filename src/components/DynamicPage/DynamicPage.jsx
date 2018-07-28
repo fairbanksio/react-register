@@ -35,7 +35,7 @@ var Components = {
 
 class DynamicPage extends Component{
     componentDidMount(){
-      document.title = this.props.page.name;
+      document.title = this.props.page.name + ' | ' + this.props.siteTitle;
     }
     renderElements(elements){
       var rtrnElements = elements.map(function(elementData){
