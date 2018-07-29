@@ -1,7 +1,7 @@
 {
   "name": "react-register",
   "version": "1.2.0",
-  "homepage": "https://fairbanks-io.github.io/react-register/",
+  "homepage": "/react-register",
   "license": "MIT",
   "private": false,
   "dependencies": {
