@@ -8,7 +8,7 @@ var siteData = {
   welcomeBanner:true, // If true, the welcome banner will be displayed.
   welcomeBannerText:"Welcome to <b>My Site</b> - this site is under active development. Please stay tuned!",
   welcomeBannerLogo:"fas fa-fighter-jet",
-  welcomeBannerType:"info", // Must be of type: info | success | warning | error
+  welcomeBannerType:"warning", // Must be of type: info | success | warning | error
 
   pages: [
     {
@@ -21,7 +21,6 @@ var siteData = {
           col: { md: 3 },
           props: {
             repo: 'GITHUBUSERNAME',
-            authToken: '' // This is not required, but if not set, GitHub will quickly rate limit you!
           },
         },
         { component: 'Docker',
@@ -200,7 +199,7 @@ var siteData = {
     elements: [
         { component: 'Links',
           props: {
-            userLinksHead: {Title: "Links", SubTitle: "These are some user specified links"},
+            userLinksHead: {Title: "Links", Subtitle: "These are some user specified links"},
             userLinks: [
               { Img: 'https://source.unsplash.com/2ShvY8Lf6l0/800x600', Name:"Google", URL: "https://google.com", Desc: "This is a link description"  },
               { Img: 'https://source.unsplash.com/epcsn8Ed8kY/800x600', Name:"YouTube", URL: "https://youtube.com", Desc: "This is a link description" },

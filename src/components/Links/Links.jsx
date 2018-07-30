@@ -16,7 +16,7 @@ class Links extends Component {
 
               <CardNoFooter
                 title={this.props.userLinksHead.Title}
-                category={this.props.userLinksHead.SubTitle}
+                category={this.props.userLinksHead.Subtitle}
                 content={
                   <Table striped hover style={{"marginBottom":"0px"}}>
                     <thead>
