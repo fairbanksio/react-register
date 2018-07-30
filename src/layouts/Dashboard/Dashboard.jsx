@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import NotificationSystem from "react-notification-system";
+import cheet from 'cheet.js';
 
 import Header from "components/Header/Header";
 import Footer from "components/Footer/Footer";
@@ -41,6 +42,9 @@ class Dashboard extends Component {
         autoDismiss: 15
       });
     }
+    cheet('r i c k', function () {
+      window.location.replace('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+    });
   }
 
   componentDidUpdate(e) {
