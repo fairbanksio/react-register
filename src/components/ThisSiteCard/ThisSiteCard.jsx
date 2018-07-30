@@ -7,7 +7,7 @@ export class ThisSiteCard extends Component {
     return (
       <Card
         statsIcon="fab fa-node-js"
-        title={this.props.SiteTitle + " Behind The Scenes"}
+        title="Behind The Scenes"
         category="This site is brought to you by..."
         stats="Powered by Javascript"
         content={
