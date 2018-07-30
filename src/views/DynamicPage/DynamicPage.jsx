@@ -16,6 +16,7 @@ import SkillsCard from "components/SkillsCard/SkillsCard";
 import HighCharts from "components/HighCharts/HighCharts";
 import Projects from "components/Projects/Projects";
 import mdEditor from "components/mdEditor/mdEditor";
+import JSONFormatter from "components/JSONFormatter/JSONFormatter";
 
 var Components = {
     'Links': Links,
@@ -33,6 +34,7 @@ var Components = {
     'HighCharts': HighCharts,
     'Projects': Projects,
     'mdEditor': mdEditor,
+    'JSONFormatter': JSONFormatter,
 };
 
 class DynamicPage extends Component{
