@@ -21,6 +21,7 @@ var siteData = {
           col: { md: 3 },
           props: {
             repo: 'GITHUBUSERNAME',
+            authToken: '' // This is not required, but if not set, GitHub will quickly rate limit you!
           },
         },
         { component: 'Docker',

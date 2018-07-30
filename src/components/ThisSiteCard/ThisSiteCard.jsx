@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { Card } from "components/Card/Card.jsx";
 
-
 export class ThisSiteCard extends Component {
   render() {
     return (
       <Card
         statsIcon="fab fa-node-js"
-        title={this.props.SiteTitle + " Behind The Scenes"}
+        title="Behind The Scenes"
         category="This site is brought to you by..."
         stats="Powered by Javascript"
         content={
