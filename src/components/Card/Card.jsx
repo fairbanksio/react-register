@@ -4,10 +4,13 @@ export class Card extends Component {
   render() {
     return (
       <div className={"card" + (this.props.plain ? " card-plain" : "")}>
-        <div className={"header" + (this.props.hCenter ? " text-center" : "")}>
-          <h4 className="title">{this.props.title}</h4>
-          <p className="category">{this.props.category}</p>
-        </div>
+        {this.props.title
+          ? <div className={"header" + (this.props.hCenter ? " text-center" : "")}>
+            <h4 className="title">{this.props.title}</h4>
+            <p className="category">{this.props.category}</p>
+          </div>
+          : null
+        }
         <div
           className={
             "content" +
@@ -18,14 +21,16 @@ export class Card extends Component {
           }
         >
           {this.props.content}
-
-          <div className="footer">
-            {this.props.legend}
-            {this.props.stats != null ? <hr /> : ""}
-            <div className="stats">
-              <i className={this.props.statsIcon} /> {this.props.stats}
+          {this.props.stats
+            ? <div className="footer">
+              {this.props.legend}
+              {this.props.stats != null ? <hr /> : ""}
+              <div className="stats">
+                <i className={this.props.statsIcon} /> {this.props.stats}
+              </div>
             </div>
-          </div>
+            : null
+          }
         </div>
       </div>
     );
