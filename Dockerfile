@@ -14,7 +14,10 @@ USER  react-register
 WORKDIR /react-register
 
 # Clone repo and install modules
-RUN git clone https://github.com/Fairbanks-io/react-register . ; yarn install
+RUN git clone https://github.com/Fairbanks-io/react-register . ; yarn install; yarn build
+RUN mkdir http; cd http; git clone https://github.com/jonfairbanks/ExpressHTTP .
+
+RUN cp ../build/* http/public
 
 
 EXPOSE 3000
