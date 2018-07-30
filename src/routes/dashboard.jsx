@@ -1,5 +1,5 @@
 import React from "react";
-import DynamicPage from "components/DynamicPage/DynamicPage";
+import DynamicPage from "views/DynamicPage/DynamicPage";
 import siteData from "variables/SiteData.jsx";
 
 // Dynamically make routes from the config file
