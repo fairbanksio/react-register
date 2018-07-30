@@ -8,7 +8,7 @@ var sitePages = siteData.pages.map(function(page){
     return { redirect: true, path: page.path, to: page.to, name: page.name}
   } else {
     var pageComponent = (props) => <DynamicPage page={page} website={siteData.Website} siteTitle={siteData.SiteTitle} />
-    return { path: page.path, name: page.name, icon: page.icon, component: pageComponent, hidden: page.hidden}
+    return { path: page.path.toLowerCase(), name: page.name, icon: page.icon, component: pageComponent, hidden: page.hidden}
   }
 })
 
