@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card } from 'components/Card/CardNoFooter.jsx';
+import CardNoFooter from "components/Card/CardNoFooter.jsx";
 import ReactMde, {ReactMdeTypes} from 'react-mde';
 import * as Showdown from 'showdown';
 import xssFilter from 'showdown-xss-filter';
@@ -23,7 +23,7 @@ export class mdEditor extends Component {
   }
   render() {
     return (
-      <Card
+      <CardNoFooter
         title={this.props.title}
         category={this.props.subtitle}
         content={

@@ -1,14 +1,14 @@
 var siteData = {
   Website:"https://yoursite.io/",
-  SiteTitle:"Website Title",
+  SiteTitle:"JohnDoe.io",
   FooterNote: "Made with love in React",
-  siteLogo:"fab fa-2x fa-bimobject",
-  siteLogoColor:"#CD4B4B",
-  sidebarBackground: "assets/images/sidebar-background.jpg",
+  siteLogo:"fab fa-2x fa-black-tie",
+  siteLogoColor:"#265874",
+  sidebarBackground: "https://images.unsplash.com/photo-1526289034009-0240ddb68ce3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c93b9bd05444a8be8a81e2e0baad8eec&auto=format&fit=crop&w=300&h=1080&q=80",
   welcomeBanner:true, // If true, the welcome banner will be displayed.
   welcomeBannerText:"Welcome to <b>My Site</b> - this site is under active development. Please stay tuned!",
   welcomeBannerLogo:"fas fa-fighter-jet",
-  welcomeBannerType:"warning", // Must be of type: info | success | warning | error
+  welcomeBannerType:"info", // Must be of type: info | success | warning | error
 
   pages: [
     {
@@ -21,7 +21,6 @@ var siteData = {
           col: { md: 3 },
           props: {
             repo: 'GITHUBUSERNAME',
-            authToken: '' // This is not required, but if not set, GitHub will quickly rate limit you!
           },
         },
         { component: 'Docker',
@@ -55,7 +54,8 @@ var siteData = {
               { src: 'https://source.unsplash.com/NQSWvyVRIJk/800x599', width: 4, height: 3, caption: "Image 6", alt: "Image6" },
               { src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4, caption: "Image 7", alt: "Image7" },
               { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3, caption: "Image 8", alt: "Image8" },
-              { src: 'assets/images/local_file.jpg', width: 4, height: 3, caption: "Image 9", alt: "Image9" }
+              { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3, caption: "Image 9", alt: "Image9" },
+              //{ src: 'assets/images/local_file.jpg', width: 4, height: 3, caption: "Image 10", alt: "Image10" }
             ]
           }
         },
@@ -183,9 +183,8 @@ var siteData = {
               { src: 'https://source.unsplash.com/NQSWvyVRIJk/800x599', width: 4, height: 3, caption: "Image 6", alt: "Image6" },
               { src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4, caption: "Image 7", alt: "Image7" },
               { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3, caption: "Image 8", alt: "Image8" },
-              { src: 'assets/images/local_file.jpg', width: 4, height: 3, caption: "Image 9", alt: "Image9" },
-              { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3, caption: "Image 8", alt: "Image8" },
-              { src: 'assets/images/local_file.jpg', width: 4, height: 3, caption: "Image 9", alt: "Image9" }
+              { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3, caption: "Image 9", alt: "Image9" },
+              //{ src: 'assets/images/local_file.jpg', width: 4, height: 3, caption: "Image 10", alt: "Image10" }
             ]
           }
         }
@@ -200,7 +199,7 @@ var siteData = {
     elements: [
         { component: 'Links',
           props: {
-            userLinksHead: {Title: "Links", SubTitle: "These are some user specified links"},
+            userLinksHead: {Title: "Links", Subtitle: "These are some user specified links"},
             userLinks: [
               { Img: 'https://source.unsplash.com/2ShvY8Lf6l0/800x600', Name:"Google", URL: "https://google.com", Desc: "This is a link description"  },
               { Img: 'https://source.unsplash.com/epcsn8Ed8kY/800x600', Name:"YouTube", URL: "https://youtube.com", Desc: "This is a link description" },
@@ -223,8 +222,8 @@ var siteData = {
             col: { md: 4 },
             props: {
               name: 'John Doe',
-              avatar: 'assets/images/UserProfileExample.jpg',
-              bgImage: 'assets/images/UserProfileBGExample.jpg',
+              avatar: 'https://images.unsplash.com/photo-1525288849522-7f24f554e64a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=80e80c09ba209c9299f6e77b6ab7e5c9&auto=format&fit=crop&w=150&h=150&q=80',
+              bgImage: 'https://images.unsplash.com/photo-1469980098053-382eb10ba017?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ee6fa1019d7c31d81eb37533460be47c&auto=format&fit=crop&w=500&h=300&q=80',
               jobTitle: 'Sr Systems Engineer | Software Developer',
               socials: [
                 {icon: "fab fa-github", url: "https://github.com/GITHUBUSERNAME"},
@@ -369,7 +368,8 @@ var siteData = {
               { src: 'https://source.unsplash.com/NQSWvyVRIJk/800x599', width: 4, height: 3, caption: "Image 6", alt: "Image6" },
               { src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4, caption: "Image 7", alt: "Image7" },
               { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3, caption: "Image 8", alt: "Image8" },
-              { src: 'assets/images/local_file.jpg', width: 4, height: 3, caption: "Image 9", alt: "Image9" }
+              { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3, caption: "Image 9", alt: "Image9" },
+              //{ src: 'assets/images/local_file.jpg', width: 4, height: 3, caption: "Image 10", alt: "Image10" }
             ]
           }
         }
