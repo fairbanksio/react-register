@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Card } from "components/Card/Card.jsx";
 
-
 export class ThisSiteCard extends Component {
   render() {
     return (
