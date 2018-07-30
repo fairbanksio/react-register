@@ -8,7 +8,7 @@ var siteData = {
   welcomeBanner:true, // If true, the welcome banner will be displayed.
   welcomeBannerText:"Welcome to <b>My Site</b> - this site is under active development. Please stay tuned!",
   welcomeBannerLogo:"fas fa-fighter-jet",
-  welcomeBannerType:"warning", // Must be of type: info | success | warning | error
+  welcomeBannerType:"info", // Must be of type: info | success | warning | error
 
   pages: [
     {
