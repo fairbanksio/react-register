@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Card } from "components/Card/CardNoFooter.jsx";
+import CardNoFooter from "components/Card/CardNoFooter.jsx";
 import ReactHighcharts from "react-highcharts";
 
 export class HighCharts extends Component {
   render() {
     return (
-      <Card
+      <CardNoFooter
         content={
           <div>
             <ReactHighcharts config={this.props.chartData}></ReactHighcharts>
