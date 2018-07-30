@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Card } from "components/Card/CardNoFooter.jsx";
+import CardNoFooter from "components/Card/CardNoFooter.jsx";
 import { Row, Col } from "react-bootstrap";
 
 export class WorkExperience extends Component {
   render() {
     return (
-      <Card
+      <CardNoFooter
         title={this.props.workExperienceTitle}
         ctAllIcons
         category={
