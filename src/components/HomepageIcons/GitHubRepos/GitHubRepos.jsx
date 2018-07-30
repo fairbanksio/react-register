@@ -1,19 +1,25 @@
 import React, { Component } from "react";
 import { StatsCard } from "components/StatsCard/StatsCard.jsx";
 
-
 export class GitHubRepos extends Component {
-
   getRepoCount() {
     var _this = this;
     var endpoint = 'https://api.github.com/users/' + this.props.repo;
-    fetch(endpoint)
+
+    let headers = new Headers();
+    if(this.props.authToken) {
+      headers.set('Authorization', 'bearer ' + this.props.authToken);
+    }
+
+    fetch(endpoint, {method:'GET',
+      headers: headers,
+    })
     .then((resp) => resp.json())
     .then(function(data){
       _this.setState({"repos": data.public_repos});
     })
     .catch(function(err) {
-      console.log(err);
+      console.log('GitHub Fetch Error: ' + err);
     });
   }
   componentWillMount() {
