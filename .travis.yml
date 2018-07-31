@@ -19,11 +19,3 @@ deploy:
   on:
     branch: develop
 ###
-
-### Auto-Merge Setup
-secure: "PKwT2ypgl1odX+1UIS+IP5NqXtGRpHjfq0v2mJQgodpGVhMyDUsVrhcMyxXhUXH/IgbFm9qCsVINqhI/pOVv27CeJL8+8nUQk/tDr5RmfoLkMyYWSRDr4I85xDpUxfr6vKrn0gM7xmt4xdEO1Ow6xLXaaGpWO28Gj3B+0yJUBw+2iBvehyBGrYxu7KMfxCSPuXHSjBhi7E4mBhk/UlvwKlVS45iJkwCc38QKD23qqDORh24No4MQhpyC6dyzLRgs7pxnLRiWpir6YJjYLSfm2MjldTLTrX8JHYz8k6LEy7e2Lt4ZguTws40V5+dFDsMzj3CMHi1dH+6F9jwFtP9C/ZGgYEXahy5DaYKPnt72N0chDzVbQNDiuydjHCXO5uUd9DAEW4kyEn+LIgnwgyGgrQarxnr1MkosDQpfhbeeNM9G+do2eGnWmoxLVrPnLXPQRBBNFoxK8fU9ajchXxDhAAwEIu1s1wJKbS733/xwbkHtup4fXfdwWuGGgebZWDVXojRucsc3yHUdnBBsj22j/ZhaYR1f/2Qpp4Fb/H5ZSYXuIwl/FSL0yAcxQcOVSV45O49/s0rpXdOIowyQwytHBWNoJwxM4RtI2jh3Jh5i5BMw0O5rmwqrpN8PjSCOYfXUgpjD4JG+gaHzaEJd7zjoOLqLxTt2EI6VhokxCpTOHXc="
-after_success:
-  - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge"
-  - "chmod a+x /tmp/travis-automerge"
-  - "BRANCHES_TO_MERGE_REGEX='develop' BRANCH_TO_MERGE_INTO=develop GITHUB_REPO=Fairbanks-io/react-register /tmp/travis-automerge"
-###
