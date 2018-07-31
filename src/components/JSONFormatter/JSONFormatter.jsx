@@ -34,14 +34,6 @@ class FormattedJSON extends Component {
 }
 
 export class JSONFormatter extends Component {
-  constructor(){
-    super();
-    this.state = {
-      inputText:'{"login":"jonfairbanks","id":1957806,"node_id":"MDQ6VXNlcjE5NTc4MDY=","avatar_url":"https://avatars0.githubusercontent.com/u/1957806?v=4","gravatar_id":"","url":"https://api.github.com/users/jonfairbanks","html_url":"https://github.com/jonfairbanks","followers_url":"https://api.github.com/users/jonfairbanks/followers","following_url":"https://api.github.com/users/jonfairbanks/following{/other_user}","gists_url":"https://api.github.com/users/jonfairbanks/gists{/gist_id}","starred_url":"https://api.github.com/users/jonfairbanks/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/jonfairbanks/subscriptions","organizations_url":"https://api.github.com/users/jonfairbanks/orgs","repos_url":"https://api.github.com/users/jonfairbanks/repos","events_url":"https://api.github.com/users/jonfairbanks/events{/privacy}","received_events_url":"https://api.github.com/users/jonfairbanks/received_events","type":"User","site_admin":false,"name":"Jon Fairbanks","company":"@paypal ","blog":"https://fairbanks.io","location":"San Jose, CA","email":null,"hireable":null,"bio":null,"public_repos":49,"public_gists":0,"followers":5,"following":5,"created_at":"2012-07-11T16:48:53Z","updated_at":"2018-07-20T04:10:30Z"}',
-      indent: 'TAB',
-      copied: false
-    };
-  }
   clearInputText = () => {
     this.setState({'inputText': ''});
   };
@@ -79,11 +71,18 @@ export class JSONFormatter extends Component {
     }
     catch (err) {
       // JSON.parse threw an exception
-      outputText = err.message;
+      outputText = 'It looks like there was an error with your JSON---\n\n' + err.message;
       outputClass = 'output-error';
     }
 
     return outputText
+  }
+  componentWillMount() {
+    this.setState({
+      inputText: this.props.sampleJSON,
+      indent: this.props.defaultIndent,
+      copied: false
+    });
   }
   render() {
     return (
@@ -129,7 +128,7 @@ export class JSONFormatter extends Component {
                 </Button>
                 <Button onClick={this.resetInputText} size="small" variant="contained" color="primary" style={{ marginLeft: 10, fontSize: 11 }}>
                   <i className="fas fa-sync"></i>
-                  <span style={{ marginLeft: 6 }}>Reset Input</span>
+                  <span style={{ marginLeft: 6 }}>Reset Sample</span>
                 </Button>
                 <br/>
                 <hr/>
