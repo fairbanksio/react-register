@@ -53,7 +53,7 @@ yarn start
 
 ### Site modification and configuration
 1. Check if **src/variables/SiteData.jx** exists
-	- If it exists, modify this file.
+	- If it exists, modify this file as necessary.
 	- If the file does not exist, **copy SiteData.jsx-sample** to **SiteData.jsx**
 
 2. Make all modifications as necessary to SiteData.jsx
