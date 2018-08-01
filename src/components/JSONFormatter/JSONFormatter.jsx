@@ -18,12 +18,12 @@ require('codemirror/theme/material.css');
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#83c3f7',
-      contrastText: '#fff',
+      main: '#83c3f7', // Light Blue
+      contrastText: '#fff', // White
     },
     secondary: {
-      main: '#a2cf6e',
-      contrastText: '#fff',
+      main: '#a2cf6e', // Light Green (for Copied button)
+      contrastText: '#fff', // White
     },
   },
 });
