@@ -457,6 +457,25 @@ var siteData = {
       ]
     },
 
+    {
+      // JSON Formatter
+      path: "/json",
+      name: "JSON Formatter",
+      icon: "",
+      hidden: true,
+      elements: [
+        { component: 'JSONFormatter',
+          col: { md: 12 },
+          props: {
+            title: "", // Set if desired
+            subtitle: "", // Set if desired
+            defaultIndent: "TAB", // Must be of type: 0 | 2 | TAB
+            sampleJSON: '{"kind":"youtube#searchListResponse","etag":"m2yskBQFythfE4irbTIeOgYYfBU/PaiEDiVxOyCWelLPuuwa9LKz3Gk","nextPageToken":"CAUQAA","regionCode":"KE","pageInfo":{"totalResults":4249,"resultsPerPage":5},"items":[{"kind":"youtube#searchResult","etag":"m2yskBQFythfE4irbTIeOgYYfBU/QpOIr3QKlV5EUlzfFcVvDiJT0hw","id":{"kind":"youtube#channel","channelId":"UCJowOS1R0FnhipXVqEnYU1A"}},{"kind":"youtube#searchResult","etag":"m2yskBQFythfE4irbTIeOgYYfBU/AWutzVOt_5p1iLVifyBdfoSTf9E","id":{"kind":"youtube#video","videoId":"Eqa2nAAhHN0"}},{"kind":"youtube#searchResult","etag":"m2yskBQFythfE4irbTIeOgYYfBU/2dIR9BTfr7QphpBuY3hPU-h5u-4","id":{"kind":"youtube#video","videoId":"IirngItQuVs"}}]}', // Set if desired
+          }
+        }
+      ]
+    },
+
     //Root landing redirect (not necessary if you define a page with path of '/' on a page)
     { redirect: true, path: "/", to: "/home", name: "Home" },
   ]

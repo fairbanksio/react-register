@@ -1,9 +1,13 @@
 language: node_js
 node_js:
   - "stable"
+### Cache node_modules for faster deploys
 cache:
   directories:
   - node_modules
+###
+
+### GitHub Pages Deploys
 script:
   - npm test
   - if [ -f src/variables/SiteData.jsx ]; then npm-run-all -p watch-css start-js; else cp src/variables/SiteData.jsx-sample src/variables/SiteData.jsx && npm run build; fi
@@ -14,3 +18,4 @@ deploy:
   local_dir: build
   on:
     branch: develop
+###
