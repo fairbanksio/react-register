@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CardNoFooter from "components/Card/CardNoFooter.jsx";
 import Editor from 'wrap-md-editor';
 
 export class mdEditor extends Component {

@@ -107,7 +107,7 @@ export class JSONFormatter extends Component {
 
     return outputText
   }
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.setState({
       inputText: this.props.sampleJSON,
       indent: this.props.defaultIndent,
@@ -137,27 +137,6 @@ export class JSONFormatter extends Component {
                 font: 'inherit',
                 verticalAlign: 'baseline',
               }}>
-                  {/*
-                  <textarea
-                    value={this.state.inputText}
-                    onChange={this.onInputTextChange}
-                    placeholder="Paste your JSON here"
-                    autoFocus="true"
-                    style={{
-                      border:      '1px solid #DDDDDD',
-                      fontFamily: 'Source Code Pro',
-                      fontSize:   '10pt',
-                      width:       '100%',
-                      height:      '15em',
-                      display:     'block',
-                      padding:     5,
-                      minWidth:    '100%',
-                      maxWidth:    '100%',
-                      color:       'black',
-                      backgroundColor: '#f9f9f9'
-                    }}
-                  />
-                  */}
                   <CodeMirror ref="display" value={this.state.inputText} onChange={this.onInputTextChange} options={inputOptions} preserveScrollPosition={true} autoCursor={false} />
                   <br/>
                   <Button onClick={this.clearInputText} size="small" variant="contained" color="primary" style={{ fontSize: 11 }}>
