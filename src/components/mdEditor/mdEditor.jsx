@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Editor from 'wrap-md-editor';
+import Editor from 'react-editor-md';
 
 export class mdEditor extends Component {
   render() {
