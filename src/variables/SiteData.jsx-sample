@@ -448,10 +448,10 @@ var siteData = {
         { component: 'mdEditor',
           col: { md: 12 },
           props: {
-            title: "", // Set if desired
-            subtitle: "", // Set if desired
-            layout: "horizontal", // Must be of type: vertical | horizontal | tabbed | noPreview
-            markdown: "# Edit some Markdown!\n* A list\n\nSome **bold** and _italic_ text\n> A quote... \n\nCheckout the [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet)"
+            toolbarTheme: 'default', // Toolbar Theme must be of type: default | dark
+            editorTheme: 'pastel-on-dark', // Left-Hand Pane Theme must be of type: default | pastel-on-dark | lesser-dark | Others: https://pandao.github.io/editor.md/examples/themes.html
+            previewTheme: "default", // Right-Hand Pane Theme must be of type: default | dark
+            markdown: "# Edit some Markdown!\n\n* A list\n\nSome **bold** and _italic_ text\n\n> A quote...\n\n`sample code`\n\nCheckout the [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet) for more"
           }
         }
       ]

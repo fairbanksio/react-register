@@ -1,23 +1,22 @@
 import React, { Component } from "react";
 import Button from "components/CustomButton/CustomButton.jsx";
 
-
 export class UserCard extends Component {
+  constructor(){
+    super();
+    this.state = {
+      "quote": "--"
+    }
+  }
   randomQuote() {
     var quotes = this.props.quotes;
     var quote = quotes[Math.floor(Math.random() * quotes.length)];
     this.setState({"quote":quote});
   }
-  componentWillMount() {
-    this.setState({
-      "quote":"-"
-    })
-  }
   componentDidMount() {
     this.randomQuote();
   }
   render() {
-
     var socials = this.props.socials.map(function(socialButton,i) {
         return (
           <a href={socialButton.url} target='_blank' rel='noopener noreferrer' key={i}>
@@ -27,8 +26,6 @@ export class UserCard extends Component {
           </a>
         )
     });
-
-
     return (
       <div className="card card-user">
         <div className="image">

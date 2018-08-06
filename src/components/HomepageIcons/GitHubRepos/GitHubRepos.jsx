@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import { StatsCard } from "components/StatsCard/StatsCard.jsx";
 
 export class GitHubRepos extends Component {
+  constructor(){
+    super();
+    this.state = {
+      "repos": "--"
+    }
+  }
   getRepoCount() {
     var _this = this;
     var endpoint = 'https://api.github.com/users/' + this.props.repo;
@@ -20,11 +26,6 @@ export class GitHubRepos extends Component {
     })
     .catch(function(err) {
       console.log('GitHub Fetch Error: ' + err);
-    });
-  }
-  componentWillMount() {
-    this.setState({
-      "repos": "--"
     });
   }
   componentDidMount() {
