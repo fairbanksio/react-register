@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Row, Col } from "react-bootstrap";
+import {Row, Col } from "react-bootstrap";
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input';
@@ -28,11 +28,19 @@ import mdEditor from "components/mdEditor/mdEditor";
 import JSONFormatter from "components/JSONFormatter/JSONFormatter";
 
 var Components = {
-    'Links': Links,
+    'Links': {
+      component: Links,
+      propDefs: [
+        {name: "Title", type: "string"},
+        {name: "Subtitle", type: "string"},
+        {name: "userLinks", type: "array", userLinks: [{name:"URL", type:"string"},{name:"Name", type:"string"},{name:"Desc", type:"string"}]},
+
+      ]
+    },
     'Github': {
       component: GitHubRepos,
       propDefs: [
-        {name: "repo", type:"string"}
+        {name: "repo", type: "string"}
       ]
     },
     'Docker': {
@@ -108,31 +116,107 @@ export class PropForm extends React.Component {
 
   constructor() {
     super();
+
+    this.state = {
+      counts: 3,
+      arrayCount: ["test","test","test"]
+    };
+
   }
 
   changeProp = event => {
     this.props.onChange(event);
   }
 
+  addArrayElement = event => {
+    this.setState(prevState => ({
+      arrayCount: [...prevState.arrayCount, "test"]
+    }))
+  }
+
+  delArrayElement = event => {
+    var currentCount = this.state.arrayCount
+    var arrId = event.target.getAttribute('arrId')
+    console.log(event.target)
+    console.log(arrId)
+    currentCount.splice(arrId, 1);
+    this.setState({
+      arrayCount: currentCount
+    })
+  }
+
   render() {
+    console.log(this.state)
     var component = this.props.component
     if(component){
       var componentProps = Components[component].propDefs;
       var formElements = componentProps.map(function(prop,key){
-        return (
-          <FormControl key={key}>
-            <InputLabel htmlFor={prop.name}>{prop.name}</InputLabel>
-            <Input
-              onChange={this.changeProp}
-              inputProps={{
-                name: prop.name,
-                id: prop.name,
-              }}
-            />
-          </FormControl>
 
-        );
-      },this);
+
+        switch(prop.type){
+          case "string": {
+            return (
+              <FormControl key={key}>
+                <InputLabel htmlFor={prop.name}>{prop.name}</InputLabel>
+                <Input
+                  onChange={this.changeProp}
+                  inputProps={{
+                    name: prop.name,
+                    id: prop.name,
+                  }}
+                />
+              </FormControl>
+            );
+          }
+          case "array": {
+
+            var formElements = this.state.arrayCount.map(function(object,i){
+              return (
+                <InputLabel key={key}>
+                  {prop[prop.name].map(function(subProp,key){
+                    return (
+                      <FormControl key={key}>
+                        <InputLabel htmlFor={subProp.name}>{subProp.name}</InputLabel>
+                        <Input
+                          onChange={this.changeProp}
+                          inputProps={{
+                            name: subProp.name,
+                            parentProp: prop.name,
+                            arrId: i,
+                            id: subProp.name,
+                          }}
+                        />
+                      </FormControl>
+                    );
+                  }, this)}
+                  <Button size="small" color="primary" onClick={this.delArrayElement} >
+                    <span name={prop.name} arrId={i} >Delete</span>
+                  </Button>
+                </InputLabel>
+              );
+            }, this)
+
+            return (
+              <Col>
+              {prop.name}
+              {formElements}
+              <Button size="small" color="primary" onClick={this.addArrayElement}>
+                <span>Add Another</span>
+              </Button>
+              </Col>
+            );
+
+          }
+          default: {
+            return "Unknown propDef type"
+          }
+        }
+
+
+
+
+
+      }, this);
       return formElements
 
     } else {
@@ -169,15 +253,30 @@ export class ComponentBuilder extends React.Component {
   changeComponent = event => {
     var currentComponent = this.state.currentComponent
     currentComponent = { [event.target.name]: event.target.value };
+    currentComponent.props = {}
+    Components[event.target.value].propDefs.map(function(prop,key){
+      if (prop.type === "array") {
+          currentComponent.props = {...currentComponent.props, [prop.name]: []}
+      }
+      return true
+    });
+
     this.setState({currentComponent})
 
   };
 
   changeProp = event => {
+    var parentProp = event.target.getAttribute('parentProp')
+    var arrId = event.target.getAttribute('arrId')
     var currentComponent = this.state.currentComponent
-    currentComponent.props = {...currentComponent.props, [event.target.name]: event.target.value };
-    this.setState({currentComponent})
 
+    if (parentProp){
+      currentComponent.props[parentProp][arrId] = {...currentComponent.props[parentProp][arrId], [event.target.name]: event.target.value}
+      this.setState({currentComponent})
+    } else {
+      currentComponent.props = {...currentComponent.props, [event.target.name]: event.target.value };
+      this.setState({currentComponent})
+    }
 
   };
 
@@ -185,7 +284,7 @@ export class ComponentBuilder extends React.Component {
 
   render() {
     const { classes } = this.props;
-
+    console.log(this.state)
     return (
       <Row>
         <Col md={12}>
@@ -210,15 +309,7 @@ export class ComponentBuilder extends React.Component {
               </Select>
             </FormControl>
 
-
-
-
             <PropForm component={this.state.currentComponent.component} onChange={this.changeProp}/>
-
-
-
-
-
 
             <Button className={classes.root} size="small" color="primary" onClick={this.createComponent}>
               <span>Create Component</span>
