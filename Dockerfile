@@ -24,4 +24,5 @@ RUN cp -a build/. server/public/
 
 WORKDIR /react-register/server
 EXPOSE 3000
+ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["yarn", "start" ]
