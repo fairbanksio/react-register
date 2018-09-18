@@ -22,7 +22,10 @@ class Sidebar extends Component {
   }
   render() {
     const sidebarBackground = {
-      backgroundImage: "url(" + this.props.sidebarBackground + ")"
+      backgroundImage: "url(" + this.props.sidebarBackground + ")",
+      WebkitBoxShadow: "2px 0px 20px 1px rgba(0,0,0,0.5)",
+      MozBoxShadow: "2px 0px 20px 1px rgba(0,0,0,0.5)",
+      boxShadow: "2px 0px 20px 1px rgba(0,0,0,0.5)"
     };
     return (
       <div

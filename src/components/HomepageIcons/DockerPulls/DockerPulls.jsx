@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import { StatsCard } from "components/StatsCard/StatsCard.jsx";
 
 export class DockerPulls extends Component {
+  constructor(){
+    super();
+    this.state = {
+      "pulls": "--"
+    }
+  }
   getPullCount() {
     var _this = this;
     var endpoint = '';
@@ -21,11 +27,6 @@ export class DockerPulls extends Component {
       _this.setState({"pulls": total_pulls})
     })
     .catch((err) => console.log(err))
-  }
-  componentWillMount() {
-    this.setState({
-      "pulls": "--"
-    });
   }
   componentDidMount() {
     this.getPullCount();
