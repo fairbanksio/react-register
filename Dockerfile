@@ -24,5 +24,6 @@ RUN cp -a build/. server/public/
 
 WORKDIR /react-register/server
 EXPOSE 3000
-ENTRYPOINT ["/docker-entrypoint.sh"]
+RUN ["chmod", "+x", "/react-register/docker-entrypoint.sh"]
+ENTRYPOINT ["../docker-entrypoint.sh"]
 CMD ["yarn", "start" ]
