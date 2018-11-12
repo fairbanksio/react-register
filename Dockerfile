@@ -13,14 +13,17 @@ RUN adduser -h /react-register -s /bin/bash -S react-register
 USER  react-register
 WORKDIR /react-register
 
+# Clone the repo and build it
+RUN git clone https://github.com/bsord/react-register . ; yarn install; yarn build
+
+# Install ExpressHTTP and install it
+RUN mkdir server; cd server; git clone https://github.com/jonfairbanks/ExpressHTTP . ; yarn install
+
 # Download the web server and copy build files to public directory
-RUN git clone https://github.com/jonfairbanks/ExpressHTTP . ; yarn install
+RUN cp -a build/. server/public/
 
-# Clone repo and install modules
-RUN mkdir tmp; cd tmp; git clone https://github.com/Fairbanks-io/react-register . ; yarn install; yarn build
-
-# Download the web server and copy build files to public directory
-RUN cp -a tmp/build/. public/
-
+WORKDIR /react-register/server
 EXPOSE 3000
+RUN ["chmod", "+x", "/react-register/docker-entrypoint.sh"]
+ENTRYPOINT ["../docker-entrypoint.sh"]
 CMD ["yarn", "start" ]
