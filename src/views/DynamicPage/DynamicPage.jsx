@@ -15,6 +15,7 @@ import EducationInfo from "components/EducationInfo/EducationInfo";
 import SkillsCard from "components/SkillsCard/SkillsCard";
 import HighCharts from "components/HighCharts/HighCharts";
 import Projects from "components/Projects/Projects";
+import ProjectsHomepage from "components/ProjectsHomepage/ProjectsHomepage";
 import mdEditor from "components/mdEditor/mdEditor";
 import JSONFormatter from "components/JSONFormatter/JSONFormatter";
 
@@ -33,6 +34,7 @@ var Components = {
     'EducationInfo': EducationInfo,
     'HighCharts': HighCharts,
     'Projects': Projects,
+    'ProjectsHomepage': ProjectsHomepage,
     'mdEditor': mdEditor,
     'JSONFormatter': JSONFormatter,
 };
