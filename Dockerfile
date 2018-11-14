@@ -14,12 +14,12 @@ USER  react-register
 WORKDIR /react-register
 
 # Clone the repo and build it
-RUN git clone https://github.com/bsord/react-register . ; yarn install; yarn build
+RUN git clone https://github.com/Fairbanks-io/react-register . ; yarn install; yarn build
 
-# Install ExpressHTTP and install it
+# Clone ExpressHTTP and install it
 RUN mkdir server; cd server; git clone https://github.com/jonfairbanks/ExpressHTTP . ; yarn install
 
-# Download the web server and copy build files to public directory
+# Copy build files to the web server's public directory
 RUN cp -a build/. server/public/
 
 WORKDIR /react-register/server
