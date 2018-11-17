@@ -23,8 +23,10 @@ const styles = theme => ({
   },
 
   card: {
-    marginBottom: '1em'
+    marginBottom: '1em',
+    minHeight: '275px'
   }
+
 
 });
 
@@ -40,6 +42,7 @@ export class ProjectsHomepage extends React.Component {
             A short list of my most recent development efforts
           </span>
         }
+        moreLink={this.props.moreLink}
         content={
           this.props.tabs.map(function(tab, i){
             return (
