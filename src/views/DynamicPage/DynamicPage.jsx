@@ -9,6 +9,7 @@ import { DockerPulls } from "components/HomepageIcons/DockerPulls/DockerPulls.js
 import { FullGallery } from "components/FullGallery/FullGallery.jsx";
 import { GoogleMaps } from "components/Maps/Maps.jsx";
 import { UserCard } from "components/UserCard/UserCard.jsx";
+import { UserCardButtons } from "components/UserCard/UserCardButtons.jsx";
 import Links from "components/Links/Links";
 import WorkExperience from "components/WorkExperience/WorkExperience";
 import EducationInfo from "components/EducationInfo/EducationInfo";
@@ -18,6 +19,7 @@ import Projects from "components/Projects/Projects";
 import ProjectsHomepage from "components/ProjectsHomepage/ProjectsHomepage";
 import mdEditor from "components/mdEditor/mdEditor";
 import JSONFormatter from "components/JSONFormatter/JSONFormatter";
+import { GitDockerCombo } from "components/HomepageIcons/GitDockerCombo/GitDockerCombo.jsx";
 
 var Components = {
     'Links': Links,
@@ -29,6 +31,7 @@ var Components = {
     'UnorderedListCard': UnorderedListCard,
     'GoogleMaps': GoogleMaps,
     'UserCard': UserCard,
+    'UserCardButtons': UserCardButtons,
     'SkillsCard': SkillsCard,
     'WorkExperience': WorkExperience,
     'EducationInfo': EducationInfo,
@@ -37,6 +40,7 @@ var Components = {
     'ProjectsHomepage': ProjectsHomepage,
     'mdEditor': mdEditor,
     'JSONFormatter': JSONFormatter,
+    'GitDockerCombo': GitDockerCombo,
 };
 
 class DynamicPage extends Component{
