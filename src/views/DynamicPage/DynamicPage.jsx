@@ -18,6 +18,7 @@ import Projects from "components/Projects/Projects";
 import ProjectsHomepage from "components/ProjectsHomepage/ProjectsHomepage";
 import mdEditor from "components/mdEditor/mdEditor";
 import JSONFormatter from "components/JSONFormatter/JSONFormatter";
+import { GitDockerCombo } from "components/HomepageIcons/GitDockerCombo/GitDockerCombo.jsx";
 
 var Components = {
     'Links': Links,
@@ -37,6 +38,7 @@ var Components = {
     'ProjectsHomepage': ProjectsHomepage,
     'mdEditor': mdEditor,
     'JSONFormatter': JSONFormatter,
+    'GitDockerCombo': GitDockerCombo,
 };
 
 class DynamicPage extends Component{
