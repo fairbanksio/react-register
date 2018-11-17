@@ -6007,9 +6007,9 @@ react-scrolllock@^2.0.1:
     exenv "^1.2.2"
     react-prop-toggle "^1.0.2"
 
-react-skillbars@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/react-skillbars/-/react-skillbars-1.5.1.tgz#be7f2c18532456cce6ff06252163636c68a79e66"
+react-skills-bars@latest:
+  version "1.0.0-development"
+  resolved "https://registry.yarnpkg.com/react-skills-bars/-/react-skills-bars-1.0.0-development.tgz#c1d10c060ebd7cac10abd12826b9caa6418ef354"
   dependencies:
     lodash.throttle "4.1.1"
 

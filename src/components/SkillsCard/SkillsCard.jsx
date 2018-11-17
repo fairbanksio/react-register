@@ -1,7 +1,7 @@
 
 import React, { Component } from "react";
 import CardNoFooter from "components/Card/CardNoFooter.jsx";
-import SkillBar from 'react-skillbars';
+import SkillBar from 'react-skills-bars';
 
 
 export class SkillsCard extends Component {

@@ -63,7 +63,7 @@
     "react-notification-system": "0.2.17",
     "react-photo-gallery": "^6.0.28",
     "react-router-dom": "4.2.2",
-    "react-skillbars": "^1.5.1",
+    "react-skills-bars": "latest",
     "showdown": "^1.8.6",
     "showdown-xss-filter": "^0.2.0",
     "style-loader": "^0.21.0",
