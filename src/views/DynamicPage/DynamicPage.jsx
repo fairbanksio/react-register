@@ -9,6 +9,7 @@ import { DockerPulls } from "components/HomepageIcons/DockerPulls/DockerPulls.js
 import { FullGallery } from "components/FullGallery/FullGallery.jsx";
 import { GoogleMaps } from "components/Maps/Maps.jsx";
 import { UserCard } from "components/UserCard/UserCard.jsx";
+import { UserCardButtons } from "components/UserCard/UserCardButtons.jsx";
 import Links from "components/Links/Links";
 import WorkExperience from "components/WorkExperience/WorkExperience";
 import EducationInfo from "components/EducationInfo/EducationInfo";
@@ -30,6 +31,7 @@ var Components = {
     'UnorderedListCard': UnorderedListCard,
     'GoogleMaps': GoogleMaps,
     'UserCard': UserCard,
+    'UserCardButtons': UserCardButtons,
     'SkillsCard': SkillsCard,
     'WorkExperience': WorkExperience,
     'EducationInfo': EducationInfo,
