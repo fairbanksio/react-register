@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from '@material-ui/core/Button';
 
 export class CardNoFooter extends Component {
   render() {
@@ -20,6 +21,19 @@ export class CardNoFooter extends Component {
           {this.props.content}
 
         </div>
+
+        {this.props.moreLink ?
+          <div className="text-center">
+            <hr style={{'margin':'5px 15px'}}/>
+            <a href={this.props.moreLink}>
+
+              <Button size="large" variant="outlined" color="#234323" style={{'margin':'5px 15px 10px 10px', 'borderWidth':'1px', 'color':'#234323', 'borderColor':'#234323', 'width':'50%'}}>
+                <i className="fas fa-plus-square"/><span style={{'paddingLeft':'10px'}}>View More</span>
+              </Button>
+            </a>
+          </div>
+        :null}
+
       </div>
     );
   }
