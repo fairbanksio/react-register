@@ -1,19 +1,14 @@
 import React from 'react';
-import { Grid, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import CardNoFooter from "components/Card/CardNoFooter.jsx";
-
-
 
 const styles = theme => ({
   root: {
@@ -48,10 +43,10 @@ export class ProjectsHomepage extends React.Component {
         content={
           this.props.tabs.map(function(tab, i){
             return (
-                <Row>
+                <Row key={i}>
                   {tab.items.map(function(item, i){
                     return (
-                      <Col md={4} key={i}>
+                      <Col md={3} key={i}>
                         <Card  className={classes.card}>
                           <CardMedia
                             className={classes.media}
