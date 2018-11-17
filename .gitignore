@@ -14,7 +14,7 @@ src/variables/ProjectsConfig.jsx
 src/variables/ChartsConfig.jsx
 src/variables/SiteData.jsx
 public/images/
-
+node_modules/
 !public/assets/images
 public/assets/images/*
 !public/assets/images/local_file.jpg
