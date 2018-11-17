@@ -4,13 +4,8 @@
 
 [![Build Status](https://travis-ci.org/Fairbanks-io/react-register.svg?branch=develop)](https://travis-ci.org/Fairbanks-io/react-register)
 
-A MaterialUI based dashboard built on React.
+A Material UI based dashboard built on React
 
-This project is still under development. This readme will get updated again soon.
-
-
-### Table of Contents
-[TOC]
 
 ### Live demo
 - https://fairbanks-io.github.io/react-register
