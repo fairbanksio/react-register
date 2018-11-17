@@ -39,7 +39,7 @@ var outputOptions = {
   lineNumbers: true,
   mode: { name: 'javascript', json: true },
   theme: 'material',
-  readOnly: 'nocursor' // Nocursor for proper mobile handling
+  readOnly: true
 };
 
 class FormattedJSON extends Component {
