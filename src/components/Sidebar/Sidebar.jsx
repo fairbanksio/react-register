@@ -27,6 +27,9 @@ class Sidebar extends Component {
       MozBoxShadow: "2px 0px 20px 1px rgba(0,0,0,0.5)",
       boxShadow: "2px 0px 20px 1px rgba(0,0,0,0.5)"
     };
+    var customTitleStyle = {
+      lineHeight: '.95'
+    }
     return (
       <div
         id="sidebar"
@@ -47,13 +50,14 @@ class Sidebar extends Component {
           <a
             href={this.props.Website}
             className="simple-text logo-normal"
+            style={customTitleStyle}
           >
             {this.props.SiteTitle}
           </a>
         </div>
         <div className="sidebar-wrapper">
           <ul className="nav">
-            {this.state.width <= 991 ? <HeaderLinks /> : null}
+            
             {this.props.sitePages.map((prop, key) => {
               if (!prop.redirect && !prop.hidden)
                   return (
