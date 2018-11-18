@@ -86,7 +86,6 @@ class DynamicPage extends Component{
           <div className="content">
             <Grid fluid>
               <Row>
-                /
                 {elements.map(function(element, i){
                   // iterate and display all the processed elements.
                   return <Col {...element.props.col} key={i}>{element}</Col>;
