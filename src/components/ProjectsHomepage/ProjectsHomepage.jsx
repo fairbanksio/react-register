@@ -51,11 +51,13 @@ export class ProjectsHomepage extends React.Component {
                     return (
                       <Col md={3} key={i}>
                         <Card  className={classes.card}>
-                          <CardMedia
-                            className={classes.media}
-                            image={item.img}
-                            title={item.name}
-                          />
+                          <a href={item.buttonLink1}>
+                            <CardMedia
+                              className={classes.media}
+                              image={item.img}
+                              title={item.name}
+                            />
+                          </a>
                           <CardContent>
                             <Typography gutterBottom variant="headline" component="h2" className={classes.title}>
                               {item.name}
