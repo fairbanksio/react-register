@@ -62,7 +62,7 @@ class DynamicPage extends Component{
             var Component = Components[elementData['component']] || elementData['component'];
 
             // Return Component wrapped in Col and md value defined in the element.
-            return <Col md={elementData.col.md}><Component {...elementData.props} {...elementData} key={i}/></Col>
+            return <Component {...elementData.props} {...elementData} key={i}/>
           });
 
           // Return all child Components wrapped in a Col that is the 'Group'
@@ -72,7 +72,7 @@ class DynamicPage extends Component{
 
           // Component is not a group, return it without further processing.
           var Component = Components[elementData['component']] || elementData['component'];
-          return <Component {...elementData.props} {...elementData}/>
+          return <Col md={elementData.col.md}><Component {...elementData.props} {...elementData}/></Col>
         }
       });
       return rtrnElements;
@@ -87,8 +87,7 @@ class DynamicPage extends Component{
             <Grid fluid>
               <Row>
                 {elements.map(function(element, i){
-                  // iterate and display all the processed elements.
-                  return <Col {...element.props.col} key={i}>{element}</Col>;
+                  return element;
                 })}
               </Row>
             </Grid>
