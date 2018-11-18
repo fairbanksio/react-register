@@ -6,6 +6,7 @@ import { GitHubRepos } from "components/HomepageIcons/GitHubRepos/GitHubRepos.js
 import { DigitalOcean } from "components/HomepageIcons/DigitalOcean/DigitalOcean.jsx";
 import { LinkedIn } from "components/HomepageIcons/LinkedIn/LinkedIn.jsx";
 import { DockerPulls } from "components/HomepageIcons/DockerPulls/DockerPulls.jsx";
+import { Npm } from "components/HomepageIcons/Npm/Npm.jsx";
 import { FullGallery } from "components/FullGallery/FullGallery.jsx";
 import { GoogleMaps } from "components/Maps/Maps.jsx";
 import { UserCard } from "components/UserCard/UserCard.jsx";
@@ -27,6 +28,7 @@ var Components = {
     'Docker': DockerPulls,
     'LinkedIn': LinkedIn,
     'DigitalOcean': DigitalOcean,
+    'Npm': Npm,
     'FullGallery': FullGallery,
     'UnorderedListCard': UnorderedListCard,
     'GoogleMaps': GoogleMaps,
@@ -52,7 +54,7 @@ class DynamicPage extends Component{
         if (Array.isArray(elementData.group)){
           var subElements = elementData.group.map(function(elementData, i){
             var Component = Components[elementData['component']] || elementData['component'];
-            return <Component {...elementData.props} {...elementData} key={i}/>
+            return <Col md={elementData.col.md}><Component {...elementData.props} {...elementData} key={i}/></Col>
           });
           return (<Col md={elementData.col.md}> {subElements} </Col>);
         } else {
