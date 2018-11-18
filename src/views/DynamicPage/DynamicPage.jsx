@@ -49,27 +49,44 @@ class DynamicPage extends Component{
     componentDidMount(){
       document.title = this.props.page.name + ' | ' + this.props.siteTitle;
     }
+
     renderElements(elements){
       var rtrnElements = elements.map(function(elementData){
+        // Check if group
         if (Array.isArray(elementData.group)){
+
+          // Process sub elements
           var subElements = elementData.group.map(function(elementData, i){
+
+            // Build the component based on element defined inside the group
             var Component = Components[elementData['component']] || elementData['component'];
+
+            // Return Component wrapped in Col and md value defined in the element.
             return <Col md={elementData.col.md}><Component {...elementData.props} {...elementData} key={i}/></Col>
           });
+
+          // Return all child Components wrapped in a Col that is the 'Group'
           return (<Col md={elementData.col.md}> {subElements} </Col>);
+
         } else {
+
+          // Component is not a group, return it without further processing.
           var Component = Components[elementData['component']] || elementData['component'];
           return <Component {...elementData.props} {...elementData}/>
         }
       });
       return rtrnElements;
     }
+
     render() {
+
+        // Process all the elements passed to this page
         var elements = this.renderElements(this.props.page["elements"]);
         return (
           <div className="content">
             <Grid fluid>
               <Row>
+                // iterate and display all the processed elements.
                 {elements.map(function(element, i){
                   return <Col {...element.props.col} key={i}>{element}</Col>;
                 })}
