@@ -62,11 +62,11 @@ class DynamicPage extends Component{
             var Component = Components[elementData['component']] || elementData['component'];
 
             // Return Component wrapped in Col and md value defined in the element.
-            return <Component {...elementData.props} {...elementData} key={i}/>
+            return <Col md={elementData.col.md} ><Component {...elementData.props} {...elementData} key={i}/></Col>
           });
 
           // Return all child Components wrapped in a Col that is the 'Group'
-          return (<Col md={elementData.col.md}> {subElements} </Col>);
+          return (<Col md={elementData.col.md} style={{'padding':'0px'}}> {subElements} </Col>);
 
         } else {
 
