@@ -88,11 +88,13 @@ export class Projects extends React.Component {
                   return (
                     <Col xs={6} sm={6} md={2} lg={2} key={i}>
                       <Card className={classes.card}>
-                        <CardMedia
-                          className={classes.media}
-                          image={item.img}
-                          title={item.name}
-                        />
+                        <a href={item.buttonLink1}>
+                          <CardMedia
+                            className={classes.media}
+                            image={item.img}
+                            title={item.name}
+                          />
+                        </a>
                         <CardContent style={{ minHeight: '125px' }}>
                           <Typography gutterBottom variant="headline" component="h2" className={classes.title}>
                             {item.name}
