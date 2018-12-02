@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { StatsCard } from "components/StatsCard/StatsCard.jsx";
 import { Row, Col } from "react-bootstrap";
 
 export class DockerPulls extends Component {
