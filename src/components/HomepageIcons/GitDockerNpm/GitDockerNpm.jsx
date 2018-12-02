@@ -78,7 +78,6 @@ export class GitDockerNpm extends Component {
   }
 
   render() {
-    const {repo, maintainer, username} = this.props
     return (
       <Row>
 

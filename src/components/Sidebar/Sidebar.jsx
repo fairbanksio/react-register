@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
-import HeaderLinks from "../Header/HeaderLinks.jsx";
 
 class Sidebar extends Component {
   constructor(props) {
@@ -57,7 +56,7 @@ class Sidebar extends Component {
         </div>
         <div className="sidebar-wrapper">
           <ul className="nav">
-            
+
             {this.props.sitePages.map((prop, key) => {
               if (!prop.redirect && !prop.hidden)
                   return (

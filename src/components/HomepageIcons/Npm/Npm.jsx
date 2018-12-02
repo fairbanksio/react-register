@@ -1,58 +1,55 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
 
-export class GitHubRepos extends Component {
+export class Npm extends Component {
   constructor(){
     super();
     this.state = {
-      "repos": "--"
+      "packages": "--",
     }
   }
-  getRepoCount() {
+  getPackageCount() {
     var _this = this;
-    var endpoint = 'https://api.github.com/users/' + this.props.repo;
+    var endpoint = 'https://registry.npmjs.com/-/v1/search?text=maintainer:' + this.props.maintainer;
 
     let headers = new Headers();
-    if(this.props.authToken) {
-      headers.set('Authorization', 'bearer ' + this.props.authToken);
-    }
 
     fetch(endpoint, {method:'GET',
       headers: headers,
     })
     .then((resp) => resp.json())
     .then(function(data){
-      _this.setState({"repos": data.public_repos});
+      _this.setState({"packages": data.objects.length});
     })
     .catch(function(err) {
-      console.log('GitHub Fetch Error: ' + err);
+      console.log('NPM Fetch Error: ' + err);
     });
   }
   componentDidMount() {
-    this.getRepoCount();
+    this.getPackageCount();
   }
   render() {
     return (
       <a style={{'color':'#000000'}}
-        href={'https://github.com/' + this.props.repo + '?tab=repositories'}
+        href={"https://www.npmjs.com/~" + this.props.maintainer}
         target='_blank'
         rel='noopener noreferrer'>
         <div className="card card-stats">
           <div className="content">
+
             <Row>
               <Col xs={5}>
                 <div className="icon-big text-center icon-warning">
-                  { <i className="fab fa-lg fa-github" style={{'color':'#6E5494'}}/> }
+                  { <i className="fab fa-lg fa-npm" style={{'color':'#cb3837'}}/>}
                 </div>
               </Col>
               <Col xs={7}>
                 <div className="numbers">
-                  <p>GitHub Repos</p>
-                  {this.state.repos}
+                  <p>NPM Packages</p>
+                  {this.state.packages}
                 </div>
               </Col>
             </Row>
-
           </div>
         </div>
       </a>
@@ -60,4 +57,4 @@ export class GitHubRepos extends Component {
   }
 }
 
-export default GitHubRepos;
+export default Npm;

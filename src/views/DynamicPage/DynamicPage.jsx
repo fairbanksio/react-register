@@ -6,6 +6,7 @@ import { GitHubRepos } from "components/HomepageIcons/GitHubRepos/GitHubRepos.js
 import { DigitalOcean } from "components/HomepageIcons/DigitalOcean/DigitalOcean.jsx";
 import { LinkedIn } from "components/HomepageIcons/LinkedIn/LinkedIn.jsx";
 import { DockerPulls } from "components/HomepageIcons/DockerPulls/DockerPulls.jsx";
+import { Npm } from "components/HomepageIcons/Npm/Npm.jsx";
 import { FullGallery } from "components/FullGallery/FullGallery.jsx";
 import { GoogleMaps } from "components/Maps/Maps.jsx";
 import { UserCard } from "components/UserCard/UserCard.jsx";
@@ -27,6 +28,7 @@ var Components = {
     'Docker': DockerPulls,
     'LinkedIn': LinkedIn,
     'DigitalOcean': DigitalOcean,
+    'Npm': Npm,
     'FullGallery': FullGallery,
     'UnorderedListCard': UnorderedListCard,
     'GoogleMaps': GoogleMaps,
@@ -47,29 +49,45 @@ class DynamicPage extends Component{
     componentDidMount(){
       document.title = this.props.page.name + ' | ' + this.props.siteTitle;
     }
+
     renderElements(elements){
       var rtrnElements = elements.map(function(elementData){
+        // Check if group
         if (Array.isArray(elementData.group)){
+
+          // Process sub elements
           var subElements = elementData.group.map(function(elementData, i){
+
+            // Build the component based on element defined inside the group
             var Component = Components[elementData['component']] || elementData['component'];
-            return <Component {...elementData.props} {...elementData} key={i}/>
+
+            // Return Component wrapped in Col and md value defined in the element.
+            return <Col md={elementData.col.md} ><Component {...elementData.props} {...elementData} key={i}/></Col>
           });
-          return (<Col md={elementData.col.md}> {subElements} </Col>);
+
+          // Return all child Components wrapped in a Col that is the 'Group'
+          return (<Col md={elementData.col.md} style={{'padding':'0px'}}> {subElements} </Col>);
+
         } else {
+
+          // Component is not a group, return it without further processing.
           var Component = Components[elementData['component']] || elementData['component'];
-          return <Component {...elementData.props} {...elementData}/>
+          return <Col md={elementData.col.md}><Component {...elementData.props} {...elementData}/></Col>
         }
       });
       return rtrnElements;
     }
+
     render() {
+
+        // Process all the elements passed to this page
         var elements = this.renderElements(this.props.page["elements"]);
         return (
           <div className="content">
             <Grid fluid>
               <Row>
                 {elements.map(function(element, i){
-                  return <Col {...element.props.col} key={i}>{element}</Col>;
+                  return element;
                 })}
               </Row>
             </Grid>

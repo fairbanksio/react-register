@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StatsCard } from "components/StatsCard/StatsCard.jsx";
+import { Row, Col } from "react-bootstrap";
 
 export class DockerPulls extends Component {
   constructor(){
@@ -33,18 +33,29 @@ export class DockerPulls extends Component {
   }
   render() {
     return (
-      <a style={{'color':'#000000'}}
-        href={'https://hub.docker.com/r/' + this.props.username}
-        target='_blank'
-        rel='noopener noreferrer'>
-        <StatsCard
-          bigIcon={ <i className="fab fa-lg fa-docker" style={{'color':'#0DB7ED'}}/> }
-          statsText="Docker Pulls"
-          statsValue={this.state.pulls}
-          statsIcon={ <i className="fa fa-refresh" /> }
-          statsIconText="Updated now"
-        />
-      </a>
+        <a style={{'color':'#000000'}}
+          href={'https://hub.docker.com/r/' + this.props.username}
+          target='_blank'
+          rel='noopener noreferrer'>
+          <div className="card card-stats">
+            <div className="content">
+
+              <Row>
+                <Col xs={5}>
+                  <div className="icon-big text-center icon-warning">
+                    { <i className="fab fa-lg fa-docker" style={{'color':'#0DB7ED'}}/>}
+                  </div>
+                </Col>
+                <Col xs={7}>
+                  <div className="numbers">
+                    <p>Docker Pulls</p>
+                    {this.state.pulls}
+                  </div>
+                </Col>
+              </Row>
+            </div>
+          </div>
+        </a>
     );
   }
 }
