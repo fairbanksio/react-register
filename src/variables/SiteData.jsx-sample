@@ -198,6 +198,7 @@ var siteData = {
     icon: "pe-7s-link",
     elements: [
         { component: 'Links',
+          col: { md: 12 },
           props: {
             userLinksHead: {Title: "Links", Subtitle: "These are some user specified links"},
             userLinks: [
@@ -210,7 +211,6 @@ var siteData = {
         }
       ]
     },
-
     {
     //About ME
     path: "/about",
@@ -219,7 +219,7 @@ var siteData = {
     elements: [
         { group: [
           { component: 'UserCard',
-            col: { md: 4 },
+            col: { md: 12 },
             props: {
               name: 'John Doe',
               avatar: 'https://images.unsplash.com/photo-1525288849522-7f24f554e64a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=80e80c09ba209c9299f6e77b6ab7e5c9&auto=format&fit=crop&w=150&h=150&q=80',
@@ -240,8 +240,9 @@ var siteData = {
 
             }
           },
+
           { component: 'SkillsCard',
-            col: { md: 4 },
+            col: { md: 12 },
             props: {
               skillsData: [
                 {type: "Node", level: 85},
@@ -260,13 +261,13 @@ var siteData = {
                 }
               }
             }
-          },
+          }
         ],
         col:{md:4},
         },
         { group: [
           { component: 'WorkExperience',
-            col: { md: 8 },
+            col: { md: 12 },
             props: {
               workExperienceTitle: "Work Experience",
               workExperienceSubtitle: "Work Experience Subtitle",
@@ -315,7 +316,7 @@ var siteData = {
             }
           },
           { component: 'EducationInfo',
-            col: { md: 8 },
+            col: { md: 12 },
             props: {
               educationInfoTitle: "Schooling and Certifications",
               educationInfoSubtitle: "Schooling and Certifications Subtitle",
