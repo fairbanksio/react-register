@@ -55,7 +55,7 @@
     "react-codemirror2": "^5.1.0",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dev-utils": "^5.0.0",
-    "react-dom": "16.3.0",
+    "react-dom": "16.3.3",
     "react-editor-md": "^1.0.6",
     "react-google-maps": "9.4.5",
     "react-highcharts": "^16.0.2",
@@ -79,7 +79,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "node scripts/start.js",
     "start-old": "npm-run-all -p watch-css start-js",
-    "start": "yarn install; if [ -f src/variables/SiteData.jsx ]; then npm-run-all -p watch-css start-js; else cp src/variables/SiteData.jsx-sample src/variables/SiteData.jsx && npm-run-all -p watch-css start-js; fi",
+    "start": "npm install; if [ -f src/variables/SiteData.jsx ]; then npm-run-all -p watch-css start-js; else cp src/variables/SiteData.jsx-sample src/variables/SiteData.jsx && npm-run-all -p watch-css start-js; fi",
     "build": "if [ -f src/variables/SiteData.jsx ]; then npm run build-css && node scripts/build.js; else cp src/variables/SiteData.jsx-sample src/variables/SiteData.jsx && npm run build-css && node scripts/build.js; fi",
     "test": "node scripts/test.js --env=jsdom",
     "load-sample": "cp src/variables/SiteData.jsx-sample src/variables/SiteData.jsx"
