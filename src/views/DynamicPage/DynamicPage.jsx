@@ -51,7 +51,7 @@ class DynamicPage extends Component{
     }
 
     renderElements(elements){
-      var rtrnElements = elements.map(function(elementData){
+      var rtrnElements = elements.map(function(elementData, i){
         // Check if group
         if (Array.isArray(elementData.group)){
 
@@ -62,17 +62,17 @@ class DynamicPage extends Component{
             var Component = Components[elementData['component']] || elementData['component'];
 
             // Return Component wrapped in Col and md value defined in the element.
-            return <Col md={elementData.col.md} ><Component {...elementData.props} {...elementData} key={i}/></Col>
+            return <Col md={elementData.col.md} key={i}><Component {...elementData.props} {...elementData} /></Col>
           });
 
           // Return all child Components wrapped in a Col that is the 'Group'
-          return (<Col md={elementData.col.md} style={{'padding':'0px'}}> {subElements} </Col>);
+          return (<Col md={elementData.col.md} style={{'padding':'0px'}} key={i}> {subElements} </Col>);
 
         } else {
 
           // Component is not a group, return it without further processing.
           var Component = Components[elementData['component']] || elementData['component'];
-          return <Col md={elementData.col.md}><Component {...elementData.props} {...elementData}/></Col>
+          return <Col md={elementData.col.md} key={i}><Component {...elementData.props} {...elementData} /></Col>
         }
       });
       return rtrnElements;
