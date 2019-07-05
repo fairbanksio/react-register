@@ -17,7 +17,7 @@
     "babel-loader": "^7.1.5",
     "babel-preset-react-app": "^3.1.1",
     "babel-runtime": "6.26.0",
-    "bootstrap": "4.1.2",
+    "bootstrap": "3.3.7",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
     "chartist": "0.10.1",
@@ -70,7 +70,7 @@
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.6.2",
     "webpack": "3.8.1",
-    "webpack-dev-server": "3.1.11",
+    "webpack-dev-server": "2.9.4",
     "webpack-manifest-plugin": "1.3.2",
     "whatwg-fetch": "2.0.3"
   },
@@ -79,7 +79,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "node scripts/start.js",
     "start-old": "npm-run-all -p watch-css start-js",
-    "start": "yarn install; if [ -f src/variables/SiteData.jsx ]; then npm-run-all -p watch-css start-js; else cp src/variables/SiteData.jsx-sample src/variables/SiteData.jsx && npm-run-all -p watch-css start-js; fi",
+    "start": "npm install; if [ -f src/variables/SiteData.jsx ]; then npm-run-all -p watch-css start-js; else cp src/variables/SiteData.jsx-sample src/variables/SiteData.jsx && npm-run-all -p watch-css start-js; fi",
     "build": "if [ -f src/variables/SiteData.jsx ]; then npm run build-css && node scripts/build.js; else cp src/variables/SiteData.jsx-sample src/variables/SiteData.jsx && npm run build-css && node scripts/build.js; fi",
     "test": "node scripts/test.js --env=jsdom",
     "load-sample": "cp src/variables/SiteData.jsx-sample src/variables/SiteData.jsx"

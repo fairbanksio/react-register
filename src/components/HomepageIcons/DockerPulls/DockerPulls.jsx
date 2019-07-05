@@ -8,6 +8,9 @@ export class DockerPulls extends Component {
       "pulls": "--"
     }
   }
+  numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
   getPullCount() {
     var _this = this;
     var endpoint = '';
@@ -24,7 +27,7 @@ export class DockerPulls extends Component {
       data.results.forEach(function(repo){
         total_pulls += repo.pull_count;
       });
-      _this.setState({"pulls": total_pulls})
+      _this.setState({"pulls": this.numberWithCommas(total_pulls)})
     })
     .catch((err) => console.log(err))
   }
