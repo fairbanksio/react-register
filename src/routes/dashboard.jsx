@@ -1,42 +1,15 @@
-import Home from "views/Home/Home";
-import Projects from "views/Projects/Projects";
-import Links from "views/Links/Links";
-import AboutMe from "views/AboutMe/AboutMe";
-import Gallery from "views/Gallery/Gallery";
+import React from "react";
+import DynamicPage from "views/DynamicPage/DynamicPage";
+import siteData from "variables/SiteData.jsx";
 
-const dashboardRoutes = [
-  {
-    path: "/home",
-    name: "Home",
-    icon: "pe-7s-home",
-    component: Home
-  },
-  {
-    path: "/gallery",
-    name: "Gallery",
-    icon: "pe-7s-photo",
-    component: Gallery
-  },
-  {
-      path: "/projects",
-      name: "Projects",
-      icon: "pe-7s-plugin",
-      component: Projects
-  },
-  {
-    path: "/links",
-    name: "Links",
-    icon: "pe-7s-link",
-    component: Links
-  },
-  {
-    path: "/about",
-    name: "About Me",
-    icon: "pe-7s-id",
-    component: AboutMe
-  },
+// Dynamically make routes from the config file
+var sitePages = siteData.pages.map(function(page){
+  if (page.redirect === true) {
+    return { redirect: true, path: page.path, to: page.to, name: page.name}
+  } else {
+    var pageComponent = (props) => <DynamicPage page={page} website={siteData.Website} siteTitle={siteData.SiteTitle} />
+    return { path: page.path.toLowerCase(), name: page.name, icon: page.icon, component: pageComponent, hidden: page.hidden}
+  }
+})
 
-  { redirect: true, path: "/", to: "/home", name: "Home" }
-];
-
-export default dashboardRoutes;
+export default sitePages;

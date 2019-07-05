@@ -1,22 +1,21 @@
 import React, { Component } from "react";
-import { Card } from "components/Card/CardNoFooter.jsx";
+import CardNoFooter from "components/Card/CardNoFooter.jsx";
 import { Row, Col } from "react-bootstrap";
-import { educationInfoTitle, educationInfoSubtitle, educationInfo } from "variables/PortfolioConfig.jsx";
 
 export class EducationInfo extends Component {
   render() {
     return (
-      <Card
-        title={educationInfoTitle}
+      <CardNoFooter
+        title={this.props.educationInfoTitle}
         ctAllIcons
         category={
           <span>
-            {educationInfoSubtitle}
+            {this.props.educationInfoSubtitle}
           </span>
         }
         content={
           <Row>
-            {educationInfo.map((prop, key) => {
+            {this.props.educationInfo.map((prop, key) => {
               return (
                 <Col
                   lg={6}

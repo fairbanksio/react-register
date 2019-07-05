@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { StatsCard } from "components/StatsCard/StatsCard.jsx";
-import { extraConfigs } from "variables/UserConfig.jsx";
+
 
 export class DigitalOcean extends Component {
   render() {
     return (
       <a style={{'color':'#333'}}
-        href={extraConfigs.doReferral}
+        href={this.props.doReferral}
+
         target='_blank'
         rel='noopener noreferrer'>
         <StatsCard

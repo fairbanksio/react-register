@@ -1,15 +1,20 @@
 import React, { Component } from "react";
-import { StatsCard } from "components/StatsCard/StatsCard.jsx";
-import { userConfig, corsProxy } from "variables/UserConfig.jsx";
+import { Row, Col } from "react-bootstrap";
 
 export class DockerPulls extends Component {
+  constructor(){
+    super();
+    this.state = {
+      "pulls": "--"
+    }
+  }
   getPullCount() {
     var _this = this;
     var endpoint = '';
-    if(corsProxy){
-      endpoint = corsProxy + 'https://hub.docker.com/v2/repositories/' + userConfig.Docker;
+    if(this.props.corsproxy){
+      endpoint = this.props.corsproxy + 'https://hub.docker.com/v2/repositories/' + this.props.username;
     } else {
-      endpoint = 'https://hub.docker.com/v2/repositories/' + userConfig.Docker;
+      endpoint = 'https://hub.docker.com/v2/repositories/' + this.props.username;
     }
 
     fetch(endpoint)
@@ -23,28 +28,34 @@ export class DockerPulls extends Component {
     })
     .catch((err) => console.log(err))
   }
-  componentWillMount() {
-    this.setState({
-      "pulls": "--"
-    });
-  }
   componentDidMount() {
     this.getPullCount();
   }
   render() {
     return (
-      <a style={{'color':'#000000'}}
-        href={'https://hub.docker.com/r/' + userConfig.Docker}
-        target='_blank'
-        rel='noopener noreferrer'>
-        <StatsCard
-          bigIcon={ <i className="fab fa-lg fa-docker" style={{'color':'#0DB7ED'}}/> }
-          statsText="Docker Pulls"
-          statsValue={this.state.pulls}
-          statsIcon={ <i className="fa fa-refresh" /> }
-          statsIconText="Updated now"
-        />
-      </a>
+        <a style={{'color':'#000000'}}
+          href={'https://hub.docker.com/r/' + this.props.username}
+          target='_blank'
+          rel='noopener noreferrer'>
+          <div className="card card-stats">
+            <div className="content">
+
+              <Row>
+                <Col xs={5}>
+                  <div className="icon-big text-center icon-warning">
+                    { <i className="fab fa-lg fa-docker" style={{'color':'#0DB7ED'}}/>}
+                  </div>
+                </Col>
+                <Col xs={7}>
+                  <div className="numbers">
+                    <p>Docker Pulls</p>
+                    {this.state.pulls}
+                  </div>
+                </Col>
+              </Row>
+            </div>
+          </div>
+        </a>
     );
   }
 }

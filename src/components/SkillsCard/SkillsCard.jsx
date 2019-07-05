@@ -1,11 +1,19 @@
+
 import React, { Component } from "react";
-import SkillBar from 'react-skillbars';
-import { skillsData, skillsColors } from 'variables/PortfolioConfig.jsx'
+import CardNoFooter from "components/Card/CardNoFooter.jsx";
+import SkillBar from 'react-skills-bars';
+
 
 export class SkillsCard extends Component {
   render() {
     return (
-      <SkillBar skills={skillsData} colors={skillsColors} />
+      <CardNoFooter
+        title={this.props.skillsTitle}
+        category={this.props.skillsSubtitle}
+        content={
+          <SkillBar skills={this.props.skillsData} colors={this.props.skillsColors} animationDelay={20} offset={1000}/>
+        }
+      />
     );
   }
 }

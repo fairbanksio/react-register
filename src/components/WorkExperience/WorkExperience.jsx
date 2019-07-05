@@ -1,22 +1,21 @@
 import React, { Component } from "react";
-import { Card } from "components/Card/CardNoFooter.jsx";
+import CardNoFooter from "components/Card/CardNoFooter.jsx";
 import { Row, Col } from "react-bootstrap";
-import { workExperienceTitle, workExperienceSubtitle, workExperience } from "variables/PortfolioConfig.jsx";
 
 export class WorkExperience extends Component {
   render() {
     return (
-      <Card
-        title={workExperienceTitle}
+      <CardNoFooter
+        title={this.props.workExperienceTitle}
         ctAllIcons
         category={
           <span>
-            {workExperienceSubtitle}
+            {this.props.workExperienceSubtitle}
           </span>
         }
         content={
           <Row>
-            {workExperience.map((prop, key) => {
+            {this.props.workExperience.map((prop, key) => {
               return (
                 <Col
                   lg={6}
