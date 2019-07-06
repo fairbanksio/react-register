@@ -56,7 +56,6 @@ class Sidebar extends Component {
         </div>
         <div className="sidebar-wrapper">
           <ul className="nav">
-
             {this.props.sitePages.map((prop, key) => {
               if (!prop.redirect && !prop.hidden)
                   return (

@@ -16,18 +16,14 @@ const styles = theme => ({
     width: '100%',
     backgroundColor: theme.palette.background.paper,
   },
-
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
   },
-
   card: {
     marginBottom: '1em',
     minHeight: '275px'
   }
-
-
 });
 
 export class ProjectsHomepage extends React.Component {
