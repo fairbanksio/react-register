@@ -27,7 +27,7 @@ class Sidebar extends Component {
       boxShadow: "2px 0px 20px 1px rgba(0,0,0,0.5)"
     };
     var customTitleStyle = {
-      lineHeight: '.95'
+      //lineHeight: '.95'
     }
     return (
       <div
