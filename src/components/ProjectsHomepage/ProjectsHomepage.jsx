@@ -58,23 +58,25 @@ export class ProjectsHomepage extends React.Component {
                             <Typography gutterBottom variant="headline" component="h2" className={classes.title}>
                               {item.name}
                             </Typography>
-                            <Typography component="h5" className={classes.text}>
+                            <Typography component="h5" className={classes.text} style={{fontSize: '1rem'}}>
                               {item.desc}
                             </Typography>
                           </CardContent>
                           <CardActions>
-                            {item.buttonText1
-                              ? <Button size="small" color="primary" onClick={() => window.open(item.buttonLink1)}>
-                                <span className={classes.text}>{item.buttonText1}</span>
-                              </Button>
-                              : null
-                            }
-                            {item.buttonText2
-                              ? <Button size="small" color="primary" onClick={() => window.open(item.buttonLink2)}>
-                                <span className={classes.text}>{item.buttonText2}</span>
-                              </Button>
-                              : null
-                            }
+                            <div style={{position: 'absolute', bottom: '20px'}}>
+                              {item.buttonText1
+                                ? <Button size="small" color="primary" onClick={() => window.open(item.buttonLink1)}>
+                                    <span className={classes.text} style={{fontSize: '1rem'}}>{item.buttonText1}</span>
+                                  </Button>
+                                : null
+                              }
+                              {item.buttonText2
+                                ? <Button size="small" color="primary" onClick={() => window.open(item.buttonLink2)}>
+                                    <span className={classes.text} style={{fontSize: '1rem'}}>{item.buttonText2}</span>
+                                  </Button>
+                                : null
+                              }
+                            </div>
                           </CardActions>
                         </Card>
                       </Col>
