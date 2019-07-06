@@ -31,8 +31,8 @@ export class CardNoFooter extends Component {
             <div className="text-center">
               <hr style={{'margin':'5px 15px'}}/>
               <a href={this.props.moreLink}>
-                <Button size="large" variant="outlined" color="primary" style={{'margin':'5px 15px 10px 10px', 'borderWidth':'1px', 'color':'#234323', 'borderColor':'#234323', 'width':'50%'}}>
-                  <i className="fas fa-plus-square"/><span style={{'paddingLeft':'10px'}}>View More</span>
+                <Button size="large" color="primary" style={{'margin':'5px 15px 10px 10px', 'borderWidth':'1px', 'color':'#234323', 'borderColor':'#234323', 'width':'50%'}}>
+                  <span style={{'paddingLeft':'10px', 'fontSize':'1.1rem'}}>View More</span>
                 </Button>
               </a>
             </div>
