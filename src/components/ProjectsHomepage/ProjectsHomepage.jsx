@@ -16,18 +16,14 @@ const styles = theme => ({
     width: '100%',
     backgroundColor: theme.palette.background.paper,
   },
-
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
   },
-
   card: {
     marginBottom: '1em',
     minHeight: '275px'
   }
-
-
 });
 
 export class ProjectsHomepage extends React.Component {
@@ -35,11 +31,11 @@ export class ProjectsHomepage extends React.Component {
     const { classes } = this.props;
     return (
       <CardNoFooter
-        title="Recent Projects"
+        title={this.props.tabs[0].tabname ? this.props.tabs[0].tabname : null}
         ctAllIcons
         category={
           <span>
-            A short list of my most recent development efforts
+            {this.props.tabs[0].subtitle ? this.props.tabs[0].subtitle : null}
           </span>
         }
         moreLink={this.props.moreLink}

@@ -148,7 +148,10 @@
 .sidebar,
 body > .navbar-collapse{
     .logo{
-        padding: 10px 30px;
+        padding-bottom: 15px;
+        padding-top: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
         p{
