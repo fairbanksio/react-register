@@ -43,7 +43,7 @@ const styles = theme => ({
     fontSize: '2em'
   },
   text: {
-    fontSize: '1.25em'
+    fontSize: '1.3em'
   },
   tabLabel: {
     fontSize: '11px'
