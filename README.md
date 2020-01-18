@@ -47,7 +47,7 @@ yarn start
 7. Navigate to http://host:3000/react-register
 
 ### Site modification and configuration
-1. Check if **src/variables/SiteData.jx** exists
+1. Check if **src/variables/SiteData.jsx** exists
 	- If it exists, modify this file as necessary.
 	- If the file does not exist, **copy SiteData.jsx-sample** to **SiteData.jsx**
 
