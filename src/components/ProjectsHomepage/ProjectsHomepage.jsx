@@ -16,18 +16,14 @@ const styles = theme => ({
     width: '100%',
     backgroundColor: theme.palette.background.paper,
   },
-
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
   },
-
   card: {
     marginBottom: '1em',
     minHeight: '275px'
   }
-
-
 });
 
 export class ProjectsHomepage extends React.Component {
@@ -35,56 +31,58 @@ export class ProjectsHomepage extends React.Component {
     const { classes } = this.props;
     return (
       <CardNoFooter
-        title="Recent Projects"
+        title={this.props.tabs[0].tabname ? this.props.tabs[0].tabname : null}
         ctAllIcons
         category={
           <span>
-            A short list of my most recent development efforts
+            {this.props.tabs[0].subtitle ? this.props.tabs[0].subtitle : null}
           </span>
         }
         moreLink={this.props.moreLink}
         content={
           this.props.tabs.map(function(tab, i){
             return (
-                <Row key={i}>
-                  {tab.items.map(function(item, i){
-                    return (
-                      <Col md={3} key={i}>
-                        <Card  className={classes.card}>
-                          <a href={item.buttonLink1}>
-                            <CardMedia
-                              className={classes.media}
-                              image={item.img}
-                              title={item.name}
-                            />
-                          </a>
-                          <CardContent>
-                            <Typography gutterBottom variant="headline" component="h2" className={classes.title}>
-                              {item.name}
-                            </Typography>
-                            <Typography component="h5" className={classes.text}>
-                              {item.desc}
-                            </Typography>
-                          </CardContent>
-                          <CardActions>
+              <Row key={i}>
+                {tab.items.map(function(item, i){
+                  return (
+                    <Col md={3} key={i}>
+                      <Card  className={classes.card}>
+                        <a href={item.buttonLink1}>
+                          <CardMedia
+                            className={classes.media}
+                            image={item.img}
+                            title={item.name}
+                          />
+                        </a>
+                        <CardContent>
+                          <Typography gutterBottom variant="headline" component="h2" className={classes.title} style={{fontSize: '1.45rem', fontWeight: '410'}}>
+                            {item.name}
+                          </Typography>
+                          <Typography component="h5" className={classes.text} style={{fontSize: '1.1rem', color: '#9b9b9b'}}>
+                            {item.desc}
+                          </Typography>
+                        </CardContent>
+                        <CardActions>
+                          <div style={{position: 'absolute', bottom: '20px'}}>
                             {item.buttonText1
                               ? <Button size="small" color="primary" onClick={() => window.open(item.buttonLink1)}>
-                                <span className={classes.text}>{item.buttonText1}</span>
-                              </Button>
+                                  <span className={classes.text} style={{fontSize: '1rem'}}>{item.buttonText1}</span>
+                                </Button>
                               : null
                             }
                             {item.buttonText2
                               ? <Button size="small" color="primary" onClick={() => window.open(item.buttonLink2)}>
-                                <span className={classes.text}>{item.buttonText2}</span>
-                              </Button>
+                                  <span className={classes.text} onClick={() => window.open(item.buttonLink2)} style={{fontSize: '1rem'}}>{item.buttonText2}</span>
+                                </Button>
                               : null
                             }
-                          </CardActions>
-                        </Card>
-                      </Col>
-                    );
-                  })}
-                </Row>
+                          </div>
+                        </CardActions>
+                      </Card>
+                    </Col>
+                  );
+                })}
+              </Row>
             );
           })
         }
@@ -92,8 +90,6 @@ export class ProjectsHomepage extends React.Component {
     );
   }
 }
-
-
 
 ProjectsHomepage.propTypes = {
   classes: PropTypes.object.isRequired,

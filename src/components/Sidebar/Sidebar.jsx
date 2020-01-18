@@ -27,7 +27,7 @@ class Sidebar extends Component {
       boxShadow: "2px 0px 20px 1px rgba(0,0,0,0.5)"
     };
     var customTitleStyle = {
-      lineHeight: '.95'
+      //lineHeight: '.95'
     }
     return (
       <div
@@ -56,7 +56,6 @@ class Sidebar extends Component {
         </div>
         <div className="sidebar-wrapper">
           <ul className="nav">
-
             {this.props.sitePages.map((prop, key) => {
               if (!prop.redirect && !prop.hidden)
                   return (
