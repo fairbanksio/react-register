@@ -13,7 +13,7 @@ USER  react-register
 WORKDIR /react-register
 
 # Clone the repo and build it
-RUN git clone https://github.com/Fairbanks-io/react-register . ; npm install; npm build
+RUN git clone https://github.com/Fairbanks-io/react-register . ; npm install; npm run build
 
 # Clone ExpressHTTP and install it
 RUN mkdir server; cd server; git clone https://github.com/jonfairbanks/ExpressHTTP . ; npm install
