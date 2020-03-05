@@ -22,7 +22,7 @@ docker run -d -p 3000:3000 --name react-register fairbanksio/react-register
 ##### Manual Deployment (Ubuntu 18.04)
 1. Install dependencies
 ```bash
-apt-get install nodejs git
+sudo apt-get install nodejs git
 ```
 2. Install Yarn
 ```bash
