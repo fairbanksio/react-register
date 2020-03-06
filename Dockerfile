@@ -1,26 +1,23 @@
-FROM alpine
-
-MAINTAINER Brandon Sorgdrager <Brandon.Sorgdrager@gmail.com>, Jon Fairbanks <Jon@Fairbanks.io>
-
-# Install dependencies
-RUN apk update && apk upgrade \
-  && apk add git \
-  && apk add nodejs-current-npm
-
-# Create user
-RUN adduser -h /react-register -s /bin/bash -S react-register
-USER  react-register
-WORKDIR /react-register
-
-# Clone the repo and build it
-RUN git clone https://github.com/Fairbanks-io/react-register . ; npm install; npm run build
-
-# Clone ExpressHTTP and install it
-RUN mkdir server; cd server; git clone https://github.com/jonfairbanks/ExpressHTTP . ; npm install
-
-# Copy build files to the web server's public directory
-RUN cp -a build/. server/public/
-
-WORKDIR /react-register/server
+FROM node:12-slim as base
+ENV NODE_ENV=production
 EXPOSE 3000
-CMD ["npm", "start" ]
+RUN mkdir /app && chown -R node:node /app
+WORKDIR /app
+USER node
+COPY --chown=node:node package.json ./
+
+FROM base as dev
+ENV NODE_ENV=development
+CMD ["npm", "start"]
+
+FROM base as source
+RUN npm i && npm cache clean --force > "/dev/null" 2>&1
+COPY --chown=node:node . .
+
+FROM source as build
+RUN npm run build
+
+FROM jonfairbanks/expresshttp:latest
+COPY --from=build /app/build /usr/src/app/public
+EXPOSE 8888
+CMD ["yarn", "start" ]
