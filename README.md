@@ -15,7 +15,7 @@ A Material UI based dashboard built on React
 ##### Manual Deployment (Ubuntu 18.04)
 1. Install dependencies
 ```bash
-apt-get install nodejs git
+sudo apt-get install nodejs git
 ```
 2. Install Yarn
 ```bash
