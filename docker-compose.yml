@@ -1,0 +1,53 @@
+version: '3.7'
+services:
+  rr-web:
+    container_name: rr-web
+    build:
+      context: ./client
+      target: dev
+    volumes:
+      - ./client/:/app:Z
+    networks:
+      - rr-net
+    restart: always
+    ports:
+      - "3000:3000"
+    
+  rr-db:
+    container_name: rr-db
+    image: bitnami/mariadb:10.4.11
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb-data:/bitnami/mariadb
+    environment:
+      - MARIADB_ROOT_PASSWORD=R00tPassword
+      - MARIADB_DATABASE=rr-db
+      - MARIADB_USER=M4riaDb
+      - MARIADB_PASSWORD=M4riaDBPassword
+    networks:
+      - rr-net
+
+  rr-redis:
+    container_name: rr-session
+    image: redis
+    restart: always
+    command: redis-server --appendonly yes
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - rr-net
+
+networks:
+  rr-net:
+    name: rr-net
+    driver: bridge
+
+volumes:
+  mariadb-data:
+    driver: local
+  redis-data:
+    driver: local
