@@ -1,58 +1,68 @@
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Summary
-![react-register](https://raw.githubusercontent.com/Fairbanks-io/react-register/develop/imgs/react-register-sm.png)
+## Available Scripts
 
-[![Build Status](https://travis-ci.org/Fairbanks-io/react-register.svg?branch=develop)](https://travis-ci.org/Fairbanks-io/react-register)
+In the project directory, you can run:
 
-A Material UI based dashboard built on React
+### `npm start`
 
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### Live demo
-- https://fairbanks-io.github.io/react-register
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-### Installation
+### `npm test`
 
-##### Docker Deployment
-1. Launch the docker image
-```bash
-docker run -d -p 3000:3000 --name react-register fairbanksio/react-register
-```
-2. Open http://hostname:3000/react-register in a browser.
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-##### Manual Deployment (Ubuntu 18.04)
-1. Install dependencies
-```bash
-apt-get install nodejs git
-```
-2. Install Yarn
-```bash
-npm install -g yarn
-```
-3. Clone the repository
-```bash
-git clone https://github.com/Fairbanks-io/react-register/
-```
-4. Change into react-register directory
-```bash
-cd react-register
-```
-5. Install module dependencies
-```bash
-yarn install
-```
-6. Run the start script
-```bash
-yarn start
-```
-7. Navigate to http://host:3000/react-register
+### `npm run build`
 
-### Site modification and configuration
-1. Check if **src/variables/SiteData.jx** exists
-	- If it exists, modify this file as necessary.
-	- If the file does not exist, **copy SiteData.jsx-sample** to **SiteData.jsx**
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-2. Make all modifications as necessary to SiteData.jsx
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Build and deploy a production ready version
-1. For serving a `build` version of this application, checkout [ExpressHTTP](https://github.com/jonfairbanks/ExpressHTTP)
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
