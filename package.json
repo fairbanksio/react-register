@@ -64,7 +64,7 @@
     "react-photo-gallery": "^6.0.28",
     "react-router-dom": "4.2.2",
     "react-skills-bars": "latest",
-    "showdown": "^1.8.6",
+    "showdown": "^1.9.1",
     "showdown-xss-filter": "^0.2.0",
     "style-loader": "^0.21.0",
     "sw-precache-webpack-plugin": "0.11.4",
